@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
   CheckCircle2,
   Microscope,
-  Award,
   HeartHandshake,
   ChevronLeft,
   ChevronRight,
@@ -68,86 +67,43 @@ const STEPS: StepData[] = [
 
 export function AboutSection() {
   const t = useTranslations("about");
-  const trackRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState<number>(0);
 
-  // Scroll listener for sticky scroll-driven book-turn on desktop
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!trackRef.current) return;
-      // Only apply scroll-driven stepper on desktop screens (>= 1024px)
-      if (window.innerWidth < 1024) return;
-
-      const rect = trackRef.current.getBoundingClientRect();
-      const totalDist = rect.height - window.innerHeight;
-      if (totalDist <= 0) return;
-
-      const currentScrolled = -rect.top;
-      const progress = Math.min(Math.max(currentScrolled / totalDist, 0), 1);
-
-      // Determine step based on scroll progress:
-      let stepIndex = Math.floor(progress * STEPS.length);
-      if (stepIndex >= STEPS.length) stepIndex = STEPS.length - 1;
-      setActiveStep(stepIndex);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Jump to step by scrolling smoothly to its progress point
   const handleStepClick = (stepIndex: number) => {
     setActiveStep(stepIndex);
-
-    if (window.innerWidth >= 1024 && trackRef.current) {
-      const rect = trackRef.current.getBoundingClientRect();
-      const totalDist = rect.height - window.innerHeight;
-      const targetProgress = (stepIndex + 0.15) / STEPS.length;
-      const targetScroll = window.scrollY + rect.top + targetProgress * totalDist;
-
-      window.scrollTo({
-        top: targetScroll,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
     <section
-      ref={trackRef}
       id="about"
-      className="relative bg-white border-b border-slate-200/70 lg:min-h-[270vh]"
+      className="relative bg-white border-b border-slate-200/70 py-16 sm:py-20 lg:py-24"
     >
-      {/* Sticky Viewport Container */}
-      <div className="lg:sticky lg:top-0 lg:h-screen lg:w-full lg:flex lg:items-center overflow-hidden py-16 lg:py-0">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center">
-            
-            {/* Left Column: Minimal Vertical Stepper & Editorial Narrative */}
-            <div
-              data-aos="fade-right"
-              data-aos-duration="850"
-              className="lg:col-span-5 flex flex-col justify-center space-y-6 sm:space-y-8"
-            >
-              {/* Minimal Eyebrow */}
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-5 h-0.5 bg-[#dc2626] rounded-full" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#dc2626]">
-                    {t("badge")}
-                  </span>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-[1.2]">
-                  {t("title")}
-                </h2>
-
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-                  {t("subtitle")}
-                </p>
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center">
+          
+          {/* Left Column: Minimal Vertical Stepper & Editorial Narrative */}
+          <div
+            data-aos="fade-right"
+            data-aos-duration="850"
+            className="lg:col-span-5 flex flex-col justify-center space-y-6 sm:space-y-8"
+          >
+            {/* Minimal Eyebrow */}
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2">
+                <span className="w-5 h-0.5 bg-[#dc2626] rounded-full" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#dc2626]">
+                  {t("badge")}
+                </span>
               </div>
+
+              <h2 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-[1.2]">
+                {t("title")}
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+                {t("subtitle")}
+              </p>
+            </div>
 
               {/* Sleek Vertical Stepper / Chapters */}
               <div
@@ -285,8 +241,8 @@ export function AboutSection() {
                               <span className="truncate">{t(step.highlightKey)}</span>
                             </div>
 
-                            {/* Mobile / Tablet Step Navigation Arrows */}
-                            <div className="flex items-center gap-1.5 lg:hidden">
+                            {/* Step Navigation Arrows */}
+                            <div className="flex items-center gap-1.5">
                               <button
                                 type="button"
                                 aria-label="Oldingi sahifa"
@@ -318,7 +274,6 @@ export function AboutSection() {
 
           </div>
         </Container>
-      </div>
     </section>
   );
 }
