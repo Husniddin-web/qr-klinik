@@ -1,0 +1,177 @@
+{
+  "brand": {
+    "name": "QAXRAMON-RAXIMJON",
+    "subtitle": "ZAMONAVIY TIBBIYOT KLINIKASI",
+    "license": "Davlat litsenziyasi: №048123 (Sog'liqni saqlash vazirligi)",
+    "workingHours": "Dushanba - Shanba: 08:00 - 20:00 | Yakshanba: 09:00 - 15:00",
+    "emergencyPhone": "+998 71 200 45 46",
+    "primaryPhone": "+998 71 200 45 45",
+    "address": "Toshkent shahri, Yunusobod tumani, Amir Temur ko'chasi 108-uy"
+  },
+  "nav": {
+    "home": "Asosiy",
+    "about": "Haqimizda",
+    "departments": "Bo'limlar",
+    "services": "Xizmatlar",
+    "equipment": "Uskunalar",
+    "doctors": "Shifokorlar",
+    "labResults": "Tahlillar",
+    "faq": "F.A.Q",
+    "contact": "Aloqa",
+    "news": "Yangiliklar",
+    "appointment": "Qabulga Yozilish",
+    "menu": "Menyu"
+  },
+  "hero": {
+    "badge": "Sog'lom jamiyat — baxtli kelajak",
+    "title": "Sizning salomatligingiz —",
+    "titleHighlight": "bizning oliy qadriyatimiz",
+    "subtitle": "Xalqaro darajadagi zamonaviy uskunalar va 15 yillik tajribaga ega shifokorlar bilan ishonchli tibbiy xizmat.",
+    "btnAppointment": "Qabulga yozilish",
+    "btnServices": "Xizmatlar bilan tanishish",
+    "statExperience": "Klinik tajriba",
+    "statDoctors": "Oliy toifali vrachlar",
+    "statEquipment": "Zamonaviy tibbiy uskunalar",
+    "feature1": "Xavfsiz va sifatli xizmat",
+    "feature2": "Qulay vaqt va sharoit",
+    "feature3": "Doimiy qo'llab-quvvatlash",
+    "note1": "Sizning",
+    "note2": "sog'lig'ingiz",
+    "note3": "biz uchun muhim! ♡"
+  },
+  "urgent": {
+    "badge": "24/7 Shoshilinch Qabul & Reanimatsiya",
+    "title": "Kechayu-kunduz Tezkor Tibbiy Yordam Kerakmi?",
+    "subtitle": "Kardiologik xuruj, jarohat va shoshilinch holatlarda navbatchi brigadamiz doimo tayyor.",
+    "call": "Tezkor Chaqiruv"
+  },
+  "about": {
+    "badge": "Biz Haqimizda",
+    "title": "Inson Salomatligi va Hayot Sifatiga Bag'ishlangan 15 Yillik Tajriba",
+    "subtitle": "\"QAXRAMON-RAXIMJON\" klinikasi — Toshkent shahridagi eng ilg'or ko'p tarmoqli tibbiyot markazlaridan biri bo'lib, dalillarga asoslangan xalqaro tibbiyot standartlarini o'zida mujassam etgan.",
+    "subheading": "Har Bir Bemorga O'z Yaqinimizdek G'amxo'rlik Ko'rsatamiz",
+    "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va aniq tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat isbotlangan tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz.",
+    "val1Title": "Oliy Toifali va Fan Nomzodlari",
+    "val1Desc": "Klinikamiz mutaxassislari doimiy ravishda Yevropa va Osiyoning nufuzli markazlarida o'z malakasini oshirib boradilar.",
+    "val2Title": "Ilg'or Diagnostika Texnologiyalari",
+    "val2Desc": "Siemens Magnetom Vida 3.0T MRT va GE Healthcare 128-kesimli KT tizimlari orqali xastaliklarni eng erta bosqichda aniqlaymiz.",
+    "val3Title": "100% Shaffoflik va Halollik",
+    "val3Desc": "Hech qanday yashirin to'lovlarsiz, barcha muolajalar va narxlar shartnomada aniq ko'rsatiladi.",
+    "license": "Davlat Litsenziyasi: №048123",
+    "licenseSub": "O'zbekiston Respublikasi SSV tomonidan tasdiqlangan",
+    "step1Tab": "Falsafa & Missiya",
+    "step1Sub": "Bemor manfaati va xalqaro standartlar",
+    "step1Badge": "Dalillarga Asoslangan Tibbiyot",
+    "step1Title": "Har Bir Bemorga O'z Yaqinimizdek G'amxo'rlik Ko'rsatamiz",
+    "step1Desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va chuqur tushunish. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillarsiz, faqat jahon standartlaridagi isbotlangan tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz.",
+    "step1Highlight": "15+ Yillik Ilmiy & Klinik Tajriba",
+    "step2Tab": "Ilg'or Diagnostika",
+    "step2Sub": "Siemens 3.0T MRT va GE 128-kesimli KT",
+    "step2Badge": "Yuqori Aniqlikdagi Diagnostika",
+    "step2Title": "Kasalliklarni Eng Erta Bosqichda 100% Aniqlikda Aniqlash",
+    "step2Desc": "Germaniyaning Siemens Magnetom Vida 3.0T MRT hamda AQShning GE Healthcare 128-kesimli KT uskunalari orqali hatto mikroskopik o'zgarishlarni ham o'z vaqtida va xatosiz aniqlaymiz. Yuqori aniqlik — to'g'ri muolaja garovidir.",
+    "step2Highlight": "0.1 mm gacha o'ta aniq 3D tomografiya",
+    "step3Tab": "Yetakchi Shifokorlar",
+    "step3Sub": "Fan nomzodlari va xalqaro mutaxassislar",
+    "step3Badge": "Tajribali Tibbiy Jamoa",
+    "step3Title": "Xalqaro Malakaga Ega Shifokorlar va Jarrohlar Hamjamiyati",
+    "step3Desc": "Klinikamiz mutaxassislari Germaniya, Turkiya, Janubiy Koreya va Rossiyaning nufuzli markazlarida doimiy malaka oshirib boradilar. Ko'p tarmoqli konsilium tizimi orqali eng murakkab tashxislar ham birgalikda aniq belgilanadi.",
+    "step3Highlight": "45+ Oliy Toifali Shifokor & Professorlar"
+  },
+  "stats": {
+    "badge": "Raqamlar va Natijalar",
+    "title": "Klinikamizning Yillar Davomidagi Yutuqlari",
+    "subtitle": "Har bir raqam ortida bemorlarimizning minnatdor tabassumi va sog'lom hayoti turibdi."
+  },
+  "departments": {
+    "badge": "Yo'nalishlar",
+    "title": "Har Bir Yo'nalishda",
+    "titleHighlight": "Professional va Chuqur Yondashuv",
+    "subtitle": "Bizning markazda barcha muhim tibbiyot sohalari bo'yicha yuqori malakali shifokorlar va zamonaviy uskunalar bilan jihozlangan ixtisoslashgan bo'limlar faoliyat ko'rsatadi.",
+    "popular": "Mashhur"
+  },
+  "promo": {
+    "badge": "Maxsus Mavsumiy Aksiya",
+    "title": "To'liq \"Check-Up\" Tibbiy Ko'rikdan O'ting va Salomatligingizga Ishonch Hosil Qiling",
+    "subtitle": "MRT, laboratoriya tahlillari va bosh mutaxassislar konsultatsiyasini o'z ichiga olgan kompleks ko'rik uchun maxsus 15% lik chegirma e'lon qilindi.",
+    "oldPrice": "1 200 000 so'm",
+    "newPrice": "990 000 so'm",
+    "btn": "Aksiyaga yozilish"
+  },
+  "services": {
+    "badge": "Xizmatlar va Narxlar",
+    "title": "Shaffof, Qulay va Belgilangan Narxlardagi Xizmatlar",
+    "subtitle": "Klinikamizda barcha tibbiy tahlil, tashxis va davolash muolajalari bo'yicha rasmiy narxlar bilan tanishing.",
+    "searchPlaceholder": "Xizmat nomi yoki kasallik turi bo'yicha qidiring (masalan: MRT, qon tahlili, kardiolog)...",
+    "all": "Barcha Xizmatlar",
+    "book": "Yozilish",
+    "popular": "Ommabop"
+  },
+  "equipment": {
+    "badge": "Bizning Uskunalar",
+    "title": "Jahon Tibbiyotining Eng Ilg'or Texnologiyalari",
+    "subtitle": "Aniq tashxis — samarali davolashning asosi. Biz bemorlarimizga xalqaro standartdagi eng yangi, minimal nurlanishga ega Germaniya, AQSH va Shveytsariya apparatlari orqali xizmat ko'rsatamiz.",
+    "specs": "Asosiy Imkoniyatlar:",
+    "bookTest": "Tekshiruvga yozilish",
+    "priceLabel": "Tashxis narxi:"
+  },
+  "doctors": {
+    "badge": "SIFAT ORTIDAGI INSONLAR",
+    "title": "EKSPERTLAR JAMOAMIZ BILAN TANISHING",
+    "subtitle": "Faoliyatimizning har bir bosqichiga ilmiy aniqlik, mas'uliyat va g'amxo'rlik olib kiradigan mutaxassislar.",
+    "experience": "Tajriba:",
+    "schedule": "Qabul vaqti:",
+    "btn": "Qabuliga yozilish"
+  },
+  "lab": {
+    "badge": "Klinik Laboratoriya",
+    "title": "Tahlil Natijalarini Uydan Chiqmasdan Onlayn Oling",
+    "subtitle": "Bizning avtomatlashtirilgan laboratoriyamizda topshirilgan har qanday tahlil natijalarini chekingizdagi kod orqali tezda yuklab oling.",
+    "searchTitle": "Tahlil Natijasini Qidirish",
+    "codeLabel": "Tahlil chek kodi (Barcode / ID) *",
+    "phoneLabel": "Bemor telefon raqami",
+    "btnSearch": "Natijani Tekshirish",
+    "btnSearching": "Qidirilmoqda...",
+    "btnDownload": "Yuklab olish",
+    "telegramBtn": "Telegram Botga Ulanish"
+  },
+  "faq": {
+    "badge": "Ko'p Beriladigan Savollar",
+    "title": "Bemorlarimiz Tez-Tez Qiziqadigan Savollarga Javoblar",
+    "subtitle": "Quyida klinikamiz ish tartibi, tahlillar, tekshiruvlarga tayyorgarlik va boshqa muhim savollarga aniq javoblar to'plangan."
+  },
+  "contact": {
+    "badge": "Aloqa va Joylashuv",
+    "title": "Biz Bilan Bog'laning yoki Qabulga Yoziling",
+    "subtitle": "Klinikamiz Toshkent shahrining markaziy qismida qulay transport tuguniga yaqin joylashgan.",
+    "addressTitle": "Manzilimiz",
+    "phonesTitle": "Telefon raqamlar",
+    "hoursTitle": "Ish vaqti",
+    "emailTitle": "Elektron pochta",
+    "formTitle": "Kutishlarsiz Shifokor Qabuliga Yoziling",
+    "nameLabel": "Ismingiz *",
+    "phoneLabel": "Telefon raqamingiz *",
+    "deptLabel": "Qiziqtirayotgan tibbiy bo'lim",
+    "msgLabel": "Shikoyatingiz yoki qo'shimcha savol (ixtiyoriy)",
+    "submitBtn": "Qabulga Yozilishni Tasdiqlash",
+    "submitting": "Yuborilmoqda..."
+  },
+  "modal": {
+    "title": "Shifokor Qabuliga Yozilish",
+    "subtitle": "Quyidagi formani to'ldiring, operatorimiz 15 daqiqada siz bilan bog'lanadi.",
+    "successTitle": "Arizangiz Qabul Qilindi!",
+    "successDesc": "Hurmatli bemor, sizning so'rovingiz qabul qilindi. Tez orada mutaxassisimiz sizga qo'ng'iroq qilib vaqtni tasdiqlaydi.",
+    "btnClose": "Yopish"
+  },
+  "news": {
+    "title": "Yangiliklar va Tahlillar",
+    "subtitle": "Klinikamiz mutaxassislari tomonidan tayyorlangan ilmiy tahlillar, amaliy tibbiyot tavsiyalari va muhim yangiliklar.",
+    "allArticles": "Barcha Maqolalar",
+    "readFull": "To'liq O'qish"
+  },
+  "wellnessBanner": {
+    "title": "Salomatlik sari yo'lingizni bugun boshlang. Shifokorlarimiz jamoasi sizning yoningizda",
+    "subtitle": "G'amxo'r va malakali mutaxassislarimiz sizga eng yuqori darajadagi tibbiy yordam ko'rsatishga doimo tayyor.",
+    "cta": "Qabulga Yozilish"
+  }
+}

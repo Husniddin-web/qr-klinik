@@ -1,0 +1,68 @@
+import { IEquipment } from "@/types";
+
+export const EQUIPMENT_DATA: IEquipment[] = [
+  {
+    id: "eq-mri-3t",
+    name: "Siemens Magnetom Vida 3.0 Tesla",
+    model: "Magnetom Vida BioMatrix",
+    originCountry: "Germaniya",
+    price: 450000,
+    badge: "Premial Daraja",
+    shortDescription: "O'zbekistondagi eng ilg'or 3.0T MRT tizimi bo'lib, bemorning nafas olish ritmiga avtomatik moslashuvchi BioMatrix texnologiyasi bilan jihozlangan.",
+    fullSpecs: [
+      "Katta 70 sm lik tunnel diametri (klaustrofobiyaga moyil bemorlar uchun qulay)",
+      "Ultra-tezkor skanerlash (odatiy apparatlardan 40% tezroq)",
+      "Miya tomirlari va neyrotizimni mikron darajadagi yuqori aniqlikda tasvirlash",
+      "Klaustrofobiyadan himoyalangan sokin rejim",
+    ],
+    image: "/images/equipment-mri.jpg",
+  },
+  {
+    id: "eq-ct-128",
+    name: "GE Healthcare Revolution EVO 128-kesimli KT",
+    model: "Revolution EVO Gen 3",
+    originCountry: "AQSH",
+    price: 390000,
+    badge: "Minimal Nurlanish",
+    shortDescription: "128 qatlamli past dozali nurlanishga ega multispirel kompyuter tomografi. Qon tomirlari va o'pka to'qimalarini sekundlarda skanerlaydi.",
+    fullSpecs: [
+      "ASiR-V nurlanish dozasini 82% gacha kamaytirish texnologiyasi",
+      "Yurak tomorlari koronarografiyasi (invaziv bo'lmagan usul)",
+      "0.35 soniyada butun tana a'zolarini yuqori aniqlikda olish",
+      "3D rekonstruksiya va tomirlar virtual modellashtirishi",
+    ],
+    image: "/images/equipment-ct.jpg",
+  },
+  {
+    id: "eq-usg-voluson",
+    name: "GE Voluson E10 4D/HDlive Ultratovush",
+    model: "Voluson E10 BT21",
+    originCountry: "Avstriya / AQSH",
+    price: 250000,
+    badge: "4D Ekspert Klass",
+    shortDescription: "Homiladorlik skriningi, kardiologiya va ichki a'zolar uchun dunyodagi yetakchi ekspert toifasidagi 4D ultratovush apparati.",
+    fullSpecs: [
+      "HDlive Silhouette nurli 3D/4D real vaqt tasviri",
+      "Yurak va qon oqimining yuqori sezgirlikdagi dopplerografiyasi",
+      "Elastografiya orqali to'qimalar qattiqligini tekshirish",
+      "Yuqori aniqlikdagi matritsali datchiklar majmuasi",
+    ],
+    image: "/images/equipment-ultrasound.jpg",
+  },
+  {
+    id: "eq-lab-roche",
+    name: "Roche Cobas 6000 Biokimyo va Immunologiya Analizatori",
+    model: "Cobas 6000 c501/e601",
+    originCountry: "Shveytsariya",
+    price: 65000,
+    badge: "Xalqaro Standart",
+    shortDescription: "To'liq robotlashtirilgan yopiq tizim. Inson omilini chetlab o'tgan holda 100% ishonchli va tezkor tahlil natijalarini kafolatlaydi.",
+    fullSpecs: [
+      "Soatiga 1000 tagacha tahlil o'tkazish quvvati",
+      "Shtrix-kod orqali bemor ma'lumotlarini avtomatik tekshirish",
+      "Kam hajmdagi qon zardobi orqali aniqlash",
+      "Xalqaro sifat nazorati (RIQAS) sertifikati",
+    ],
+    image: "/images/equipment-lab.jpg",
+  },
+];
