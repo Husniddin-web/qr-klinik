@@ -9,7 +9,6 @@ import {
   Check,
   Calendar,
   ChevronRight,
-  Phone,
   Home,
   Stethoscope,
   Users,
@@ -358,29 +357,6 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
             })}
           </div>
 
-          {/* Quick Emergency Phone Link */}
-          <a
-            href="tel:+998712000000"
-            className="flex items-center justify-between p-3 rounded-2xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] transition-colors"
-          >
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                <Phone className="w-4 h-4" />
-              </div>
-              <div className="text-left">
-                <div className="text-[10px] text-slate-400 font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  24/7 Tezkor aloqa
-                </div>
-                <div className="text-xs font-bold text-white tracking-wide mt-0.5">
-                  +998 71 200 00 00
-                </div>
-              </div>
-            </div>
-            <span className="text-[10px] font-bold uppercase text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-lg">
-              Qo&apos;ng&apos;iroq
-            </span>
-          </a>
 
           {/* Full Width Primary Appointment Button */}
           <button

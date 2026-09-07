@@ -144,12 +144,12 @@ export default function ContactPage() {
           {/* Form and Map Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 sm:mb-20">
             {/* Interactive Contact & Appointment Form */}
-            <div className="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/80 shadow-sm">
+            <div className="lg:col-span-6 bg-white rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/80 shadow-sm">
               <div className="mb-6">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#dc2626] mb-1.5">
                   XABAR YUBORISH
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
                   Kutishlarsiz Mutaxassis Qabuliga Yoziling
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-500 font-normal mt-2">
@@ -190,7 +190,7 @@ export default function ContactPage() {
                         setFormState({ ...formState, name: e.target.value })
                       }
                       placeholder="Masalan: Sardor Rustamov"
-                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-base sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
                     />
                   </div>
 
@@ -206,7 +206,7 @@ export default function ContactPage() {
                         setFormState({ ...formState, phone: e.target.value })
                       }
                       placeholder="+998 90 123 45 67"
-                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-base sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
                     />
                   </div>
 
@@ -219,7 +219,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormState({ ...formState, department: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-base sm:text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
                     >
                       <option value="">Bo&apos;limni tanlang (ixtiyoriy)</option>
                       {DEPARTMENTS_DATA.map((dept) => (
@@ -241,7 +241,7 @@ export default function ContactPage() {
                         setFormState({ ...formState, message: e.target.value })
                       }
                       placeholder="Qisqacha shikoyat yoki sizga qulay vaqt..."
-                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200/90 text-base sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all resize-none"
                     />
                   </div>
 

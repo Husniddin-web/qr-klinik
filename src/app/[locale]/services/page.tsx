@@ -65,21 +65,21 @@ export default function ServicesPage() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Clean Focused Search Input */}
-          <div className="max-w-2xl mx-auto mb-10 sm:mb-12">
+          <div className="max-w-2xl mx-auto mb-8 sm:mb-12">
             <div className="relative w-full">
-              <Search className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-slate-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Xizmat nomi yoki kasallik turi bo'yicha qidiring (masalan: MRT, Kardiolog, EKG)..."
-                className="w-full pl-11 sm:pl-13 pr-11 sm:pr-12 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-xs sm:text-sm md:text-base font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
+                placeholder="Xizmat yoki kasallik bo'yicha qidiring (MRT, Kardiolog, EKG)..."
+                className="w-full pl-10 sm:pl-13 pr-10 sm:pr-12 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-base sm:text-sm md:text-base font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500 transition-all"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3.5 sm:right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -220,10 +220,10 @@ export default function ServicesPage() {
           </div>
 
           {/* Quick Appointment Call-To-Action Banner */}
-          <div className="mt-12 sm:mt-16 rounded-3xl bg-gradient-to-r from-[#0b1328] via-[#101c3d] to-[#0b1328] p-7 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-xl">
+          <div className="mt-12 sm:mt-16 rounded-3xl bg-gradient-to-r from-[#0b1328] via-[#101c3d] to-[#0b1328] p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-xl">
             <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 max-w-2xl">
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight mb-3">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight mb-2 sm:mb-3">
                 O&apos;zingizga qulay vaqtda shifokor qabuliga yoziling
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
@@ -232,7 +232,7 @@ export default function ServicesPage() {
               <button
                 type="button"
                 onClick={() => handleOpenAppointment()}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm shadow-lg shadow-red-600/30 active:scale-95 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm shadow-lg shadow-red-600/30 active:scale-95 transition-all cursor-pointer"
               >
                 <span>Hozir qabulga yozilish</span>
                 <ChevronRight className="w-4 h-4" />

@@ -38,10 +38,10 @@ export default function DoctorsPage() {
       />
 
       {/* Main Content Area: Doctors Gallery matching user reference style */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="py-10 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Doctors Grid: Clean Square Rounded Photos with Centered Name & Position */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-10">
             {DOCTORS_DATA.map((doctor) => (
               <div
                 key={doctor.id}
@@ -49,7 +49,7 @@ export default function DoctorsPage() {
                 className="group cursor-pointer flex flex-col items-center text-center transition-transform active:scale-98"
               >
                 {/* Photo Container with rounded corners */}
-                <div className="relative w-full aspect-square rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-100 mb-3 sm:mb-4 shadow-xs group-hover:shadow-md transition-all duration-300">
+                <div className="relative w-full aspect-square rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-100 mb-2.5 sm:mb-4 shadow-xs group-hover:shadow-md transition-all duration-300">
                   <Image
                     src={doctor.image}
                     alt={doctor.name}
@@ -60,12 +60,12 @@ export default function DoctorsPage() {
                 </div>
 
                 {/* Doctor Name */}
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#dc2626] transition-colors leading-snug">
+                <h3 className="text-sm sm:text-lg font-bold text-slate-900 group-hover:text-[#dc2626] transition-colors leading-snug line-clamp-2">
                   {doctor.name}
                 </h3>
 
                 {/* Doctor Specialty / Position */}
-                <p className="text-xs sm:text-sm text-slate-500 font-normal mt-1 leading-normal max-w-xs">
+                <p className="text-xs sm:text-sm text-slate-500 font-normal mt-0.5 sm:mt-1 leading-normal max-w-xs line-clamp-2">
                   {doctor.specialty}
                 </p>
               </div>

@@ -16,7 +16,7 @@ export function WellnessBannerSection({ onOpenAppointment }: WellnessBannerSecti
     <section className="relative w-full h-[42vh] sm:h-[48vh] min-h-[380px] max-h-[500px] overflow-hidden select-none">
       {/* Fixed / Sticky Parallax Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center sm:bg-[center_30%] bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-center sm:bg-[center_30%] bg-no-repeat sm:bg-fixed"
         style={{ backgroundImage: "url('/on-section.jpg')" }}
         role="img"
         aria-label="QAXRAMON-RAXIMJON tibbiyot jamoasi"

@@ -44,7 +44,7 @@ export default function NewsPage() {
           {featuredArticle && (
             <div className="mb-12 sm:mb-16 rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                <div className="lg:col-span-7 relative min-h-[280px] sm:min-h-[360px] lg:min-h-[420px]">
+                <div className="lg:col-span-7 relative min-h-[220px] sm:min-h-[360px] lg:min-h-[420px]">
                   <Image
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
@@ -177,7 +177,7 @@ export default function NewsPage() {
                 href="https://t.me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#229ED9] hover:bg-[#1e8bc0] text-white font-bold text-sm shadow-lg shadow-blue-600/30 active:scale-95 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#229ED9] hover:bg-[#1e8bc0] text-white font-bold text-sm shadow-lg shadow-blue-600/30 active:scale-95 transition-all cursor-pointer"
               >
                 <Send className="w-4 h-4" />
                 <span>Telegram kanalga a&apos;zo bo&apos;lish</span>
@@ -192,7 +192,7 @@ export default function NewsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-fadeIn">
           <div className="relative w-full max-w-2xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200 animate-scaleUp max-h-[90vh] flex flex-col">
             {/* Header image */}
-            <div className="relative w-full h-56 sm:h-64 bg-slate-100 shrink-0">
+            <div className="relative w-full h-48 sm:h-64 bg-slate-100 shrink-0">
               <Image
                 src={activeArticle.image}
                 alt={activeArticle.title}
@@ -209,7 +209,7 @@ export default function NewsPage() {
             </div>
 
             {/* Content body */}
-            <div className="p-6 sm:p-8 overflow-y-auto space-y-4">
+            <div className="p-5 sm:p-8 overflow-y-auto space-y-4">
               <div className="flex items-center gap-3 text-xs text-slate-400">
                 <span>{activeArticle.publishDate}</span>
                 <span>•</span>
@@ -236,21 +236,21 @@ export default function NewsPage() {
                 </p>
               </div>
 
-              <div className="pt-4 flex items-center justify-between border-t border-slate-100">
+              <div className="pt-4 flex flex-col-reverse sm:flex-row gap-2.5 sm:gap-0 items-stretch sm:items-center justify-between border-t border-slate-100">
                 <button
                   type="button"
                   onClick={() => {
                     setActiveArticle(null);
                     setIsAppointmentOpen(true);
                   }}
-                  className="px-5 py-2.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer text-center"
                 >
                   Shifokor ko&apos;rigiga yozilish
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveArticle(null)}
-                  className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer"
+                  className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer text-center py-1 sm:py-0"
                 >
                   Yopish
                 </button>

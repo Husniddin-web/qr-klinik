@@ -29,7 +29,7 @@ export function PartnersSection() {
               data-aos="zoom-in"
               data-aos-delay={(idx + 1) * 70}
               data-aos-duration="600"
-              className="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0f172a] hover:shadow-xs transition-all duration-200 flex flex-col items-center justify-center text-center h-24 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0f172a] hover:shadow-xs transition-all duration-200 flex flex-col items-center justify-center text-center h-24 group col-span-1 last:col-span-2 sm:last:col-span-1"
             >
               <div className="text-xs font-extrabold text-[#0f172a] group-hover:text-[#dc2626] transition-colors leading-tight tracking-wide">
                 {partner.logoText}

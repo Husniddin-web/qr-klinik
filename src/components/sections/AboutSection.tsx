@@ -224,7 +224,7 @@ export function AboutSection() {
               className="lg:col-span-7 flex items-center justify-center"
             >
               <div
-                className="relative w-full max-w-xl lg:max-w-none h-[520px] sm:h-[560px] xl:h-[590px]"
+                className="relative w-full max-w-xl lg:max-w-none h-[490px] xs:h-[520px] sm:h-[560px] xl:h-[590px]"
                 style={{ perspective: "1200px" }}
               >
                 {STEPS.map((step, idx) => {
@@ -256,7 +256,7 @@ export function AboutSection() {
                       <div className="w-full h-full bg-white rounded-xl border border-slate-200/90 shadow-[0_12px_32px_-8px_rgba(15,23,42,0.12)] flex flex-col overflow-hidden">
                         
                         {/* Top: Clean Full Editorial Image (No badges, no dark overlays) */}
-                        <div className="relative h-[290px] sm:h-[330px] xl:h-[350px] w-full bg-slate-100 overflow-hidden shrink-0">
+                        <div className="relative h-[220px] xs:h-[260px] sm:h-[330px] xl:h-[350px] w-full bg-slate-100 overflow-hidden shrink-0">
                           <Image
                             src={step.image}
                             alt={t(step.titleKey)}
@@ -268,7 +268,7 @@ export function AboutSection() {
                         </div>
 
                         {/* Bottom: Minimalist Editorial Content Block */}
-                        <div className="p-6 sm:p-7 xl:p-8 flex-1 flex flex-col justify-between bg-white text-left">
+                        <div className="p-4 xs:p-5 sm:p-7 xl:p-8 flex-1 flex flex-col justify-between bg-white text-left">
                           <div>
                             <h3 className="text-lg sm:text-xl xl:text-2xl font-bold text-[#0f172a] tracking-tight leading-snug">
                               {t(step.titleKey)}

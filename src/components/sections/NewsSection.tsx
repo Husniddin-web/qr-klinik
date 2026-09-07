@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Clock, ArrowRight, User } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { NEWS_DATA } from "@/data/news";
 import { Container } from "../common/Container";
 
@@ -31,13 +32,13 @@ export function NewsSection() {
             </p>
           </div>
 
-          <a
-            href="#news"
+          <Link
+            href="/news"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 self-start md:self-auto shrink-0 shadow-lg shadow-red-600/25 active:scale-95 rounded-lg"
           >
             <span>{t("allArticles")}</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
 
         {/* Editorial News Grid (1 Featured Lead + 2 Stacked Secondary) */}
@@ -45,7 +46,8 @@ export function NewsSection() {
           
           {/* Left Column: Big Featured Lead Article (lg:col-span-7) */}
           {featured && (
-            <article
+            <Link
+              href="/news"
               data-aos="fade-right"
               data-aos-delay="200"
               data-aos-duration="850"
@@ -93,7 +95,7 @@ export function NewsSection() {
                   </div>
                 </div>
               </div>
-            </article>
+            </Link>
           )}
 
           {/* Right Column: 2 Stacked Secondary Articles (lg:col-span-5) */}
@@ -104,8 +106,9 @@ export function NewsSection() {
             className="lg:col-span-5 flex flex-col justify-between gap-7 sm:gap-8"
           >
             {sideArticles.map((article) => (
-              <article
+              <Link
                 key={article.id}
+                href="/news"
                 className="group flex flex-col cursor-pointer text-left"
               >
                 {/* Image Container with Date Tag */}
@@ -136,7 +139,7 @@ export function NewsSection() {
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 

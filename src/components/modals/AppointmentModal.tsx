@@ -114,7 +114,7 @@ export function AppointmentModal({
                     placeholder="Masalan: Alisher Vohidov"
                     value={patientName}
                     onChange={(e) => setPatientName(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0f172a] font-medium"
+                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-base sm:text-sm focus:outline-none focus:border-[#0f172a] font-medium"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ export function AppointmentModal({
                     placeholder="+998 90 123 45 67"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0f172a] font-medium"
+                    className="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-base sm:text-sm focus:outline-none focus:border-[#0f172a] font-medium"
                   />
                 </div>
               </div>
@@ -147,7 +147,7 @@ export function AppointmentModal({
                       setDepartmentId(e.target.value);
                       setDoctorId("");
                     }}
-                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0f172a] font-medium cursor-pointer"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-base sm:text-sm focus:outline-none focus:border-[#0f172a] font-medium cursor-pointer"
                   >
                     {DEPARTMENTS_DATA.map((dep) => (
                       <option key={dep.id} value={dep.id}>
@@ -164,7 +164,7 @@ export function AppointmentModal({
                   <select
                     value={doctorId}
                     onChange={(e) => setDoctorId(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0f172a] font-medium cursor-pointer"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-base sm:text-sm focus:outline-none focus:border-[#0f172a] font-medium cursor-pointer"
                   >
                     <option value="">Ixtiyoriy shifokor</option>
                     {filteredDoctors.map((doc) => (
@@ -186,7 +186,7 @@ export function AppointmentModal({
                     type="date"
                     value={preferredDate}
                     onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full pl-11 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0f172a] font-medium"
+                    className="w-full pl-11 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-base sm:text-sm focus:outline-none focus:border-[#0f172a] font-medium"
                   />
                 </div>
               </div>

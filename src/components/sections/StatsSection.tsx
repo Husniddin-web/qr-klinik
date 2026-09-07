@@ -45,14 +45,14 @@ function CounterItem({
 
   return (
     <div ref={ref} className="text-left py-2 sm:py-0">
-      <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight">
+      <div className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight">
         {count.toLocaleString()}
         <span className="text-[#dc2626] ml-0.5">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm sm:text-base font-bold text-[#0f172a]">
+      <div className="mt-1.5 sm:mt-2 text-xs sm:text-base font-bold text-[#0f172a]">
         {label}
       </div>
-      <p className="mt-1 text-xs text-slate-500 leading-relaxed max-w-[220px]">
+      <p className="mt-1 text-[11px] sm:text-xs text-slate-500 leading-relaxed max-w-[220px]">
         {description}
       </p>
     </div>
@@ -63,16 +63,16 @@ export function StatsSection() {
   const t = useTranslations("stats");
 
   return (
-    <section className="py-20 bg-[#f8fafc] border-b border-slate-200/80">
+    <section className="py-14 sm:py-20 bg-[#f8fafc] border-b border-slate-200/80">
       <Container>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:divide-x divide-slate-200">
           {STATS_DATA.map((stat, idx) => (
             <div
               key={stat.id}
               data-aos="fade-up"
               data-aos-delay={(idx + 1) * 120}
               data-aos-duration="750"
-              className={idx > 0 ? "sm:pl-8 pt-4 sm:pt-0" : ""}
+              className={idx > 0 ? "lg:pl-8" : ""}
             >
               <CounterItem
                 value={stat.value}

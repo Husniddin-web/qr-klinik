@@ -25,7 +25,7 @@ export function PageHero({
   breadcrumbs,
 }: PageHeroProps) {
   return (
-    <section className="relative w-full min-h-[340px] sm:min-h-[400px] lg:min-h-[440px] flex items-center justify-center overflow-hidden bg-[#070e1e] pt-24 sm:pt-28 pb-16 sm:pb-20">
+    <section className="relative w-full min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] flex items-center justify-center overflow-hidden bg-[#070e1e] pt-24 sm:pt-28 pb-14 sm:pb-20">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -58,13 +58,13 @@ export function PageHero({
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-4xl leading-[1.15] mb-4 sm:mb-5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-4xl leading-[1.18] sm:leading-[1.15] mb-3 sm:mb-5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
           {title}
         </h1>
 
         {/* Optional Description */}
         {description && (
-          <p className="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl font-normal leading-relaxed mb-6 sm:mb-7 text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+          <p className="text-xs sm:text-base md:text-lg text-slate-200 max-w-2xl font-normal leading-relaxed mb-5 sm:mb-7 text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
             {description}
           </p>
         )}
@@ -72,7 +72,7 @@ export function PageHero({
         {/* Clean Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 text-xs sm:text-sm text-slate-300"
+          className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 text-[11px] sm:text-sm text-slate-300 max-w-full text-center"
         >
           <Link
             href="/"
