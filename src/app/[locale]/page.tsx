@@ -45,7 +45,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-white selection:bg-[#dc2626] selection:text-white">
+    <main className="min-h-screen flex flex-col bg-white selection:bg-[#dc2626] selection:text-white overflow-x-hidden w-full max-w-full">
       {/* 1. Floating Pill Header with next-intl language switcher */}
       <Navbar onOpenAppointment={() => handleOpenAppointment()} />
 

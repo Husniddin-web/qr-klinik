@@ -92,7 +92,7 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
   const isDarkHero = pathname !== "/";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 pointer-events-none flex justify-center transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 w-full z-50 pointer-events-none flex justify-center transition-all duration-300">
       {/* 
         Dynamic Header Capsule:
         - Transparent at top
@@ -102,21 +102,21 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
       <div
         className={`pointer-events-auto flex items-center justify-between transition-all duration-300 ease-out ${
           isScrolled
-            ? "w-[95%] sm:w-[94%] max-w-6xl mt-2.5 sm:mt-3 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-sm"
-            : "w-full max-w-7xl mt-0 px-4 sm:px-10 py-3.5 sm:py-5 bg-transparent backdrop-blur-none border-b border-transparent"
+            ? "w-[95%] sm:w-[94%] max-w-6xl mt-2 sm:mt-3 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-sm"
+            : "w-full max-w-7xl mt-0 px-3.5 sm:px-10 py-3 sm:py-5 bg-transparent backdrop-blur-none border-b border-transparent"
         }`}
       >
         {/* Brand Logo: User's main-logo.jpg */}
         <Link
           href="/"
-          className="flex items-center shrink-0 hover:opacity-95 transition-opacity"
+          className="flex items-center shrink-0 hover:opacity-95 transition-opacity z-10"
           title="QAXRAMON-RAXIMJON"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/main-logo.jpg"
             alt="QAXRAMON-RAXIMJON"
-            className="h-8 sm:h-9 md:h-10 w-auto object-contain rounded-md"
+            className="h-8 sm:h-9 md:h-10 w-auto object-contain rounded-md shrink-0 shadow-xs"
           />
         </Link>
 
@@ -259,8 +259,10 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
 
       {/* Senior-Level Mobile Drawer: Slide-In Sheet */}
       <div
-        className={`md:hidden fixed inset-y-0 right-0 w-[86%] max-w-[340px] bg-[#0c1326] text-white shadow-2xl z-50 flex flex-col justify-between p-5 sm:p-6 transition-transform duration-300 ease-out border-l border-white/10 pointer-events-auto ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`md:hidden fixed inset-y-0 right-0 w-[86%] max-w-[340px] bg-[#0c1326] text-white shadow-2xl z-50 flex flex-col justify-between p-5 sm:p-6 transition-all duration-300 ease-out border-l border-white/10 ${
+          isMobileMenuOpen
+            ? "translate-x-0 opacity-100 pointer-events-auto visible"
+            : "translate-x-full opacity-0 pointer-events-none invisible"
         }`}
       >
         {/* Drawer Header: Logo + Close Button */}

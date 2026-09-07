@@ -15,7 +15,7 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
   return (
     <section
       id="hero"
-      className="relative h-screen min-h-[100dvh] w-full flex items-center overflow-hidden bg-white pt-20 sm:pt-24"
+      className="relative h-screen min-h-[100dvh] w-full max-w-full flex items-center overflow-hidden bg-white pt-20 sm:pt-24"
     >
       {/* Background Graphic & Doctors Photo as requested */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
@@ -56,8 +56,8 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
       </div>
 
       {/* Main Content Area: Shifted to the left as requested */}
-      <div className="relative z-10 w-full px-6 sm:px-10 md:px-14 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="max-w-xl lg:max-w-2xl xl:max-w-[700px] flex flex-col items-start">
+      <div className="relative z-10 w-full max-w-full px-4 sm:px-10 md:px-14 lg:px-16 xl:px-24 2xl:px-32 overflow-hidden">
+        <div className="max-w-xl lg:max-w-2xl xl:max-w-[700px] flex flex-col items-start w-full">
           {/* Eyebrow Pill Badge */}
           <div
             data-aos="fade-down"
@@ -74,7 +74,7 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-duration="850"
-            className="text-[26px] xs:text-[28px] sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-extrabold tracking-tight leading-[1.18] sm:leading-[1.14] text-[#0f172a]"
+            className="text-[24px] xs:text-[28px] sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-extrabold tracking-tight leading-[1.2] sm:leading-[1.14] text-[#0f172a] max-w-full"
           >
             <span className="block whitespace-normal sm:whitespace-nowrap">
               {t("title")}
