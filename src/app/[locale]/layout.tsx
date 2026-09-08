@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { AOSInit } from "@/components/common/AOSInit";
+import { FloatingChatWidget } from "@/components/chat/FloatingChatWidget";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
         <AOSInit />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <FloatingChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>
