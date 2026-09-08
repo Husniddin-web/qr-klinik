@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white border border-slate-200 shadow-sm p-3 mb-4">
             <Image
-              src="/logo.svg"
+              src="/main-logo.jpg"
               alt="QR-Klinik"
               width={48}
               height={48}

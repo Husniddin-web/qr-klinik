@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   description:
     "Toshkent shahridagi eng zamonaviy tibbiyot markazi. 3.0 Tesla MRT, multispirel KT, to'liq robotlashgan laboratoriya, oliy toifali kardiolog, nevrolog va mutaxassislar.",
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 

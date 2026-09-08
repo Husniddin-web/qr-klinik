@@ -63,7 +63,7 @@ export function AdminSidebar() {
         <Link href="/admin" className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-white p-1 flex items-center justify-center shrink-0">
             <Image
-              src="/logo.svg"
+              src="/main-logo.jpg"
               alt="Logo"
               width={28}
               height={28}

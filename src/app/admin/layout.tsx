@@ -5,6 +5,14 @@ import "../globals.css";
 export const metadata: Metadata = {
   title: "Admin Portal | QAXRAMON-RAXIMJON Klinikasi",
   description: "Klinika boshqaruv tizimi va administratorlar paneli",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function AdminRootLayout({
