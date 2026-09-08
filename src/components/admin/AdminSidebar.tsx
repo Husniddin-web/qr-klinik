@@ -13,7 +13,6 @@ import {
   LogOut,
   ExternalLink,
   Shield,
-  MessageSquare,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 
@@ -23,11 +22,6 @@ const NAV_ITEMS = [
     label: "Boshqaruv (KPI)",
     icon: LayoutDashboard,
     exact: true,
-  },
-  {
-    href: "/admin/chat",
-    label: "Onlayn Chat",
-    icon: MessageSquare,
   },
   {
     href: "/admin/departments",
