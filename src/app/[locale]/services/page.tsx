@@ -220,8 +220,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Quick Appointment Call-To-Action Banner */}
-          <div className="mt-12 sm:mt-16 rounded-3xl bg-gradient-to-r from-[#0b1328] via-[#101c3d] to-[#0b1328] p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-xl">
-            <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="mt-12 sm:mt-16 rounded-2xl bg-[#0f172a] border border-slate-800 p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-sm">
             <div className="relative z-10 max-w-2xl">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight mb-2 sm:mb-3">
                 O&apos;zingizga qulay vaqtda shifokor qabuliga yoziling
