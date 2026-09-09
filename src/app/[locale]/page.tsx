@@ -19,6 +19,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { NewsSection } from "@/components/sections/NewsSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -87,6 +88,9 @@ export default function HomePage() {
 
       {/* 13. Frequently Asked Questions (F.A.Q.) Section */}
       <FaqSection onOpenAppointment={() => handleOpenAppointment()} />
+
+      {/* 13.5. Unified Contact & Appointment Section (Without redundant phone/email bottom cards) */}
+      <ContactSection onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* 14. Partners & Certifications Section */}
       <PartnersSection />

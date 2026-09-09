@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import {
   Phone,
-  Mail,
-  Clock,
   ArrowRight,
   User,
   MessageSquare,
@@ -14,7 +12,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { CLINIC_CONTACT } from "@/data/navigation";
 import { Container } from "../common/Container";
 
 interface ContactSectionProps {
@@ -60,7 +57,7 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
   return (
     <section
       id="contact"
-      className="w-full bg-[#0f172a] text-white mt-24 sm:mt-32 lg:mt-40 pt-4 sm:pt-6 lg:pt-8 pb-14 sm:pb-20 relative overflow-visible border-t border-slate-800"
+      className="w-full bg-[#0f172a] text-white mt-24 sm:mt-32 lg:mt-40 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 relative overflow-visible border-t border-slate-800"
     >
       <Container className="relative overflow-visible">
         {/* Main Grid: Left Cutout Doctors (Overflown above full-bleed banner) + Right Form */}
@@ -217,64 +214,6 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
             </div>
           </motion.div>
 
-        </div>
-
-        {/* Bottom Strip: 3 Sleek Interactive Contact Cards */}
-        <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-slate-800/80 relative z-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            
-            {/* Card 1: Phone */}
-            <a
-              href={`tel:${CLINIC_CONTACT.phones[0].replace(/\s+/g, "")}`}
-              className="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-red-500/50 transition-all duration-200 group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-red-500/10 text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-white transition-all flex items-center justify-center shrink-0 border border-red-500/20">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div className="min-w-0 text-left">
-                <div className="text-sm sm:text-[15px] font-bold text-white group-hover:text-red-400 transition-colors truncate">
-                  {CLINIC_CONTACT.phones[0]}
-                </div>
-                <div className="text-xs text-slate-400 truncate">
-                  {t("callUs")}
-                </div>
-              </div>
-            </a>
-
-            {/* Card 2: Email */}
-            <a
-              href={`mailto:${CLINIC_CONTACT.email}`}
-              className="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-red-500/50 transition-all duration-200 group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-red-500/10 text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-white transition-all flex items-center justify-center shrink-0 border border-red-500/20">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div className="min-w-0 text-left">
-                <div className="text-sm sm:text-[15px] font-bold text-white group-hover:text-red-400 transition-colors truncate">
-                  {CLINIC_CONTACT.email}
-                </div>
-                <div className="text-xs text-slate-400 truncate">
-                  {t("emailUs")}
-                </div>
-              </div>
-            </a>
-
-            {/* Card 3: Working Hours */}
-            <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-red-500/50 transition-all duration-200 group">
-              <div className="w-11 h-11 rounded-xl bg-red-500/10 text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-white transition-all flex items-center justify-center shrink-0 border border-red-500/20">
-                <Clock className="w-5 h-5" />
-              </div>
-              <div className="min-w-0 text-left">
-                <div className="text-sm sm:text-[15px] font-bold text-white group-hover:text-red-400 transition-colors truncate">
-                  {t("workingHours")}
-                </div>
-                <div className="text-xs text-slate-400 truncate">
-                  {t("sundayHours")}
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </Container>
     </section>
