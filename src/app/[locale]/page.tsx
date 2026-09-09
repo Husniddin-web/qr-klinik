@@ -19,8 +19,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { NewsSection } from "@/components/sections/NewsSection";
-import { ContactCtaBannerSection } from "@/components/sections/ContactCtaBannerSection";
-import { ContactMapSection } from "@/components/sections/ContactMapSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -96,11 +95,8 @@ export default function HomePage() {
       {/* 15. News & Health Articles Section */}
       <NewsSection />
 
-      {/* 15.5. Redesigned Contact Call-To-Action Banner */}
-      <ContactCtaBannerSection onOpenAppointment={() => handleOpenAppointment()} />
-
-      {/* 16. Contact & Map Section */}
-      <ContactMapSection />
+      {/* 16. Unified Contact & Appointment Section */}
+      <ContactSection onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* Global Footer */}
       <Footer />

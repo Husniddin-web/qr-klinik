@@ -191,7 +191,15 @@
     "deptLabel": "Qiziqtirayotgan tibbiy bo'lim",
     "msgLabel": "Shikoyatingiz yoki qo'shimcha savol (ixtiyoriy)",
     "submitBtn": "Qabulga Yozilishni Tasdiqlash",
-    "submitting": "Yuborilmoqda..."
+    "submitting": "Yuborilmoqda...",
+    "successTitle": "Murojaatingiz qabul qilindi!",
+    "successDesc": "Operatorimiz 15 daqiqa ichida siz bilan bog'lanib, qabul vaqtini tasdiqlaydi.",
+    "newRequest": "Yangi murojaat",
+    "privacyNote": "Shaxsiy ma'lumotlaringiz maxfiyligi to'liq kafolatlanadi",
+    "callUs": "24/7 Qabulxona va tezkor aloqa",
+    "emailUs": "Rasmiy elektron pochta",
+    "workingHours": "Du - Sha: 08:00 - 20:00",
+    "sundayHours": "Yakshanba: 09:00 - 15:00"
   },
   "modal": {
     "title": "Shifokor Qabuliga Yozilish",
