@@ -12,23 +12,12 @@ interface FaqSectionProps {
 
 export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
   const t = useTranslations("faq");
+  // First item open by default like in screenshot
   const [openId, setOpenId] = useState<string | null>("faq-1");
-  const [activeTab, setActiveTab] = useState<"all" | "urgent" | "diagnostic">("all");
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
   };
-
-  // Filter questions based on active tab
-  const filteredFaqs = FAQS_DATA.filter((item) => {
-    if (activeTab === "urgent") {
-      return item.id === "faq-2" || item.id === "faq-5";
-    }
-    if (activeTab === "diagnostic") {
-      return item.id === "faq-1" || item.id === "faq-3";
-    }
-    return true; // "all"
-  });
 
   const handleAskQuestion = () => {
     if (onOpenAppointment) {
@@ -41,14 +30,17 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
     }
   };
 
+  // General 4 most common patient questions
+  const displayFaqs = FAQS_DATA.slice(0, 4);
+
   return (
     <section
       id="faq"
       className="w-full bg-[#fafbfc] border-y border-slate-200/80 overflow-hidden"
     >
-      <div className="flex flex-col lg:flex-row items-stretch w-full min-h-[600px] lg:min-h-[680px]">
-        {/* Left Side: Full Rectangular Photo (Edge-to-Edge) */}
-        <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden bg-slate-200">
+      <div className="flex flex-col lg:flex-row items-stretch w-full min-h-[620px] lg:min-h-[720px]">
+        {/* Left Side: Full Rectangular Photo (Fixed Stable Height, No Zooming) */}
+        <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[720px] overflow-hidden bg-slate-200 shrink-0">
           <Image
             src="/images/faq-nurse-patient.jpg"
             alt="Bemorlar bilan samimiy g'amxo'rlik"
@@ -58,59 +50,23 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
             className="object-cover object-center"
           />
           {/* Subtle natural vignette overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/10 lg:to-black/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/10 pointer-events-none" />
         </div>
 
-        {/* Right Side: Patient Information FAQ Accordions */}
-        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20 flex flex-col justify-center bg-[#fafbfc]">
+        {/* Right Side: General Questions FAQ Accordions (No Tabs, Stable Container Height) */}
+        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-16 xl:px-20 py-12 sm:py-16 flex flex-col justify-center bg-[#fafbfc] min-h-[620px] lg:min-h-[720px]">
           <div className="max-w-xl w-full mx-auto lg:mx-0 text-left">
             {/* Main Section Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-[#0f172a] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-[#0f172a] tracking-tight leading-tight">
               {t("title")}
             </h2>
-
-            {/* Sub-Category Filter Tabs (Matching Screenshot: General | Urgent) */}
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold mt-3 mb-7">
-              <button
-                type="button"
-                onClick={() => setActiveTab("all")}
-                className={`transition-colors cursor-pointer ${
-                  activeTab === "all"
-                    ? "text-[#dc2626]"
-                    : "text-slate-400 hover:text-slate-600"
-                }`}
-              >
-                {t("tabGeneral")}
-              </button>
-              <span className="text-slate-300">|</span>
-              <button
-                type="button"
-                onClick={() => setActiveTab("urgent")}
-                className={`transition-colors cursor-pointer ${
-                  activeTab === "urgent"
-                    ? "text-[#dc2626]"
-                    : "text-slate-400 hover:text-slate-600"
-                }`}
-              >
-                {t("tabUrgent")}
-              </button>
-              <span className="text-slate-300">|</span>
-              <button
-                type="button"
-                onClick={() => setActiveTab("diagnostic")}
-                className={`transition-colors cursor-pointer ${
-                  activeTab === "diagnostic"
-                    ? "text-[#dc2626]"
-                    : "text-slate-400 hover:text-slate-600"
-                }`}
-              >
-                {t("tabDiagnostic")}
-              </button>
-            </div>
+            <p className="mt-2 mb-8 text-xs sm:text-sm text-slate-500 font-medium">
+              {t("subtitle")}
+            </p>
 
             {/* Accordion Cards (Screenshot Style: Numbered, White Cards, Crisp Borders) */}
             <div className="space-y-3">
-              {filteredFaqs.slice(0, 4).map((item, idx) => {
+              {displayFaqs.map((item, idx) => {
                 const isOpen = openId === item.id;
 
                 return (
@@ -118,8 +74,8 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                     key={item.id}
                     className={`rounded-xl sm:rounded-2xl transition-all duration-200 border overflow-hidden ${
                       isOpen
-                        ? "bg-white border-slate-200 shadow-sm"
-                        : "bg-white border-slate-200/70 hover:border-slate-300 shadow-xs"
+                        ? "bg-white border-slate-300 shadow-sm"
+                        : "bg-white border-slate-200/80 hover:border-slate-300 shadow-xs"
                     }`}
                   >
                     <button
