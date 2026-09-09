@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { STATS_DATA } from "@/data/stats";
 import { Container } from "../common/Container";
 
@@ -10,12 +9,10 @@ function CounterItem({
   value,
   suffix,
   label,
-  description,
 }: {
   value: number;
   suffix: string;
   label: string;
-  description: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -52,16 +49,11 @@ function CounterItem({
       <div className="mt-1.5 sm:mt-2 text-xs sm:text-base font-bold text-[#0f172a]">
         {label}
       </div>
-      <p className="mt-1 text-[11px] sm:text-xs text-slate-500 leading-relaxed max-w-[220px]">
-        {description}
-      </p>
     </div>
   );
 }
 
 export function StatsSection() {
-  const t = useTranslations("stats");
-
   return (
     <section className="py-14 sm:py-20 bg-[#f8fafc] border-b border-slate-200/80">
       <Container>
@@ -78,7 +70,6 @@ export function StatsSection() {
                 value={stat.value}
                 suffix={stat.suffix}
                 label={stat.label}
-                description={stat.description}
               />
             </div>
           ))}
