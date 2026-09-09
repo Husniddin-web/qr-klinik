@@ -53,6 +53,35 @@
     "subtitle": "Kardiologik xuruj, jarohat va shoshilinch holatlarda navbatchi brigadamiz doimo tayyor.",
     "call": "Tezkor Chaqiruv"
   },
+  "showcase": {
+    "card1Title": "Kattalar va reabilitatsiya uchun mehrli parvarish",
+    "card2Title": "Pediatriya va bolalar salomatligi",
+    "card3Badge": "Bemorlarimiz e'tirofi",
+    "card3Quote": "Shifokorlarning e'tibori va zamonaviy apparatlari tufayli tezda sog'ayib ketdim. Haqiqiy mehrli klinika!",
+    "card3Reviews": "1,200+ Sharhlar",
+    "card4Title": "Siz uchun chin dildan qayg'uruvchi shifokorlar"
+  },
+  "howItWorks": {
+    "badge": "Qabul Jarayoni",
+    "title": "Qabulga yozilish qanday amalga oshiriladi?",
+    "step1Title": "Qabulga yoziling",
+    "step1Desc": "Sayt orqali yoki qo'ng'iroq qilib o'zingizga qulay vaqtni tanlang.",
+    "step2Title": "Shifokorni tanlang",
+    "step2Desc": "Oliy toifali mutaxassislar ro'yxatidan kerakli vrachni tanlang.",
+    "step3Title": "Ko'rikdan o'ting",
+    "step3Desc": "Zamonaviy 3.0T MRT diagnostika va shifokor konsultatsiyasini oling.",
+    "step4Title": "Salomatlikka erishing",
+    "step4Desc": "Samarali davolash rejasi bilan sog'lom va bardam hayotga qayting."
+  },
+  "contactBanner": {
+    "title": "Professional va ishonchli tibbiy yordam izlayapsizmi?",
+    "subtitle": "Qabulga yozilish yoki shifokorlarimiz bilan maslahatlashish uchun hoziroq bog'laning.",
+    "btnBook": "Qabulga yozilish",
+    "callUs": "Bizga qo'ng'iroq qiling",
+    "emailUs": "Elektron pochta",
+    "supportHours": "24 / 7 Qabul",
+    "openDaily": "Har kuni dam olishsiz"
+  },
   "about": {
     "badge": "Biz Haqimizda",
     "title": "Inson Salomatligi va Hayot Sifatiga Bag'ishlangan 15 Yillik Tajriba",

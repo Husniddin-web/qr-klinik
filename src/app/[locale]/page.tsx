@@ -7,9 +7,11 @@ import { AppointmentModal } from "@/components/modals/AppointmentModal";
 
 // Sections
 import { HeroSection } from "@/components/sections/HeroSection";
+import { HeroShowcaseSection } from "@/components/sections/HeroShowcaseSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { DepartmentsSection } from "@/components/sections/DepartmentsSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WellnessBannerSection } from "@/components/sections/WellnessBannerSection";
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
@@ -17,6 +19,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { NewsSection } from "@/components/sections/NewsSection";
+import { ContactCtaBannerSection } from "@/components/sections/ContactCtaBannerSection";
 import { ContactMapSection } from "@/components/sections/ContactMapSection";
 
 export default function HomePage() {
@@ -52,6 +55,9 @@ export default function HomePage() {
       {/* 2. Hero Section with Primary Navy & Accent Red Styling */}
       <HeroSection onOpenAppointment={() => handleOpenAppointment()} />
 
+      {/* 2.5. Post-Hero 4-Card Photo Showcase Section */}
+      <HeroShowcaseSection onOpenAppointment={() => handleOpenAppointment()} />
+
       {/* 3. About Us Section (Storytelling Book Page-Turn) */}
       <AboutSection />
 
@@ -60,6 +66,9 @@ export default function HomePage() {
 
       {/* 6. Departments Grid Section */}
       <DepartmentsSection onSelectDepartment={handleSelectDepartment} />
+
+      {/* 7. How It Works (4 Connected Circular Process Steps) */}
+      <HowItWorksSection />
 
       {/* 8. Services & Pricing Section */}
       <ServicesSection
@@ -86,6 +95,9 @@ export default function HomePage() {
 
       {/* 15. News & Health Articles Section */}
       <NewsSection />
+
+      {/* 15.5. Redesigned Contact Call-To-Action Banner */}
+      <ContactCtaBannerSection onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* 16. Contact & Map Section */}
       <ContactMapSection />
