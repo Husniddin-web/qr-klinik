@@ -5,40 +5,43 @@ import { PARTNERS_DATA } from "@/data/partners";
 import { Container } from "../common/Container";
 
 export function PartnersSection() {
+  // Duplicate partners array to ensure seamless infinite looping track
+  const marqueePartners = [...PARTNERS_DATA, ...PARTNERS_DATA, ...PARTNERS_DATA];
+
   return (
-    <section className="py-20 bg-slate-50/80 border-b border-slate-200">
+    <section className="py-16 sm:py-20 bg-slate-50/90 border-b border-slate-200/80 overflow-hidden select-none">
       <Container>
         <div
           data-aos="fade-down"
           data-aos-duration="700"
           className="text-center mb-10"
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-[#0f172a] tracking-tight uppercase">
+          <h3 className="text-xl sm:text-2xl font-black text-[#0f172a] tracking-tight uppercase">
             Hamkorlarimiz
           </h3>
           <div className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-3" />
         </div>
+      </Container>
 
-        {/* Partners Grid / Ribbon */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 items-center justify-center">
-          {PARTNERS_DATA.map((partner, idx) => (
+      {/* Infinite Horizontal Marquee Track with Edge Fade Masks */}
+      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]">
+        <div className="flex items-center gap-5 w-max animate-marquee-horizontal hover:[animation-play-state:paused] py-3 px-4">
+          {marqueePartners.map((partner, idx) => (
             <div
-              key={partner.id}
-              data-aos="zoom-in"
-              data-aos-delay={(idx + 1) * 70}
-              data-aos-duration="600"
-              className="p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0f172a] hover:shadow-xs transition-all duration-200 flex flex-col items-center justify-center text-center h-24 group col-span-1 last:col-span-2 sm:last:col-span-1"
+              key={`${partner.id}-${idx}`}
+              className="w-[210px] sm:w-[230px] shrink-0 h-24 px-5 py-4 rounded-2xl bg-white border border-slate-200/90 hover:border-red-200/90 hover:shadow-lg hover:shadow-red-500/5 transition-all duration-300 flex flex-col items-center justify-center text-center group cursor-pointer"
             >
-              <div className="text-xs font-extrabold text-[#0f172a] group-hover:text-[#dc2626] transition-colors leading-tight tracking-wide">
+              <span className="text-xs sm:text-[13px] font-extrabold text-[#0f172a] group-hover:text-[#dc2626] transition-colors leading-tight tracking-wide">
                 {partner.logoText}
-              </div>
-              <div className="text-[10px] text-slate-400 font-medium mt-1">
+              </span>
+              <span className="text-[11px] text-slate-400 font-medium mt-1.5 line-clamp-1">
                 {partner.type}
-              </div>
+              </span>
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
+

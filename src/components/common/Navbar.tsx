@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, useRouter, usePathname } from "@/i18n/routing";
+import { MagneticButton } from "./MagneticButton";
 
 interface NavbarProps {
   onOpenAppointment: () => void;
@@ -211,15 +212,18 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
             )}
           </div>
 
-          {/* Desktop Solid Red CTA Pill Button */}
-          <button
-            type="button"
-            onClick={onOpenAppointment}
-            className="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#dc2626] hover:bg-[#b91c1c] transition-all duration-200 shadow-md shadow-red-500/20 active:scale-95 cursor-pointer shrink-0"
-          >
-            <Calendar className="w-4 h-4 shrink-0" />
-            <span>{t("appointment")}</span>
-          </button>
+          {/* Desktop Solid Red CTA Pill Button with Magnetic attraction */}
+          <div className="hidden sm:block">
+            <MagneticButton
+              onClick={onOpenAppointment}
+              strength={10}
+              glow={true}
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#dc2626] hover:bg-[#b91c1c] transition-colors duration-200 shadow-md shadow-red-500/20 active:scale-95 cursor-pointer shrink-0"
+            >
+              <Calendar className="w-4 h-4 shrink-0" />
+              <span>{t("appointment")}</span>
+            </MagneticButton>
+          </div>
 
           {/* Mobile Quick Appointment Button */}
           <button

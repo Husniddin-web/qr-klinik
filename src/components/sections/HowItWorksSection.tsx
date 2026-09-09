@@ -51,10 +51,20 @@ export function HowItWorksSection() {
           <div className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4" />
         </div>
 
-        {/* 4 Connected Circular Steps */}
+        {/* 4 Connected Circular Steps with Flowing Pulse Beam */}
         <div className="relative">
-          {/* Connecting Dashed Line on Desktop */}
-          <div className="hidden lg:block absolute top-[68px] left-[14%] right-[14%] h-0.5 border-t-2 border-dashed border-red-200 z-0" />
+          {/* Base Track & Animated Glowing Flow Beam (Desktop) */}
+          <div className="hidden lg:block absolute top-[70px] left-[13%] right-[13%] h-[2px] bg-slate-200/90 z-0 overflow-hidden rounded-full">
+            <motion.div
+              animate={{ x: ["-100%", "420%"] }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.5,
+                ease: "easeInOut",
+              }}
+              className="w-44 h-full bg-gradient-to-r from-transparent via-[#dc2626] to-transparent shadow-[0_0_10px_rgba(220,38,38,0.9)]"
+            />
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 lg:gap-6 relative z-10">
             {steps.map((item, idx) => (
@@ -64,11 +74,14 @@ export function HowItWorksSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
-                className="flex flex-col items-center text-center group"
+                className="flex flex-col items-center text-center group cursor-default"
               >
-                {/* Circular Photo with Number Pill */}
+                {/* Circular Photo with Pulse Glow and Number Indicator */}
                 <div className="relative mb-6">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] group-hover:shadow-[0_15px_35px_rgba(220,38,38,0.18)] group-hover:border-red-100 transition-all duration-300 relative bg-slate-100">
+                  {/* Subtle Pulsing Halo on Hover */}
+                  <div className="absolute -inset-2 rounded-full bg-red-500/10 scale-95 group-hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none" />
+
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] group-hover:shadow-[0_15px_35px_rgba(220,38,38,0.22)] group-hover:border-red-100 transition-all duration-300 relative bg-slate-100">
                     <Image
                       src={item.image}
                       alt={t(item.titleKey as any)}
@@ -78,8 +91,8 @@ export function HowItWorksSection() {
                     />
                   </div>
 
-                  {/* Step Number Badge */}
-                  <div className="absolute top-1 -right-1 w-8 h-8 rounded-full bg-[#dc2626] text-white font-black text-xs flex items-center justify-center shadow-md ring-2 ring-white">
+                  {/* Step Number Circle */}
+                  <div className="absolute top-1 -right-1 w-8 h-8 rounded-full bg-[#dc2626] text-white font-black text-xs flex items-center justify-center shadow-md ring-2 ring-white group-hover:scale-110 transition-transform duration-200">
                     {item.step}
                   </div>
                 </div>

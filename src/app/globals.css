@@ -99,3 +99,24 @@ body {
   animation-play-state: paused !important;
 }
 
+/* Horizontal Infinite Marquee for Partners */
+@keyframes marquee-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-horizontal {
+  animation: marquee-horizontal 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-horizontal:hover,
+.hover-pause:hover .animate-marquee-horizontal {
+  animation-play-state: paused !important;
+}
+
+

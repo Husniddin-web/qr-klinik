@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Calendar, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { MagneticButton } from "../common/MagneticButton";
 
 interface HeroSectionProps {
   onOpenAppointment: () => void;
@@ -74,22 +75,23 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
             </span>
           </h1>
 
-          {/* Action Button: Single Solid Red CTA */}
+          {/* Action Button: Senior-Level Magnetic Button with Glow Ripple */}
           <div
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-duration="850"
             className="mt-6 sm:mt-8"
           >
-            <button
-              type="button"
+            <MagneticButton
               onClick={onOpenAppointment}
-              className="px-7 sm:px-8 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm sm:text-base font-bold transition-all duration-200 shadow-lg shadow-red-500/25 flex items-center gap-2.5 active:scale-95 cursor-pointer"
+              strength={14}
+              glow={true}
+              className="px-7 sm:px-8 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm sm:text-base font-bold transition-colors duration-200 shadow-xl shadow-red-600/30 flex items-center gap-2.5 active:scale-95 cursor-pointer"
             >
               <Calendar className="w-4 h-4 shrink-0" />
               <span>{t("btnAppointment")}</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
-            </button>
+            </MagneticButton>
           </div>
         </div>
       </div>
