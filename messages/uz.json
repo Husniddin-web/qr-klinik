@@ -23,10 +23,10 @@
     "menu": "Menyu"
   },
   "hero": {
-    "badge": "QAXRAMON-RAXIMJON KLINIKASI",
+    "badge": "Sog'lom jamiyat — baxtli kelajak",
     "title": "Sizning salomatligingiz —",
-    "titleHighlight": "ishonchli qo'llarda",
-    "subtitle": "Xalqaro darajadagi 3.0T MRT uskunasi, to'liq robotlashgan laboratoriya va oliy toifali mutaxassislar bilan aniq tashxis.",
+    "titleHighlight": "bizning oliy qadriyatimiz",
+    "subtitle": "Zamonaviy 3.0T MRT diagnostikasi va oliy toifali shifokorlar ko'rigi.",
     "btnAppointment": "Qabulga yozilish",
     "btnServices": "Xizmatlar va narxlar",
     "reviewsRating": "4.9",
