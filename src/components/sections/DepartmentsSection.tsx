@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { DEPARTMENTS_DATA } from "@/data/departments";
 import { Department3DIcon } from "../common/Department3DIcon";
@@ -90,17 +91,23 @@ export function DepartmentsSection({ onSelectDepartment }: DepartmentsSectionPro
           </p>
         </div>
 
-        {/* 3-Column Luxury Card Grid */}
+        {/* 3-Column Luxury Card Grid with Rich Scroll Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {DEPARTMENTS_DATA.map((dept, idx) => {
             return (
-              <div
+              <motion.div
                 key={dept.id}
                 onClick={() => onSelectDepartment?.(dept.id)}
-                data-aos="fade-up"
-                data-aos-delay={((idx % 3) + 1) * 80}
-                data-aos-duration="650"
-                className="group cursor-pointer rounded-2xl sm:rounded-[22px] p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between relative bg-white/95 border border-slate-200/80 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[0_16px_35px_rgba(220,38,38,0.1)] hover:border-red-200 hover:-translate-y-1 backdrop-blur-md"
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.55,
+                  delay: ((idx % 3) + 1) * 0.1,
+                  ease: [0.21, 0.47, 0.32, 0.98],
+                }}
+                whileHover={{ y: -7, transition: { duration: 0.2 } }}
+                className="group cursor-pointer rounded-2xl sm:rounded-[22px] p-5 sm:p-6 transition-colors duration-200 flex flex-col justify-between relative bg-white/95 border border-slate-200/80 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_40px_rgba(220,38,38,0.12)] hover:border-red-200 backdrop-blur-md"
               >
                 <div>
                   {/* 3D Glossy Icon Container */}
@@ -129,7 +136,7 @@ export function DepartmentsSection({ onSelectDepartment }: DepartmentsSectionPro
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

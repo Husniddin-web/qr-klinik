@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { Search, ArrowRight, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { SERVICES_DATA } from "@/data/services";
 import { formatPrice } from "@/lib/utils";
@@ -92,7 +93,7 @@ export function ServicesSection({ onOpenAppointment }: ServicesSectionProps) {
           </div>
         </div>
 
-        {/* Compact 3-Column Card Grid */}
+        {/* Compact 3-Column Card Grid with Rich Motion Entrance */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {displayedServices.length === 0 ? (
             <div className="col-span-full text-center py-16 bg-[#1e293b] border border-slate-800 rounded-xl text-slate-400 text-sm">
@@ -101,12 +102,18 @@ export function ServicesSection({ onOpenAppointment }: ServicesSectionProps) {
           ) : (
             displayedServices.map((service, idx) => {
               return (
-                <div
+                <motion.div
                   key={service.id}
-                  data-aos="fade-up"
-                  data-aos-delay={((idx % 3) + 1) * 70}
-                  data-aos-duration="600"
-                  className="group relative rounded-xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-200 bg-[#1e293b] hover:bg-[#1e293b]/90 border border-slate-800 hover:border-slate-700 shadow-sm hover:shadow-md"
+                  initial={{ opacity: 0, y: 35, scale: 0.96 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: ((idx % 3) + 1) * 0.08,
+                    ease: [0.21, 0.47, 0.32, 0.98],
+                  }}
+                  whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                  className="group relative rounded-xl p-5 sm:p-6 flex flex-col justify-between transition-colors duration-200 bg-[#1e293b] hover:bg-[#1e293b]/90 border border-slate-800 hover:border-slate-700 shadow-sm hover:shadow-md"
                 >
                   <div>
                     {/* Title */}
@@ -143,7 +150,7 @@ export function ServicesSection({ onOpenAppointment }: ServicesSectionProps) {
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               );
             })
           )}

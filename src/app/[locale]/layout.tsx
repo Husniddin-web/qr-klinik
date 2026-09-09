@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { AOSInit } from "@/components/common/AOSInit";
+import { ScrollProgressBar } from "@/components/common/ScrollProgressBar";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <body className="antialiased selection:bg-[#dc2626] selection:text-white bg-white text-[#1e293b]">
+        <ScrollProgressBar />
         <AOSInit />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
