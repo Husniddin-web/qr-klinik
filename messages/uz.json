@@ -174,8 +174,12 @@
   },
   "faq": {
     "badge": "Ko'p Beriladigan Savollar",
-    "title": "Bemorlarimiz Tez-Tez Qiziqadigan Savollarga Javoblar",
-    "subtitle": "Quyida klinikamiz ish tartibi, tahlillar, tekshiruvlarga tayyorgarlik va boshqa muhim savollarga aniq javoblar to'plangan."
+    "title": "Bemorlar Uchun Ma'lumot",
+    "subtitle": "Klinikamiz ish tartibi, tekshiruvlar va umumiy savollarga aniq javoblar.",
+    "tabGeneral": "Umumiy",
+    "tabUrgent": "Shoshilinch",
+    "tabDiagnostic": "Diagnostika",
+    "askBtn": "Savol berish"
   },
   "contact": {
     "badge": "Aloqa va Joylashuv",

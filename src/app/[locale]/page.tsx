@@ -87,16 +87,16 @@ export default function HomePage() {
       <TestimonialsSection />
 
       {/* 13. Frequently Asked Questions (F.A.Q.) Section */}
-      <FaqSection />
+      <FaqSection onOpenAppointment={() => handleOpenAppointment()} />
+
+      {/* 13.5. Unified Contact & Appointment Section */}
+      <ContactSection onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* 14. Partners & Certifications Section */}
       <PartnersSection />
 
       {/* 15. News & Health Articles Section */}
       <NewsSection />
-
-      {/* 16. Unified Contact & Appointment Section */}
-      <ContactSection onOpenAppointment={() => handleOpenAppointment()} />
 
       {/* Global Footer */}
       <Footer />
