@@ -74,20 +74,10 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
             </span>
           </h1>
 
-          {/* Subtitle: Shortened and clean */}
-          <p
-            data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="850"
-            className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal max-w-md"
-          >
-            {t("subtitle")}
-          </p>
-
           {/* Action Button: Single Solid Red CTA */}
           <div
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="200"
             data-aos-duration="850"
             className="mt-6 sm:mt-8"
           >
