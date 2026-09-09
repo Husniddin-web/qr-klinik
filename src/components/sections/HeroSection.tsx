@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Heart, Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface HeroSectionProps {
@@ -20,12 +20,12 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
       {/* Background Graphic & Doctors Photo (Eski Original Style) */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
-          src="/images/main-hero.jpeg"
+          src="/main-hero.png"
           alt="QAXRAMON-RAXIMJON tibbiyot markazi shifokorlar jamoasi"
           fill
           priority
           unoptimized
-          className="object-cover object-[72%_center] sm:object-right lg:object-center"
+          className="object-cover object-[75%_center] sm:object-right lg:object-center"
         />
 
         {/* Soft gradient mask for mobile to keep text 100% readable over background */}
@@ -58,21 +58,11 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
       {/* Main Content Area: Shifted to the left */}
       <div className="relative z-10 w-full max-w-full px-4 sm:px-10 md:px-14 lg:px-16 xl:px-24 2xl:px-32 overflow-hidden">
         <div className="max-w-xl lg:max-w-2xl xl:max-w-[700px] flex flex-col items-start w-full">
-          {/* Eyebrow Pill Badge */}
-          <div
-            data-aos="fade-down"
-            data-aos-delay="100"
-            data-aos-duration="700"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fef2f2] border border-[#fecaca] text-[#dc2626] text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-xs"
-          >
-            <Heart className="w-4 h-4 text-[#dc2626]" />
-            <span>{t("badge")}</span>
-          </div>
 
           {/* Headline: Concise 2 lines */}
           <h1
             data-aos="fade-up"
-            data-aos-delay="200"
+            data-aos-delay="100"
             data-aos-duration="850"
             className="text-[24px] xs:text-[28px] sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[56px] font-extrabold tracking-tight leading-[1.2] sm:leading-[1.14] text-[#0f172a] max-w-full"
           >
@@ -87,7 +77,7 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
           {/* Subtitle: Shortened and clean */}
           <p
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="200"
             data-aos-duration="850"
             className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal max-w-md"
           >
@@ -97,7 +87,7 @@ export function HeroSection({ onOpenAppointment }: HeroSectionProps) {
           {/* Action Button: Single Solid Red CTA */}
           <div
             data-aos="fade-up"
-            data-aos-delay="400"
+            data-aos-delay="300"
             data-aos-duration="850"
             className="mt-6 sm:mt-8"
           >

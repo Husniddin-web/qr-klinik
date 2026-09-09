@@ -102,7 +102,7 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
       <div
         className={`pointer-events-auto flex items-center justify-between transition-all duration-300 ease-out ${
           isScrolled
-            ? "w-[95%] sm:w-[94%] max-w-6xl mt-2 sm:mt-3 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-sm"
+            ? "w-[95%] sm:w-[94%] max-w-6xl mt-2 sm:mt-3 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/50 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)]"
             : "w-full max-w-7xl mt-0 px-3.5 sm:px-10 py-3 sm:py-5 bg-transparent backdrop-blur-none border-b border-transparent"
         }`}
       >
@@ -148,7 +148,7 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
               >
                 <span>{item.name}</span>
                 {isActive && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-7 h-[3px] bg-[#dc2626] rounded-full shadow-[0_2px_8px_rgba(220,38,38,0.7)]" />
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-5 h-[2px] bg-[#dc2626] rounded-full shadow-[0_1px_3px_rgba(220,38,38,0.3)]" />
                 )}
               </Link>
             );
@@ -164,10 +164,10 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
               onClick={() => setIsLangOpen(!isLangOpen)}
               className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 isScrolled
-                  ? "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200"
+                  ? "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200/50"
                   : isDarkHero
                     ? "bg-white/15 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md"
-                    : "bg-white/90 hover:bg-white text-slate-800 border border-slate-200/80 shadow-xs"
+                    : "bg-white/90 hover:bg-white text-slate-800 border border-slate-200/50 shadow-xs"
               }`}
               aria-expanded={isLangOpen}
             >
@@ -188,7 +188,7 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
 
             {/* Dropdown Menu */}
             {isLangOpen && (
-              <div className="absolute right-0 mt-2 w-32 rounded-2xl bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-xl p-1.5 z-50 animate-fadeIn text-slate-800">
+              <div className="absolute right-0 mt-2 w-32 rounded-2xl bg-white/98 backdrop-blur-2xl border border-slate-200/60 shadow-lg p-1.5 z-50 animate-fadeIn text-slate-800">
                 {LANGUAGES.map((lang) => {
                   const isSelected = currentLang.code === lang.code;
                   return (
@@ -237,10 +237,10 @@ export function Navbar({ onOpenAppointment }: NavbarProps) {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full transition-colors active:scale-95 cursor-pointer shrink-0 ${
               isScrolled
-                ? "bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800"
+                ? "bg-slate-100 hover:bg-slate-200 border border-slate-200/50 text-slate-800"
                 : isDarkHero
                   ? "bg-white/15 hover:bg-white/25 border border-white/20 text-white"
-                  : "bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800"
+                  : "bg-slate-100 hover:bg-slate-200 border border-slate-200/50 text-slate-800"
             }`}
             aria-label="Menu"
           >
