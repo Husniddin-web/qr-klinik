@@ -41,14 +41,6 @@ export function WellnessBannerSection({ onOpenAppointment }: WellnessBannerSecti
             >
               {t("title")}
             </h2>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-              className="mt-3 sm:mt-4 text-xs sm:text-sm lg:text-base text-white/95 max-w-xl leading-relaxed font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]"
-            >
-              {t("subtitle")}
-            </p>
 
             <div
               data-aos="fade-up"

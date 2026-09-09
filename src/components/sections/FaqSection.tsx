@@ -57,12 +57,9 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
         <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-16 xl:px-20 py-12 sm:py-16 flex flex-col justify-center bg-[#fafbfc] min-h-[620px] lg:min-h-[720px]">
           <div className="max-w-xl w-full mx-auto lg:mx-0 text-left">
             {/* Main Section Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-[#0f172a] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-[#0f172a] tracking-tight leading-tight mb-8">
               {t("title")}
             </h2>
-            <p className="mt-2 mb-8 text-xs sm:text-sm text-slate-500 font-medium">
-              {t("subtitle")}
-            </p>
 
             {/* Accordion Cards (Screenshot Style: Numbered, White Cards, Crisp Borders) */}
             <div className="space-y-3">

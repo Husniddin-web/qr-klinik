@@ -89,33 +89,21 @@ export function DoctorsSection({ onSelectDoctor }: DoctorsSectionProps) {
       onTouchEnd={handleTouchEnd}
     >
       <Container className="relative z-10">
-        {/* Section Heading matching reference mockup */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
-          <div className="inline-flex items-center gap-2 mb-2 sm:mb-3">
-            <span
-              data-aos="fade-down"
-              data-aos-delay="100"
-              className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-blue-600 uppercase"
-            >
-              {t("badge")}
-            </span>
-          </div>
-
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 px-4">
           <h2
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0b1b36] tracking-tight leading-[1.2] mb-3 sm:mb-4 uppercase"
+            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0b1b36] tracking-tight leading-[1.2] uppercase"
           >
             {t("title")}
           </h2>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="300"
-            className="text-slate-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed"
-          >
-            {t("subtitle")}
-          </p>
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="240"
+            className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4"
+          />
         </div>
 
         {/* 3D Fan Carousel Container */}

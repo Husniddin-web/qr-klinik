@@ -17,28 +17,19 @@ export function TestimonialsSection() {
       className="py-20 lg:py-28 bg-white relative overflow-hidden border-b border-slate-200/80"
     >
       {/* Section Header */}
-      <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 px-4 relative z-10">
-        <span
-          data-aos="fade-down"
-          data-aos-delay="100"
-          className="inline-block text-xs font-bold uppercase tracking-widest text-[#dc2626] mb-3"
-        >
-          Bemorlar Sharhlari
-        </span>
+      <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 px-4 relative z-10">
         <h2
           data-aos="fade-up"
           data-aos-delay="200"
           className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight uppercase font-sans"
         >
-          Samimiy Fikrlar va Minnatdor Bemorlar
+          Bemorlar Sharhlari
         </h2>
-        <p
-          data-aos="fade-up"
-          data-aos-delay="300"
-          className="mt-3 text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed"
-        >
-          Biz uchun har bir bemorning dardiga darmon bo&apos;lish va ularning ishonchini oqlash oliy burchimizdir.
-        </p>
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="240"
+          className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4"
+        />
       </div>
 
       {/* 3-Column Vertical Infinite Marquee Showcase */}

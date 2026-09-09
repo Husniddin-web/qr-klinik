@@ -27,9 +27,6 @@ export function NewsSection() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight text-[#0f172a] font-sans">
               {t("title")}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-2 max-w-2xl leading-relaxed">
-              {t("subtitle")}
-            </p>
           </div>
 
           <Link

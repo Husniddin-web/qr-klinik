@@ -44,15 +44,11 @@ export function HowItWorksSection() {
 
       <Container className="relative z-10">
         {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.2em] text-[#dc2626] mb-3">
-            <span className="w-6 h-px bg-[#dc2626]" />
-            <span>{t("badge")}</span>
-            <span className="w-6 h-px bg-[#dc2626]" />
-          </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-[#0f172a] tracking-tight leading-snug">
+        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-[#0f172a] tracking-tight leading-snug uppercase">
             {t("title")}
           </h2>
+          <div className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4" />
         </div>
 
         {/* 4 Connected Circular Steps */}

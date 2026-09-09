@@ -13,12 +13,10 @@ export function PartnersSection() {
           data-aos-duration="700"
           className="text-center mb-10"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-[#dc2626]">
-            Xalqaro Tibbiy Standartlar
-          </span>
-          <h3 className="text-xl sm:text-2xl font-bold text-[#0f172a] tracking-tight mt-1.5">
-            Jahonning Yetakchi Texnologik Hamkorlari
+          <h3 className="text-xl sm:text-2xl font-bold text-[#0f172a] tracking-tight uppercase">
+            Hamkorlarimiz
           </h3>
+          <div className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-3" />
         </div>
 
         {/* Partners Grid / Ribbon */}

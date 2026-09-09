@@ -48,22 +48,14 @@ export function ServicesSection({ onOpenAppointment }: ServicesSectionProps) {
             data-aos-delay="100"
             className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.2] text-white uppercase"
           >
-            <span className="block">{t("title")}</span>
+            {t("title")}
           </h2>
 
           <div
             data-aos="zoom-in"
             data-aos-delay="180"
-            className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4 mb-4"
+            className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4"
           />
-
-          <p
-            data-aos="fade-up"
-            data-aos-delay="240"
-            className="text-slate-400 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed"
-          >
-            {t("subtitle")}
-          </p>
         </div>
 
         {/* High-Visibility Minimalist Search Bar */}

@@ -62,8 +62,8 @@
     "card4Title": "Siz uchun chin dildan qayg'uruvchi shifokorlar"
   },
   "howItWorks": {
-    "badge": "Qabul Jarayoni",
-    "title": "Qabulga yozilish qanday amalga oshiriladi?",
+    "badge": "Jarayon",
+    "title": "Qabul Jarayoni",
     "step1Title": "Qabulga yoziling",
     "step1Desc": "Sayt orqali yoki qo'ng'iroq qilib o'zingizga qulay vaqtni tanlang.",
     "step2Title": "Shifokorni tanlang",
@@ -84,8 +84,8 @@
   },
   "about": {
     "badge": "Biz Haqimizda",
-    "title": "Inson Salomatligi va Hayot Sifatiga Bag'ishlangan 15 Yillik Tajriba",
-    "subtitle": "\"QAXRAMON-RAXIMJON\" klinikasi — Toshkent shahridagi eng ilg'or ko'p tarmoqli tibbiyot markazlaridan biri bo'lib, dalillarga asoslangan xalqaro tibbiyot standartlarini o'zida mujassam etgan.",
+    "title": "Biz Haqimizda",
+    "subtitle": "",
     "subheading": "Har Bir Bemorga O'z Yaqinimizdek G'amxo'rlik Ko'rsatamiz",
     "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va aniq tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat isbotlangan tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz.",
     "val1Title": "Oliy Toifali va Fan Nomzodlari",
@@ -117,14 +117,14 @@
   },
   "stats": {
     "badge": "Raqamlar va Natijalar",
-    "title": "Klinikamizning Yillar Davomidagi Yutuqlari",
-    "subtitle": "Har bir raqam ortida bemorlarimizning minnatdor tabassumi va sog'lom hayoti turibdi."
+    "title": "Bizning Natijalar",
+    "subtitle": ""
   },
   "departments": {
     "badge": "Yo'nalishlar",
-    "title": "Har Bir Yo'nalishda",
-    "titleHighlight": "Professional va Chuqur Yondashuv",
-    "subtitle": "Bizning markazda barcha muhim tibbiyot sohalari bo'yicha yuqori malakali shifokorlar va zamonaviy uskunalar bilan jihozlangan ixtisoslashgan bo'limlar faoliyat ko'rsatadi.",
+    "title": "Klinika Bo'limlari",
+    "titleHighlight": "",
+    "subtitle": "",
     "popular": "Mashhur"
   },
   "promo": {
@@ -137,8 +137,8 @@
   },
   "services": {
     "badge": "Xizmatlar va Narxlar",
-    "title": "Shaffof, Qulay va Belgilangan Narxlardagi Xizmatlar",
-    "subtitle": "Klinikamizda barcha tibbiy tahlil, tashxis va davolash muolajalari bo'yicha rasmiy narxlar bilan tanishing.",
+    "title": "Xizmatlar va Narxlar",
+    "subtitle": "",
     "searchPlaceholder": "Xizmat nomi yoki kasallik turi bo'yicha qidiring (masalan: MRT, qon tahlili, kardiolog)...",
     "all": "Barcha Xizmatlar",
     "book": "Yozilish",
@@ -146,16 +146,16 @@
   },
   "equipment": {
     "badge": "Bizning Uskunalar",
-    "title": "Jahon Tibbiyotining Eng Ilg'or Texnologiyalari",
-    "subtitle": "Aniq tashxis — samarali davolashning asosi. Biz bemorlarimizga xalqaro standartdagi eng yangi, minimal nurlanishga ega Germaniya, AQSH va Shveytsariya apparatlari orqali xizmat ko'rsatamiz.",
+    "title": "Ilg'or Tibbiy Uskunalar",
+    "subtitle": "",
     "specs": "Asosiy Imkoniyatlar:",
     "bookTest": "Tekshiruvga yozilish",
     "priceLabel": "Tashxis narxi:"
   },
   "doctors": {
-    "badge": "SIFAT ORTIDAGI INSONLAR",
-    "title": "EKSPERTLAR JAMOAMIZ BILAN TANISHING",
-    "subtitle": "Faoliyatimizning har bir bosqichiga ilmiy aniqlik, mas'uliyat va g'amxo'rlik olib kiradigan mutaxassislar.",
+    "badge": "Shifokorlar",
+    "title": "Bizning Shifokorlar",
+    "subtitle": "",
     "experience": "Tajriba:",
     "schedule": "Qabul vaqti:",
     "btn": "Qabuliga yozilish"
@@ -173,23 +173,23 @@
     "telegramBtn": "Telegram Botga Ulanish"
   },
   "faq": {
-    "badge": "Ko'p Beriladigan Savollar",
-    "title": "Bemorlar Uchun Ma'lumot",
-    "subtitle": "Klinikamiz ish tartibi, tekshiruvlar va umumiy savollarga aniq javoblar.",
+    "badge": "F.A.Q",
+    "title": "Ko'p Beriladigan Savollar",
+    "subtitle": "",
     "tabGeneral": "Umumiy",
     "tabUrgent": "Shoshilinch",
     "tabDiagnostic": "Diagnostika",
     "askBtn": "Savol berish"
   },
   "contact": {
-    "badge": "Aloqa va Joylashuv",
-    "title": "Kutishlarsiz Shifokor Qabuliga Yoziling",
-    "subtitle": "Biz bilan bog'laning",
+    "badge": "Aloqa",
+    "title": "Qabulga Yozilish",
+    "subtitle": "",
     "addressTitle": "Manzilimiz",
     "phonesTitle": "Telefon raqamlar",
     "hoursTitle": "Ish vaqti",
     "emailTitle": "Elektron pochta",
-    "formTitle": "Kutishlarsiz Shifokor Qabuliga Yoziling",
+    "formTitle": "Qabulga Yozilish",
     "nameLabel": "Ismingiz *",
     "phoneLabel": "Telefon raqamingiz *",
     "deptLabel": "Qiziqtirayotgan tibbiy bo'lim",
@@ -212,14 +212,14 @@
     "btnClose": "Yopish"
   },
   "news": {
-    "title": "Yangiliklar va Tahlillar",
-    "subtitle": "Klinikamiz mutaxassislari tomonidan tayyorlangan ilmiy tahlillar, amaliy tibbiyot tavsiyalari va muhim yangiliklar.",
+    "title": "So'nggi Yangiliklar",
+    "subtitle": "",
     "allArticles": "Barcha Maqolalar",
     "readFull": "To'liq O'qish"
   },
   "wellnessBanner": {
-    "title": "Salomatlik sari yo'lingizni bugun boshlang. Shifokorlarimiz jamoasi sizning yoningizda",
-    "subtitle": "G'amxo'r va malakali mutaxassislarimiz sizga eng yuqori darajadagi tibbiy yordam ko'rsatishga doimo tayyor.",
+    "title": "Sizning Salomatligingiz — Bizning Maqsadimiz",
+    "subtitle": "",
     "cta": "Qabulga Yozilish"
   }
 }

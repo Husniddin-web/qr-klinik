@@ -95,14 +95,11 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
             className="lg:col-span-7 xl:col-span-7 relative z-20 order-2 lg:order-2 pt-6 lg:pt-8"
           >
             <div className="max-w-xl">
-              {/* Form Header (Concise texts requested by user) */}
+              {/* Form Header (Concise single title) */}
               <div className="mb-6 text-left">
                 <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-white tracking-tight leading-snug">
                   {t("title")}
                 </h2>
-                <p className="mt-2 text-sm sm:text-base text-slate-300 font-medium">
-                  {t("subtitle")}
-                </p>
               </div>
 
               {isSuccess ? (

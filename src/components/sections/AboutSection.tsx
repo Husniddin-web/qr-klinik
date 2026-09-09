@@ -99,10 +99,6 @@ export function AboutSection() {
               <h2 className="text-2xl sm:text-3xl xl:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-[1.2]">
                 {t("title")}
               </h2>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-                {t("subtitle")}
-              </p>
             </div>
 
               {/* Sleek Vertical Stepper / Chapters */}

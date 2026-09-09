@@ -66,29 +66,20 @@ export function DepartmentsSection({ onSelectDepartment }: DepartmentsSectionPro
 
       <Container className="relative z-10">
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
           <h2
             data-aos="fade-up"
             data-aos-delay="100"
             className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.2] text-[#0f172a] uppercase"
           >
-            <span className="block">{t("title")}</span>
-            <span className="block text-[#dc2626] mt-1 sm:mt-1.5">{t("titleHighlight")}</span>
+            {t("title")}
           </h2>
 
           <div
             data-aos="zoom-in"
-            data-aos-delay="240"
-            className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4 mb-4"
+            data-aos-delay="200"
+            className="w-12 h-1 bg-[#dc2626] mx-auto rounded-full mt-4"
           />
-
-          <p
-            data-aos="fade-up"
-            data-aos-delay="300"
-            className="text-slate-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed"
-          >
-            {t("subtitle")}
-          </p>
         </div>
 
         {/* 3-Column Luxury Card Grid with Rich Scroll Animations */}
