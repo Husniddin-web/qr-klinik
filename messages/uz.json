@@ -85,13 +85,7 @@
   "about": {
     "title": "Biz Haqimizda",
     "subheading": "Har Bir Bemorga O'z Yaqinimizdek G'amxo'rlik Ko'rsatamiz",
-    "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va chuqur tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat dalillarga asoslangan xalqaro tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz.",
-    "stat1Num": "15+ Yil",
-    "stat1Label": "Klinik tajriba va ishonch",
-    "stat2Num": "3.0 Tesla",
-    "stat2Label": "Siemens MRT diagnostikasi",
-    "stat3Num": "45+ Vrach",
-    "stat3Label": "Oliy toifali mutaxassislar"
+    "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va chuqur tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat dalillarga asoslangan xalqaro tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz."
   },
   "stats": {
     "badge": "Raqamlar va Natijalar",

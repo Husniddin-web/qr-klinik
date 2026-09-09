@@ -36,36 +36,6 @@ export function AboutSection() {
             <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               {t("desc")}
             </p>
-
-            {/* Architectural Key Pillars (Pure clean typography without badges or heavy cards) */}
-            <div className="mt-8 sm:mt-10 pt-8 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-3 gap-6 text-left">
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#0f172a] tracking-tight">
-                  {t("stat1Num")}
-                </div>
-                <div className="text-xs font-medium text-slate-500 mt-1 leading-snug">
-                  {t("stat1Label")}
-                </div>
-              </div>
-
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#dc2626] tracking-tight">
-                  {t("stat2Num")}
-                </div>
-                <div className="text-xs font-medium text-slate-500 mt-1 leading-snug">
-                  {t("stat2Label")}
-                </div>
-              </div>
-
-              <div className="col-span-2 sm:col-span-1">
-                <div className="text-2xl sm:text-3xl font-black text-[#0f172a] tracking-tight">
-                  {t("stat3Num")}
-                </div>
-                <div className="text-xs font-medium text-slate-500 mt-1 leading-snug">
-                  {t("stat3Label")}
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Handcrafted Asymmetric Multi-Photo Layered Composition */}
