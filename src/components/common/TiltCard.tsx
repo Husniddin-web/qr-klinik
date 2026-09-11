@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { m as motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useCanHover } from "@/lib/hooks/useMediaQuery";
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -19,13 +20,9 @@ export function TiltCard({
   glare = true,
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [canHover, setCanHover] = useState(false);
+  const canHover = useCanHover();
   const [isHovered, setIsHovered] = useState(false);
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
-
-  useEffect(() => {
-    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
-  }, []);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);

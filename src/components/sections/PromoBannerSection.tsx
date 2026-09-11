@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Sparkles, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "../common/Container";
+import { Reveal } from "../common/Reveal";
 
 interface PromoBannerSectionProps {
   onOpenAppointment: () => void;
@@ -15,18 +16,12 @@ export function PromoBannerSection({ onOpenAppointment }: PromoBannerSectionProp
   return (
     <section className="py-14 bg-white border-b border-slate-100">
       <Container>
-        {/* Solid Navy Blue #0f172a architectural container */}
-        <div
-          data-aos="zoom-in-up"
-          data-aos-duration="850"
+        <Reveal
+          variant="zoom"
+          duration={0.7}
           className="rounded-3xl bg-[#0f172a] text-white p-8 sm:p-12 lg:p-14 border border-slate-800 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden"
         >
-          <div
-            data-aos="fade-right"
-            data-aos-delay="200"
-            data-aos-duration="800"
-            className="space-y-3 max-w-2xl text-left z-10"
-          >
+          <Reveal variant="left" delay={0.2} className="space-y-3 max-w-2xl text-left z-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#dc2626]">
               {t("badge")}
             </span>
@@ -36,12 +31,11 @@ export function PromoBannerSection({ onOpenAppointment }: PromoBannerSectionProp
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
               {t("subtitle")}
             </p>
-          </div>
+          </Reveal>
 
-          <div
-            data-aos="fade-left"
-            data-aos-delay="300"
-            data-aos-duration="800"
+          <Reveal
+            variant="right"
+            delay={0.3}
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6 shrink-0 z-10 pt-2 lg:pt-0"
           >
             <div className="text-left sm:text-right">
@@ -61,8 +55,8 @@ export function PromoBannerSection({ onOpenAppointment }: PromoBannerSectionProp
               <Calendar className="w-4 h-4" />
               <span>{t("btn")}</span>
             </button>
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </Container>
     </section>
   );

@@ -2,17 +2,15 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import {
-  Phone,
-  ArrowRight,
-  User,
-  MessageSquare,
-  CheckCircle2,
-  RotateCcw,
-} from "lucide-react";
-import { motion } from "framer-motion";
+import { Phone, ArrowRight, User, MessageSquare, RotateCcw } from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "../common/Container";
+import { Reveal } from "../common/Reveal";
+import { FloatingInput } from "../ui/FloatingInput";
+import { MorphButton, MorphState } from "../ui/MorphButton";
+import { EASE, DUR } from "@/lib/animations";
+import { submitContact } from "@/lib/public-api";
 
 interface ContactSectionProps {
   onOpenAppointment?: () => void;
@@ -21,37 +19,56 @@ interface ContactSectionProps {
 export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
   const t = useTranslations("contact");
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "+998 ",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "+998 ", message: "" });
+  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [shake, setShake] = useState(0);
+  const [state, setState] = useState<MorphState>("idle");
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let val = e.target.value;
-    if (!val.startsWith("+998")) {
-      val = "+998 ";
-    }
+    if (!val.startsWith("+998")) val = "+998 ";
     setFormData({ ...formData, phone: val });
+    if (errors.phone) setErrors((p) => ({ ...p, phone: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || formData.phone.trim().length < 9) {
+    const next: typeof errors = {};
+    if (formData.name.trim().length < 3) next.name = "Ismingizni kiriting (kamida 3 ta harf)";
+    if (formData.phone.replace(/\D/g, "").length < 12) next.phone = "To'liq telefon raqam kiriting";
+    setErrors(next);
+    if (Object.keys(next).length) {
+      setShake((k) => k + 1);
       return;
     }
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    setState("loading");
+    setSubmitError(null);
+    try {
+      await submitContact({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        message: formData.message.trim(),
+        source: "website:home-contact",
+      });
+      setState("success");
+      await new Promise((r) => setTimeout(r, 600));
       setIsSuccess(true);
-    }, 600);
+    } catch (err) {
+      setState("idle");
+      setSubmitError((err as Error).message || "Yuborishda xatolik. Qayta urinib ko'ring");
+      setShake((k) => k + 1);
+    }
   };
 
   const handleReset = () => {
     setFormData({ name: "", phone: "+998 ", message: "" });
+    setErrors({});
+    setState("idle");
     setIsSuccess(false);
+    setSubmitError(null);
   };
 
   return (
@@ -60,160 +77,158 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
       className="w-full bg-[#0f172a] text-white mt-24 sm:mt-32 lg:mt-40 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 relative overflow-visible border-t border-slate-800"
     >
       <Container className="relative overflow-visible">
-        {/* Main Grid: Left Cutout Doctors (Overflown above full-bleed banner) + Right Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          
-          {/* Left Column: Large Cutout Doctors Overflowing Top Edge (Screenshot 3 Style) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-end order-1 lg:order-1"
-          >
+          {/* Chap: shifokorlar kesmasi banner ustidan chiqib turadi */}
+          <Reveal className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-end order-1 lg:order-1">
             <div className="relative -mt-24 sm:-mt-32 lg:-mt-44 xl:-mt-52 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[520px] xl:max-w-[580px] select-none pointer-events-none z-20">
               <Image
                 src="/contact-person.png"
                 alt="QAXRAMON-RAXIMJON Klinikasi Malakali Shifokorlari"
                 width={654}
                 height={504}
-                priority
+                sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 580px"
                 className="w-full h-auto object-contain object-bottom drop-shadow-[0_25px_35px_rgba(0,0,0,0.65)]"
               />
             </div>
-          </motion.div>
+          </Reveal>
 
-          {/* Right Column: Senior-Level Concise Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-7 xl:col-span-7 relative z-20 order-2 lg:order-2 pt-6 lg:pt-8"
-          >
+          {/* O'ng: forma */}
+          <Reveal delay={0.1} className="lg:col-span-7 xl:col-span-7 relative z-20 order-2 lg:order-2 pt-6 lg:pt-8">
             <div className="max-w-xl">
-              {/* Form Header (Concise single title) */}
               <div className="mb-6 text-left">
                 <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-white tracking-tight leading-snug">
                   {t("title")}
                 </h2>
               </div>
 
-              {isSuccess ? (
-                /* Success Feedback State */
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 rounded-2xl bg-slate-900/90 border border-emerald-500/30 text-center space-y-4 shadow-xl"
-                >
-                  <div className="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/20">
-                    <CheckCircle2 className="w-7 h-7" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
-                      {t("successTitle")}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
-                      {t("successDesc")}
-                    </p>
-                  </div>
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={handleReset}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors border border-slate-700 cursor-pointer"
+              <AnimatePresence mode="wait" initial={false}>
+                {isSuccess ? (
+                  <m.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.96, y: 12 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96 }}
+                    transition={{ duration: DUR.base, ease: EASE }}
+                    className="p-8 rounded-2xl bg-slate-900/90 border border-emerald-500/30 text-center space-y-4 shadow-xl"
+                  >
+                    <div className="relative w-16 h-16 mx-auto">
+                      <svg viewBox="0 0 64 64" className="w-16 h-16">
+                        <m.circle
+                          cx="32" cy="32" r="27" fill="none" stroke="#10b981" strokeWidth="2.5"
+                          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.55, ease: EASE }}
+                        />
+                        <m.path
+                          d="M21 33 L29 41 L44 25" fill="none" stroke="#10b981" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"
+                          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.35, ease: EASE, delay: 0.45 }}
+                        />
+                      </svg>
+                    </div>
+                    <m.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6, duration: DUR.base, ease: EASE }}
+                      className="space-y-1"
                     >
-                      <RotateCcw className="w-3.5 h-3.5" />
-                      <span>{t("newRequest")}</span>
-                    </button>
-                  </div>
-                </motion.div>
-              ) : (
-                /* Form Fields */
-                <form onSubmit={handleSubmit} className="space-y-4 text-left">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Name Input */}
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        {t("nameLabel")}
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                          <User className="w-4 h-4" />
-                        </div>
-                        <input
-                          type="text"
-                          required
-                          placeholder="Masalan: Abdulla Qodiriy"
-                          value={formData.name}
-                          onChange={(e) =>
-                            setFormData({ ...formData, name: e.target.value })
-                          }
-                          className="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 font-medium transition-all"
-                        />
-                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{t("successTitle")}</h3>
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
+                        {t("successDesc")}
+                      </p>
+                    </m.div>
+                    <div className="pt-2">
+                      <button
+                        type="button"
+                        onClick={handleReset}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors border border-slate-700 cursor-pointer"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                        <span>{t("newRequest")}</span>
+                      </button>
                     </div>
-
-                    {/* Phone Input */}
-                    <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        {t("phoneLabel")}
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                          <Phone className="w-4 h-4" />
-                        </div>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="+998 90 123 45 67"
-                          value={formData.phone}
-                          onChange={handlePhoneChange}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 font-medium transition-all"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Message / Complaint Input */}
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                      {t("msgLabel")}
-                    </label>
-                    <div className="relative">
-                      <div className="absolute top-3 left-3.5 pointer-events-none text-slate-400">
-                        <MessageSquare className="w-4 h-4" />
-                      </div>
-                      <textarea
-                        rows={2}
-                        placeholder="Qisqacha shikoyat yoki ma'lumot (ixtiyoriy)..."
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData({ ...formData, message: e.target.value })
-                        }
-                        className="w-full pl-10 pr-4 py-2.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 font-medium transition-all resize-none"
+                  </m.div>
+                ) : (
+                  <m.form
+                    key="form"
+                    onSubmit={handleSubmit}
+                    noValidate
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: DUR.fast }}
+                    className="space-y-4 text-left"
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <FloatingInput
+                        tone="dark"
+                        label={t("nameLabel").replace(" *", "")}
+                        icon={User}
+                        type="text"
+                        autoComplete="name"
+                        value={formData.name}
+                        error={errors.name}
+                        shakeKey={shake}
+                        onChange={(e) => {
+                          setFormData({ ...formData, name: e.target.value });
+                          if (errors.name) setErrors((p) => ({ ...p, name: undefined }));
+                        }}
+                      />
+                      <FloatingInput
+                        tone="dark"
+                        label={t("phoneLabel").replace(" *", "")}
+                        icon={Phone}
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        value={formData.phone}
+                        error={errors.phone}
+                        shakeKey={shake}
+                        onChange={handlePhoneChange}
                       />
                     </div>
-                  </div>
 
-                  {/* Submit Button: "Yuborish" */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="px-9 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 shadow-lg shadow-red-600/30 hover:shadow-red-600/50 hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
-                    >
-                      <span>
-                        {isSubmitting ? t("submitting") : t("submitBtn")}
-                      </span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </form>
-              )}
+                    <FloatingInput
+                      tone="dark"
+                      label={t("msgLabel")}
+                      icon={MessageSquare}
+                      multiline
+                      rows={2}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+
+                    {submitError && (
+                      <p role="alert" className="text-xs font-semibold text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-2.5">
+                        {submitError}
+                      </p>
+                    )}
+
+                    <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3">
+                      <MorphButton
+                        type="submit"
+                        state={state}
+                        loadingLabel={t("submitting")}
+                        successLabel="Yuborildi"
+                        className="px-9 py-3.5 text-xs sm:text-sm shadow-lg shadow-red-600/30"
+                      >
+                        <span>{t("submitBtn")}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </MorphButton>
+                      {onOpenAppointment && (
+                        <button
+                          type="button"
+                          onClick={onOpenAppointment}
+                          className="text-xs font-semibold text-slate-400 hover:text-white underline-offset-4 hover:underline transition-colors cursor-pointer text-left"
+                        >
+                          yoki qabulga yozilish →
+                        </button>
+                      )}
+                    </div>
+                  </m.form>
+                )}
+              </AnimatePresence>
             </div>
-          </motion.div>
-
+          </Reveal>
         </div>
       </Container>
     </section>

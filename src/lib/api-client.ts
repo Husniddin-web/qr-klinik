@@ -87,6 +87,20 @@ class ApiClient {
     return data;
   }
 
+  async patch<T>(path: string, body?: unknown): Promise<ApiResponse<T>> {
+    const res = await fetch(`${API_BASE_URL}${path}`, {
+      method: "PATCH",
+      headers: this.getHeaders(),
+      body: body ? JSON.stringify(body) : undefined,
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Xatolik yuz berdi");
+    }
+    return data;
+  }
+
   async delete<T>(path: string): Promise<ApiResponse<T>> {
     const res = await fetch(`${API_BASE_URL}${path}`, {
       method: "DELETE",

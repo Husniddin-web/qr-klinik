@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Reveal } from "./Reveal";
 
 export interface SectionHeadingProps {
   eyebrow?: string;
@@ -29,32 +30,33 @@ export function SectionHeading({
       )}
     >
       {label && (
-        <span
-          data-aos="fade-down"
-          data-aos-delay="100"
+        <Reveal
+          as="span"
+          variant="down"
+          delay={0.1}
           className="inline-block text-xs font-bold uppercase tracking-widest text-[#dc2626] mb-2.5"
         >
           {label}
-        </span>
+        </Reveal>
       )}
-      <h2
-        data-aos="fade-up"
-        data-aos-delay="200"
+      <Reveal
+        as="h2"
+        delay={0.2}
         className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f172a] tracking-tight leading-tight"
       >
         {title}
-      </h2>
+      </Reveal>
       {subtitle && (
-        <p
-          data-aos="fade-up"
-          data-aos-delay="300"
+        <Reveal
+          as="p"
+          delay={0.3}
           className={cn(
             "mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl",
             align === "center" ? "mx-auto" : ""
           )}
         >
           {subtitle}
-        </p>
+        </Reveal>
       )}
     </div>
   );

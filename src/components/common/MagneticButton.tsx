@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useSpring } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { m as motion, useSpring } from "framer-motion";
+import { useCanHover } from "@/lib/hooks/useMediaQuery";
 
 interface MagneticButtonProps {
   children: React.ReactNode;
@@ -25,13 +26,9 @@ export function MagneticButton({
   id,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
-  const [canHover, setCanHover] = useState(false);
+  // Faqat haqiqiy hover/kursor bor qurilmalarda kursorni kuzatamiz
+  const canHover = useCanHover();
   const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    // Only activate cursor tracking on devices with actual hover/pointer capability
-    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
-  }, []);
 
   const springConfig = { damping: 14, stiffness: 160, mass: 0.1 };
   const x = useSpring(0, springConfig);

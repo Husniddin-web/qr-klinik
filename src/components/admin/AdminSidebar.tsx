@@ -10,6 +10,7 @@ import {
   Stethoscope,
   Users,
   Newspaper,
+  Inbox,
   LogOut,
   ExternalLink,
   Shield,
@@ -22,6 +23,11 @@ const NAV_ITEMS = [
     label: "Boshqaruv (KPI)",
     icon: LayoutDashboard,
     exact: true,
+  },
+  {
+    href: "/admin/appointments",
+    label: "Arizalar",
+    icon: Inbox,
   },
   {
     href: "/admin/departments",

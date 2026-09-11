@@ -9,20 +9,31 @@ import {
   Newspaper,
   Plus,
   ArrowRight,
-  TrendingUp,
   Activity,
-  CheckCircle,
-  Clock,
+  Inbox,
+  Phone,
 } from "lucide-react";
 import { KpiCard } from "@/components/admin/KpiCard";
 import { apiClient } from "@/lib/api-client";
 import { useAuth } from "@/lib/auth-context";
+
+interface RecentLead {
+  _id: string;
+  type: "appointment" | "contact";
+  name: string;
+  phone: string;
+  status: string;
+  createdAt: string;
+  departmentId?: { title: string } | null;
+  doctorId?: { name: string } | null;
+}
 
 interface SummaryData {
   doctors: { total: number; active: number };
   services: { total: number; active: number };
   departments: { total: number; active: number };
   news: { total: number; active: number };
+  appointments?: { total: number; new: number; recent: RecentLead[] };
 }
 
 export default function AdminDashboardPage() {
@@ -81,7 +92,14 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <KpiCard
+          title="Yangi arizalar"
+          value={isLoading ? "..." : summary?.appointments?.new || 0}
+          subValue={`${summary?.appointments?.total || 0} ta jami so'rov`}
+          icon={Inbox}
+          color="red"
+        />
         <KpiCard
           title="Shifokorlar"
           value={isLoading ? "..." : summary?.doctors.total || 0}
@@ -110,6 +128,60 @@ export default function AdminDashboardPage() {
           icon={Newspaper}
           color="emerald"
         />
+      </div>
+
+      {/* So'nggi arizalar */}
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-red-50 text-[#dc2626] flex items-center justify-center">
+              <Inbox className="w-4 h-4" />
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">So&apos;nggi arizalar</h3>
+          </div>
+          <Link
+            href="/admin/appointments"
+            className="text-xs font-semibold text-[#dc2626] hover:underline flex items-center gap-1"
+          >
+            Barchasini ko&apos;rish
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {isLoading ? (
+          <p className="text-xs text-slate-400">Yuklanmoqda...</p>
+        ) : !summary?.appointments?.recent?.length ? (
+          <p className="text-xs text-slate-400">Hozircha arizalar yo&apos;q. Saytdan so&apos;rov kelganda shu yerda ko&apos;rinadi.</p>
+        ) : (
+          <ul className="divide-y divide-slate-100">
+            {summary.appointments.recent.map((lead) => (
+              <li key={lead._id} className="py-2.5 flex items-center justify-between gap-3 text-xs">
+                <div className="min-w-0">
+                  <div className="font-bold text-slate-900 truncate">
+                    {lead.name}
+                    <span className={`ml-2 px-1.5 py-0.5 rounded text-[10px] font-semibold ${lead.type === "appointment" ? "bg-blue-50 text-blue-700" : "bg-purple-50 text-purple-700"}`}>
+                      {lead.type === "appointment" ? "Qabul" : "Murojaat"}
+                    </span>
+                  </div>
+                  <div className="text-slate-500 truncate mt-0.5">
+                    <Phone className="w-3 h-3 inline mr-1 text-slate-400" />
+                    {lead.phone}
+                    {lead.departmentId?.title ? ` · ${lead.departmentId.title}` : ""}
+                    {lead.doctorId?.name ? ` · ${lead.doctorId.name}` : ""}
+                  </div>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold border ${lead.status === "new" ? "bg-red-50 text-[#dc2626] border-red-200" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
+                    {lead.status === "new" ? "Yangi" : lead.status}
+                  </span>
+                  <div className="text-[10px] text-slate-400 font-mono mt-1">
+                    {new Date(lead.createdAt).toLocaleString("uz-UZ", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Quick Action Navigation Panels */}

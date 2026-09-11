@@ -5,7 +5,7 @@
   --foreground: #1e293b;
   --surface: #f8fafc;
   --surface-border: #e2e8f0;
-  
+
   /* Brand Colors from plan.txt */
   --primary: #0f172a;
   --primary-hover: #1e293b;
@@ -14,6 +14,20 @@
   --accent-hover: #b91c1c;
   --text-muted: #64748b;
   --card-bg: #ffffff;
+
+  /* ---- Fluid tipografik shkala (clamp bilan, breakpointsiz o'sadi) ---- */
+  --text-display: clamp(2rem, 1.2rem + 4vw, 3.75rem);
+  --text-h1: clamp(1.75rem, 1.1rem + 3.2vw, 3.25rem);
+  --text-h2: clamp(1.5rem, 1rem + 2.4vw, 2.5rem);
+  --text-h3: clamp(1.125rem, 0.95rem + 0.9vw, 1.5rem);
+  --text-body: clamp(0.875rem, 0.83rem + 0.22vw, 1rem);
+  --text-small: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+
+  /* ---- Motion tokenlari (lib/animations.ts bilan bir xil qiymatlar) ---- */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 250ms;
+  --dur-base: 450ms;
+  --dur-slow: 700ms;
 }
 
 @theme {
@@ -25,23 +39,76 @@
   --color-surface: var(--surface);
   --color-surface-border: var(--surface-border);
   --color-text-muted: var(--text-muted);
+
+  /* next/font orqali keladigan Inter o'zgaruvchisi */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --text-display: var(--text-display);
+  --text-h1: var(--text-h1);
+  --text-h2: var(--text-h2);
+  --text-h3: var(--text-h3);
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* `hidden` emas, `clip`: hidden ota elementni scroll-konteynerga aylantirib,
+     ichkaridagi position: sticky'ni buzadi (HowItWorks). `clip` faqat kesadi. */
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
+  /* Sticky navbar ostiga anchor sakrab qolmasligi uchun */
+  scroll-padding-top: 6rem;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  overflow-x: hidden;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+  font-optical-sizing: auto;
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
   position: relative;
+}
+
+/* ==========================================================================
+   A11Y: Klaviatura fokusi
+   Sichqoncha bilan bosilganda halqa ko'rinmaydi, Tab bilan — aniq ko'rinadi.
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   A11Y: prefers-reduced-motion
+   Vestibulyar buzilishi bor bemorlar va keksa foydalanuvchilar uchun majburiy.
+   Framer tomonini <MotionConfig reducedMotion="user"> hal qiladi;
+   bu yerda CSS animatsiya/transition/parallax qismi to'xtatiladi.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Cheksiz aylanuvchi karusel/marquee butunlay to'xtaydi */
+  .animate-marquee-horizontal,
+  .ekg-trace {
+    animation: none !important;
+  }
 }
 
 /* Custom subtle scrollbar */
@@ -63,43 +130,19 @@ body {
   background: #94a3b8;
 }
 
-/* Testimonials Infinite Vertical Marquee Animations */
-@keyframes marquee-vertical-up {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes marquee-vertical-down {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.animate-marquee-vertical-up {
-  animation: marquee-vertical-up 35s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-vertical-down {
-  animation: marquee-vertical-down 35s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-vertical-up:hover,
-.animate-marquee-vertical-down:hover,
-.hover-pause:hover .animate-marquee-vertical-up,
-.hover-pause:hover .animate-marquee-vertical-down {
-  animation-play-state: paused !important;
-}
-
-/* Horizontal Infinite Marquee for Partners */
+/* ==========================================================================
+   Horizontal Infinite Marquee (Partners)
+   `will-change` faqat hover paytida emas, doimiy GPU qatlami ochmaslik uchun
+   konteyner hover'ida beriladi.
+   ========================================================================== */
 @keyframes marquee-horizontal {
   0% {
     transform: translateX(0);
@@ -111,12 +154,109 @@ body {
 
 .animate-marquee-horizontal {
   animation: marquee-horizontal 26s linear infinite;
-  will-change: transform;
 }
 
 .animate-marquee-horizontal:hover,
 .hover-pause:hover .animate-marquee-horizontal {
-  animation-play-state: paused !important;
+  animation-play-state: paused;
 }
 
+/* ==========================================================================
+   Departments: hover'da kartochka chegarasi bo'ylab chiziladigan qizil trace.
+   `pathLength="1"` SVG'da uzunlikni normallashtiradi, shuning uchun
+   dasharray/dashoffset 0–1 oralig'ida ishlaydi (o'lchamga bog'liq emas).
+   ========================================================================== */
+.trace-rect {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-out-expo);
+}
 
+.group:hover .trace-rect,
+.group:focus-visible .trace-rect {
+  stroke-dashoffset: 0;
+}
+
+/* ==========================================================================
+   Formalar: xatolik paytidagi qisqa "shake"
+   ========================================================================== */
+@keyframes field-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-field-shake {
+  animation: field-shake 0.4s var(--ease-out-expo);
+}
+
+/* Skeleton shimmer — API'ga ulanganda loading holatlari uchun */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #e9edf3;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}
+
+/* Footer havolalari: ostidan chiziq chapdan o'ngga chiziladi (JSsiz) */
+.footer-link {
+  position: relative;
+  color: #94a3b8;
+  transition: color var(--dur-fast) var(--ease-out-expo);
+}
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: #dc2626;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+.footer-link:hover {
+  color: #ffffff;
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+}

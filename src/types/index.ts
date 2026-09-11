@@ -1,5 +1,8 @@
 export interface IDepartment {
+  /** Ikonka/URL kaliti (slug: "cardiology"). Backend'dan kelganda ham slug. */
   id: string;
+  /** MongoDB ObjectId — formalarda backendga yuboriladi (static data'da yo'q) */
+  dbId?: string;
   name: string;
   slug: string;
   shortDescription: string;

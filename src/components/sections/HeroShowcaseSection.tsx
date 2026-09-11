@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight, Quote } from "lucide-react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "../common/Container";
 import { TiltCard } from "../common/TiltCard";
