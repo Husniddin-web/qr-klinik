@@ -2,11 +2,10 @@
 
 import React, { useId, useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronDown, ArrowRight, Phone, Plus, Minus } from "lucide-react";
+import { ChevronDown, ArrowRight, Plus, Minus } from "lucide-react";
 import { m, AnimatePresence, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { FAQS_DATA } from "@/data/faqs";
-import { CLINIC_CONTACT } from "@/data/navigation";
 import { Reveal, RevealGroup, RevealItem } from "../common/Reveal";
 import { AnimatedDivider } from "../common/AnimatedDivider";
 import { EASE, DUR, SPRING } from "@/lib/animations";
@@ -60,28 +59,6 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
             />
           </m.div>
 
-          {/* Pastki gradient — karta o'qilishi uchun */}
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
-
-          {/* Aloqa kartasi — flat, soyasiz */}
-          <Reveal variant="up" delay={0.2} className="absolute left-5 right-5 bottom-5 sm:left-8 sm:bottom-8 sm:right-auto sm:max-w-sm">
-            <div className="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 flex items-center gap-4">
-              <span className="w-11 h-11 rounded-xl bg-[#dc2626] text-white flex items-center justify-center shrink-0">
-                <Phone className="w-5 h-5" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                  Javob topolmadingizmi? 24/7
-                </p>
-                <a
-                  href={`tel:${CLINIC_CONTACT.phones[0].replace(/\s+/g, "")}`}
-                  className="text-base sm:text-lg font-black text-[#0f172a] hover:text-[#dc2626] transition-colors tracking-tight"
-                >
-                  {CLINIC_CONTACT.phones[0]}
-                </a>
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         {/* ---------- O'ng: akkordeon ---------- */}
