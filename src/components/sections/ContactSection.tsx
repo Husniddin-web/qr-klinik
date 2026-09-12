@@ -80,15 +80,48 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
           {/* Chap: shifokorlar kesmasi banner ustidan chiqib turadi */}
           <Reveal className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-end order-1 lg:order-1">
-            <div className="relative -mt-24 sm:-mt-32 lg:-mt-44 xl:-mt-52 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[520px] xl:max-w-[580px] select-none pointer-events-none z-20">
-              <Image
-                src="/contact-person.png"
-                alt="QAXRAMON-RAXIMJON Klinikasi Malakali Shifokorlari"
-                width={654}
-                height={504}
-                sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 580px"
-                className="w-full h-auto object-contain object-bottom drop-shadow-[0_25px_35px_rgba(0,0,0,0.65)]"
+            {/* O'ram nisbati = rasm nisbati (654×504), shunda ikkala qatlam pikselma-piksel ustma-ust tushadi */}
+            <div className="relative -mt-24 sm:-mt-32 lg:-mt-44 xl:-mt-52 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[520px] xl:max-w-[580px] aspect-[654/504] select-none pointer-events-none z-20">
+              {/* ---------- 1. Doira foni: toza qizil, hech qanday soya/halqa/animatsiya yo'q ---------- */}
+              <div
+                aria-hidden
+                className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[84%] aspect-square rounded-full bg-[#dc2626]"
               />
+
+              {/* ---------- 2. Pastki qism: rasm DOIRA ICHIDA (rounded-full + overflow-hidden) ----------
+                   Rasm kengligi = o'ram kengligi (doiradan 100/84 ≈ 119% katta), pastga tekislangan —
+                   shunda doira chetlari tanani yumaloq kesadi. */}
+              <div
+                aria-hidden
+                className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[84%] aspect-square rounded-full overflow-hidden z-10"
+              >
+                <Image
+                  src="/contact-person.png"
+                  alt=""
+                  width={654}
+                  height={504}
+                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 580px"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[119.05%] max-w-none h-auto object-contain"
+                />
+              </div>
+
+              {/* ---------- 3. Yuqori qism: doira markazidan YUQORISI kesilmasdan ko'rinadi ----------
+                   Doira radiusi = 42% (o'ram kengligi), o'ram balandligi = 77% → markaz chizig'i pastdan ≈54.5%.
+                   Shu chiziqdan pastini clip-path yashiradi (u qism 2-qatlamda doira ichida ko'rinadi). */}
+              <div
+                className="absolute inset-0 z-20"
+                style={{ clipPath: "inset(0 0 54.5% 0)" }}
+              >
+                <Image
+                  src="/contact-person.png"
+                  alt="QAXRAMON-RAXIMJON Klinikasi Malakali Shifokorlari"
+                  width={654}
+                  height={504}
+                  priority={false}
+                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 580px"
+                  className="absolute bottom-0 left-0 w-full h-auto object-contain"
+                />
+              </div>
             </div>
           </Reveal>
 
