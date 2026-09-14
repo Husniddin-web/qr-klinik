@@ -26,7 +26,7 @@
     "badge": "",
     "title": "Sizning salomatligingiz —",
     "titleHighlight": "bizning oliy qadriyatimiz",
-    "subtitle": "",
+    "subtitle": "3.0 Tesla MRT, multispirel KT, robotlashgan laboratoriya va oliy toifali shifokorlar — bir joyda. Dalillarga asoslangan tibbiyot, ortiqcha tahlillarsiz.",
     "btnAppointment": "Qabulga yozilish",
     "btnServices": "Xizmatlar va narxlar",
     "reviewsRating": "4.9",
@@ -45,7 +45,19 @@
     "feature3": "Doimiy qo'llab-quvvatlash",
     "note1": "Sizning",
     "note2": "sog'lig'ingiz",
-    "note3": "biz uchun muhim! ♡"
+    "note3": "biz uchun muhim! ♡",
+    "eyebrow": "24/7 shoshilinch qabul · Toshkent, Yunusobod",
+    "quickTitle": "Tezkor qabul",
+    "quickDept": "Bo'limni tanlang",
+    "quickBtn": "Vaqt tanlash",
+    "quickHint": "Operator 15 daqiqada bog'lanadi",
+    "chipMrt": "3.0 Tesla MRT",
+    "chipMrtSub": "Siemens Magnetom",
+    "chipDoctors": "45+ shifokor",
+    "chipDoctorsSub": "Oliy toifali",
+    "chipYears": "15+ yil",
+    "chipYearsSub": "Klinik tajriba",
+    "trustReviews": "1 200+ bemor sharhi"
   },
   "urgent": {
     "badge": "24/7 Shoshilinch Qabul & Reanimatsiya",
@@ -63,7 +75,7 @@
   },
   "howItWorks": {
     "badge": "Jarayon",
-    "title": "Qabul Jarayoni",
+    "title": "Qabul jarayoni",
     "step1Title": "Qabulga yoziling",
     "step1Desc": "Sayt orqali yoki qo'ng'iroq qilib o'zingizga qulay vaqtni tanlang.",
     "step2Title": "Shifokorni tanlang",
@@ -71,7 +83,9 @@
     "step3Title": "Ko'rikdan o'ting",
     "step3Desc": "Zamonaviy 3.0T MRT diagnostika va shifokor konsultatsiyasini oling.",
     "step4Title": "Salomatlikka erishing",
-    "step4Desc": "Samarali davolash rejasi bilan sog'lom va bardam hayotga qayting."
+    "step4Desc": "Samarali davolash rejasi bilan sog'lom va bardam hayotga qayting.",
+    "eyebrow": "Jarayon",
+    "subtitle": "To'rt qadam — birinchi qo'ng'iroqdan sog'ayishgacha."
   },
   "contactBanner": {
     "title": "Professional va ishonchli tibbiy yordam izlayapsizmi?",
@@ -85,7 +99,8 @@
   "about": {
     "title": "Biz Haqimizda",
     "subheading": "Har Bir Bemorga O'z Yaqinimizdek G'amxo'rlik Ko'rsatamiz",
-    "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va chuqur tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat dalillarga asoslangan xalqaro tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz."
+    "desc": "Biz uchun eng muhimi — bemor dardini to'g'ri va chuqur tushunishdir. Keraksiz ortiqcha dori-darmon yoki asossiz tahlillardan xoli, faqat dalillarga asoslangan xalqaro tibbiyot (Evidence-based Medicine) qoidalariga amal qilamiz.",
+    "eyebrow": "Biz haqimizda"
   },
   "stats": {
     "badge": "Raqamlar va Natijalar",
@@ -94,10 +109,16 @@
   },
   "departments": {
     "badge": "Yo'nalishlar",
-    "title": "Klinika Bo'limlari",
+    "title": "Klinika bo'limlari",
     "titleHighlight": "",
-    "subtitle": "",
-    "popular": "Mashhur"
+    "subtitle": "Tashxisdan davolashgacha — 9 ta yo'nalish bir binoda, bitta tibbiy karta va bitta jamoa.",
+    "popular": "Mashhur",
+    "eyebrow": "Yo'nalishlar",
+    "servicesCount": "{count} ta xizmat",
+    "viewServices": "Xizmatlarni ko'rish",
+    "ctaTitle": "Kerakli bo'limni topmadingizmi?",
+    "ctaText": "Qo'ng'iroq qiling — operator to'g'ri mutaxassisga yo'naltiradi.",
+    "ctaBtn": "Qo'ng'iroq qilish"
   },
   "promo": {
     "badge": "Maxsus Mavsumiy Aksiya",
@@ -109,28 +130,39 @@
   },
   "services": {
     "badge": "Xizmatlar va Narxlar",
-    "title": "Xizmatlar va Narxlar",
-    "subtitle": "",
-    "searchPlaceholder": "Xizmat nomi yoki kasallik turi bo'yicha qidiring (masalan: MRT, qon tahlili, kardiolog)...",
-    "all": "Barcha Xizmatlar",
+    "title": "Xizmatlar va narxlar",
+    "subtitle": "Yashirin to'lovlarsiz. Narxlar 2026-yil uchun amal qiladi, konsultatsiya narxiga birlamchi ko'rik kiradi.",
+    "searchPlaceholder": "Xizmat nomi bo'yicha qidirish…",
+    "all": "Barchasi",
     "book": "Yozilish",
-    "popular": "Ommabop"
+    "popular": "Ommabop",
+    "eyebrow": "Narxnoma",
+    "duration": "Davomiyligi",
+    "price": "Narxi",
+    "showAll": "Barcha xizmatlar ({count})",
+    "showLess": "Kamroq ko'rsatish",
+    "empty": "Hech narsa topilmadi. Boshqa so'z bilan qidirib ko'ring.",
+    "count": "{count} ta xizmat",
+    "viewGrid": "Kartalar",
+    "viewList": "Ro'yxat"
   },
   "equipment": {
     "badge": "Bizning Uskunalar",
-    "title": "Ilg'or Tibbiy Uskunalar",
-    "subtitle": "",
+    "title": "Ilg'or diagnostika uskunalari",
+    "subtitle": "Siemens, GE va Roche — Yevropa va AQSH klinikalari ishlatadigan xuddi shu apparatlar, xalqaro sifat nazorati ostida.",
     "specs": "Asosiy Imkoniyatlar:",
     "bookTest": "Tekshiruvga yozilish",
-    "priceLabel": "Tashxis narxi:"
+    "priceLabel": "Tekshiruv narxi",
+    "eyebrow": "Uskunalar"
   },
   "doctors": {
     "badge": "Shifokorlar",
-    "title": "Bizning Shifokorlar",
-    "subtitle": "",
+    "title": "Bizning shifokorlar",
+    "subtitle": "Fan nomzodlari, xalqaro sertifikatli mutaxassislar va 15 yildan ortiq tajribaga ega vrachlar.",
     "experience": "Tajriba:",
     "schedule": "Qabul vaqti:",
-    "btn": "Qabuliga yozilish"
+    "btn": "Qabuliga yozilish",
+    "eyebrow": "Jamoa"
   },
   "lab": {
     "badge": "Klinik Laboratoriya",
@@ -147,16 +179,17 @@
   "faq": {
     "badge": "F.A.Q",
     "title": "Ko'p Beriladigan Savollar",
-    "subtitle": "",
+    "subtitle": "Eng ko'p so'raladigan savollarga qisqa javoblar.",
     "tabGeneral": "Umumiy",
     "tabUrgent": "Shoshilinch",
     "tabDiagnostic": "Diagnostika",
-    "askBtn": "Savol berish"
+    "askBtn": "Savol berish",
+    "eyebrow": "F.A.Q"
   },
   "contact": {
     "badge": "Aloqa",
     "title": "Qabulga Yozilish",
-    "subtitle": "",
+    "subtitle": "Ism va telefoningizni qoldiring — qolganini biz hal qilamiz.",
     "addressTitle": "Manzilimiz",
     "phonesTitle": "Telefon raqamlar",
     "hoursTitle": "Ish vaqti",
@@ -174,11 +207,12 @@
     "callUs": "24/7 Qabulxona va tezkor aloqa",
     "emailUs": "Rasmiy elektron pochta",
     "workingHours": "Du - Sha: 08:00 - 20:00",
-    "sundayHours": "Yakshanba: 09:00 - 15:00"
+    "sundayHours": "Yakshanba: 09:00 - 15:00",
+    "eyebrow": "Aloqa"
   },
   "modal": {
-    "title": "Shifokor Qabuliga Yozilish",
-    "subtitle": "Quyidagi formani to'ldiring, operatorimiz 15 daqiqada siz bilan bog'lanadi.",
+    "title": "Qabulga yozilish",
+    "subtitle": "Ism, familiya va telefoningizni qoldiring — operator 15 daqiqada bog'lanadi.",
     "successTitle": "Arizangiz Qabul Qilindi!",
     "successDesc": "Hurmatli bemor, sizning so'rovingiz qabul qilindi. Tez orada mutaxassisimiz sizga qo'ng'iroq qilib vaqtni tasdiqlaydi.",
     "btnClose": "Yopish",
@@ -200,23 +234,41 @@
     "serviceLabel": "Xizmat",
     "btnNext": "Davom etish",
     "btnBack": "Orqaga",
-    "btnSubmit": "Tasdiqlash",
+    "btnSubmit": "Yuborish",
     "submitting": "Yuborilmoqda...",
     "submitted": "Yuborildi",
     "errName": "Ismingizni kiriting (kamida 3 ta harf)",
     "errPhone": "To'liq telefon raqam kiriting",
     "errDate": "Sanani tanlang",
-    "summary": "Siz tanladingiz"
+    "summary": "Siz tanladingiz",
+    "subtitleShort": "operator 15 daqiqada bog'lanadi",
+    "firstNameLabel": "Ismingiz",
+    "lastNameLabel": "Familiyangiz",
+    "errFirstName": "Ismingizni kiriting",
+    "errLastName": "Familiyangizni kiriting",
+    "hint": "Yuborish orqali siz shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz."
   },
   "news": {
     "title": "So'nggi Yangiliklar",
-    "subtitle": "",
+    "subtitle": "Shifokorlarimizning ilmiy tahlillari va klinika yangiliklari.",
     "allArticles": "Barcha Maqolalar",
-    "readFull": "To'liq O'qish"
+    "readFull": "To'liq O'qish",
+    "eyebrow": "Blog"
   },
   "wellnessBanner": {
     "title": "Sizning Salomatligingiz — Bizning Maqsadimiz",
     "subtitle": "",
     "cta": "Qabulga Yozilish"
+  },
+  "testimonials": {
+    "eyebrow": "Sharhlar",
+    "title": "Bemorlar nima deydi",
+    "subtitle": "Google va Yandex'dagi 1 200 dan ortiq sharh asosida o'rtacha baho — 4.9.",
+    "drag": "Sudrab ko'ring"
+  },
+  "partners": {
+    "eyebrow": "Hamkorlar",
+    "title": "Bizga ishonadiganlar",
+    "subtitle": "Sug'urta kompaniyalari, uskuna ishlab chiqaruvchilar va xalqaro klinikalar."
   }
 }

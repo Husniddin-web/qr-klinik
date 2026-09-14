@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Manrope, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -22,6 +22,26 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+/**
+ * Manrope — sarlavhalar uchun display shrift (Inter'dan farqli geometrik xarakter,
+ * kirill alifbosi bor — "kr" locale uchun shart).
+ */
+const manrope = Manrope({
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+  variable: "--font-manrope",
+  weight: ["500", "600", "700", "800"],
+});
+
+/** Playfair Display italic — sarlavhadagi bitta urg'uli so'z uchun serif aksent. */
+const playfair = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+  variable: "--font-playfair",
+  style: ["italic"],
+  weight: ["500", "600"],
 });
 
 export const viewport: Viewport = {
@@ -67,12 +87,12 @@ export default async function LocaleLayout({
   const [departments, doctors] = await Promise.all([getDepartments(), getDoctors()]);
 
   return (
-    <html lang={locale} className={`${inter.variable} scroll-smooth`}>
-      <body className="antialiased selection:bg-[#dc2626] selection:text-white bg-white text-[#1e293b]">
+    <html lang={locale} className={`${inter.variable} ${manrope.variable} ${playfair.variable} scroll-smooth`}>
+      <body className="antialiased selection:bg-accent selection:text-white bg-white text-ink-soft">
         {/* Klaviatura foydalanuvchilari uchun kontentga tez o'tish havolasi */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-[#0f172a] focus:text-white focus:text-sm focus:font-bold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-ink focus:text-white focus:text-sm focus:font-bold"
         >
           Asosiy kontentga o&apos;tish
         </a>

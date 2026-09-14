@@ -14,6 +14,7 @@ import { STATS_DATA } from "@/data/stats";
 import { Container } from "../common/Container";
 import { RevealGroup, RevealItem } from "../common/Reveal";
 import { EASE } from "@/lib/animations";
+import { formatNumber } from "@/lib/utils";
 
 function CounterItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -24,7 +25,7 @@ function CounterItem({ value, suffix, label }: { value: number; suffix: string; 
   // Ilgari setInterval(20ms) + setState edi — har 20ms'da re-render, jank.
   // Endi: bitta MotionValue, rAF'da yangilanadi, DOM'ga to'g'ridan-to'g'ri yoziladi.
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v).toLocaleString("uz-UZ"));
+  const rounded = useTransform(count, (v) => formatNumber(v));
 
   useEffect(() => {
     if (!isInView) return;
@@ -34,7 +35,7 @@ function CounterItem({ value, suffix, label }: { value: number; suffix: string; 
       return;
     }
     const controls = animate(count, value, {
-      duration: 1.4,
+      duration: 1.0,
       ease: EASE,
       onComplete: () => setDone(true),
     });
@@ -44,9 +45,9 @@ function CounterItem({ value, suffix, label }: { value: number; suffix: string; 
   return (
     <div ref={ref} className="text-left py-2 sm:py-0 relative">
       <div className="relative inline-flex items-baseline">
-        <div className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight tabular-nums">
+        <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight tabular-nums">
           <m.span>{rounded}</m.span>
-          <span className="text-[#dc2626] ml-0.5">{suffix}</span>
+          <span className="text-red-400 ml-0.5">{suffix}</span>
         </div>
 
         {/* Sanoq tugagach bir marta pulsatsiya */}
@@ -58,32 +59,32 @@ function CounterItem({ value, suffix, label }: { value: number; suffix: string; 
                 initial={{ scale: 0.6, opacity: 0.7 }}
                 animate={{ scale: 2.5, opacity: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut" }}
-                className="absolute inset-0 rounded-full border-2 border-[#dc2626]/50 pointer-events-none"
+                className="absolute inset-0 rounded-full border-2 border-red-400/50 pointer-events-none"
               />
               <m.span
                 key="ring2"
                 initial={{ scale: 0.6, opacity: 0.4 }}
                 animate={{ scale: 3.2, opacity: 0 }}
                 transition={{ duration: 1.1, ease: "easeOut", delay: 0.15 }}
-                className="absolute inset-0 rounded-full border border-[#dc2626]/25 pointer-events-none"
+                className="absolute inset-0 rounded-full border border-red-400/25 pointer-events-none"
               />
             </>
           )}
         </AnimatePresence>
       </div>
 
-      <div className="mt-1.5 sm:mt-2 text-xs sm:text-base font-bold text-[#0f172a]">{label}</div>
+      <div className="mt-1.5 sm:mt-2 text-xs sm:text-[15px] font-medium text-slate-400">{label}</div>
     </div>
   );
 }
 
 export function StatsSection() {
   return (
-    <section className="py-14 sm:py-20 bg-[#f8fafc] border-b border-slate-200/80">
+    <section className="py-16 sm:py-20 bg-ink text-white">
       <Container>
         <RevealGroup
           stagger={0.12}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:divide-x divide-slate-200"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:divide-x divide-white/10"
         >
           {STATS_DATA.map((stat, idx) => (
             <RevealItem key={stat.id} className={idx > 0 ? "lg:pl-8" : ""}>

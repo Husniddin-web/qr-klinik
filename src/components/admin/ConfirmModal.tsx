@@ -34,7 +34,7 @@ export function ConfirmModal({
             <div
               className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
                 isDanger
-                  ? "bg-red-50 text-[#dc2626]"
+                  ? "bg-red-50 text-accent"
                   : "bg-blue-50 text-blue-600"
               }`}
             >
@@ -73,8 +73,8 @@ export function ConfirmModal({
             }}
             className={`px-4 py-2 rounded-lg text-xs font-semibold text-white transition-colors ${
               isDanger
-                ? "bg-[#dc2626] hover:bg-red-700 shadow-xs"
-                : "bg-[#0f172a] hover:bg-slate-800"
+                ? "bg-accent hover:bg-red-700 shadow-xs"
+                : "bg-ink hover:bg-slate-800"
             }`}
           >
             {confirmText}

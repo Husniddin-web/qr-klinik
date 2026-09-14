@@ -11,7 +11,7 @@ import {
   STAGGER,
 } from "@/lib/animations";
 
-type RevealTag = "div" | "span" | "section" | "article" | "li" | "p" | "h2" | "h3";
+type RevealTag = "div" | "span" | "section" | "article" | "li" | "p" | "h1" | "h2" | "h3";
 
 export interface RevealProps {
   children: React.ReactNode;
@@ -25,6 +25,8 @@ export interface RevealProps {
   amount?: number;
   /** Faqat bir marta o'ynasinmi. Default: true */
   once?: boolean;
+  /** IntersectionObserver rootMargin. Default: VIEWPORT.margin (pastdan 120px erta) */
+  margin?: string;
   className?: string;
   style?: React.CSSProperties;
   id?: string;
@@ -48,6 +50,7 @@ export function Reveal({
   duration,
   amount = VIEWPORT.amount,
   once = true,
+  margin = VIEWPORT.margin,
   className,
   style,
   id,
@@ -76,7 +79,7 @@ export function Reveal({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount }}
+      viewport={{ once, amount, margin }}
       transition={{
         duration: duration ?? DUR.base,
         delay,
@@ -96,6 +99,7 @@ export interface RevealGroupProps {
   delay?: number;
   amount?: number;
   once?: boolean;
+  margin?: string;
   as?: RevealTag;
 }
 
@@ -110,6 +114,7 @@ export function RevealGroup({
   delay = 0.05,
   amount = VIEWPORT.amount,
   once = true,
+  margin = VIEWPORT.margin,
   as = "div",
 }: RevealGroupProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -125,7 +130,7 @@ export function RevealGroup({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount }}
+      viewport={{ once, amount, margin }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: stagger, delayChildren: delay } },

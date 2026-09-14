@@ -14,6 +14,7 @@ import { DepartmentsSection } from "@/components/sections/DepartmentsSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WellnessBannerSection } from "@/components/sections/WellnessBannerSection";
+import { EquipmentSection } from "@/components/sections/EquipmentSection";
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -44,7 +45,7 @@ export function HomeClient({ departments, doctors, services, news }: HomeClientP
   return (
     <main
       id="main-content"
-      className="min-h-screen flex flex-col bg-white selection:bg-[#dc2626] selection:text-white overflow-x-clip w-full max-w-full"
+      className="min-h-screen flex flex-col bg-white selection:bg-accent selection:text-white overflow-x-clip w-full max-w-full"
     >
       <HeroSection onOpenAppointment={() => openAppointment()} />
 
@@ -53,7 +54,7 @@ export function HomeClient({ departments, doctors, services, news }: HomeClientP
       <AboutSection />
 
       {/* EKG: scroll bilan chiziladi — brend "yurak urishi" */}
-      <EkgDivider className="bg-[#f8fafc]" />
+      <EkgDivider className="bg-canvas-soft" />
 
       <StatsSection />
 
@@ -65,9 +66,10 @@ export function HomeClient({ departments, doctors, services, news }: HomeClientP
         onOpenAppointment={(serviceTitle) =>
           openAppointment({ serviceTitle, departmentId: selectedDepartmentId })
         }
-        selectedDept={selectedDepartmentId}
         services={services}
       />
+
+      <EquipmentSection onOpenAppointment={(serviceTitle) => openAppointment({ serviceTitle })} />
 
       <WellnessBannerSection onOpenAppointment={() => openAppointment()} />
 

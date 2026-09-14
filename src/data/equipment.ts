@@ -15,7 +15,7 @@ export const EQUIPMENT_DATA: IEquipment[] = [
       "Miya tomirlari va neyrotizimni mikron darajadagi yuqori aniqlikda tasvirlash",
       "Klaustrofobiyadan himoyalangan sokin rejim",
     ],
-    image: "/images/equipment-mri.jpg",
+    image: "/images/equipment/mri.png",
   },
   {
     id: "eq-ct-128",
@@ -31,7 +31,7 @@ export const EQUIPMENT_DATA: IEquipment[] = [
       "0.35 soniyada butun tana a'zolarini yuqori aniqlikda olish",
       "3D rekonstruksiya va tomirlar virtual modellashtirishi",
     ],
-    image: "/images/equipment-ct.jpg",
+    image: "/images/equipment/ct.png",
   },
   {
     id: "eq-usg-voluson",
@@ -47,7 +47,7 @@ export const EQUIPMENT_DATA: IEquipment[] = [
       "Elastografiya orqali to'qimalar qattiqligini tekshirish",
       "Yuqori aniqlikdagi matritsali datchiklar majmuasi",
     ],
-    image: "/images/equipment-ultrasound.jpg",
+    image: "/images/equipment/ultrasound.png",
   },
   {
     id: "eq-lab-roche",
@@ -63,6 +63,6 @@ export const EQUIPMENT_DATA: IEquipment[] = [
       "Kam hajmdagi qon zardobi orqali aniqlash",
       "Xalqaro sifat nazorati (RIQAS) sertifikati",
     ],
-    image: "/images/equipment-lab.jpg",
+    image: "/images/equipment/lab.png",
   },
 ];

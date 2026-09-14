@@ -6,19 +6,39 @@
   --surface: #f8fafc;
   --surface-border: #e2e8f0;
 
-  /* Brand Colors from plan.txt */
-  --primary: #0f172a;
-  --primary-hover: #1e293b;
+  /* ======================================================================
+     BRAND TOKENS — barcha ranglar shu yerdan. Komponentlarda hex yozilmaydi.
+     Navy: zamin va matn. Qizil: faqat aksent (CTA, muhim urg'u, EKG chizig'i).
+     ====================================================================== */
+  --navy-950: #060b18;
+  --navy-900: #0f172a;
+  --navy-800: #1e293b;
+  --navy-700: #334155;
+  --navy-500: #64748b;
+  --navy-300: #cbd5e1;
+  --navy-200: #e2e8f0;
+  --navy-100: #f1f5f9;
+  --navy-50: #f8fafc;
+
+  --red-700: #b91c1c;
+  --red-600: #dc2626;
+  --red-500: #ef4444;
+  --red-100: #fee2e2;
+  --red-50: #fef2f2;
+
+  /* Semantik nomlar (Tailwind class'lari @theme orqali) */
+  --primary: var(--navy-900);
+  --primary-hover: var(--navy-800);
   --primary-blue: #1e3a8a;
-  --accent: #dc2626;
-  --accent-hover: #b91c1c;
-  --text-muted: #64748b;
+  --accent: var(--red-600);
+  --accent-hover: var(--red-700);
+  --text-muted: var(--navy-500);
   --card-bg: #ffffff;
 
   /* ---- Fluid tipografik shkala (clamp bilan, breakpointsiz o'sadi) ---- */
-  --text-display: clamp(2rem, 1.2rem + 4vw, 3.75rem);
-  --text-h1: clamp(1.75rem, 1.1rem + 3.2vw, 3.25rem);
-  --text-h2: clamp(1.5rem, 1rem + 2.4vw, 2.5rem);
+  --text-display: clamp(2.5rem, 1.4rem + 4.6vw, 4.5rem);
+  --text-h1: clamp(2rem, 1.2rem + 3.4vw, 3.5rem);
+  --text-h2: clamp(1.75rem, 1.15rem + 2.4vw, 2.75rem);
   --text-h3: clamp(1.125rem, 0.95rem + 0.9vw, 1.5rem);
   --text-body: clamp(0.875rem, 0.83rem + 0.22vw, 1rem);
   --text-small: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
@@ -31,6 +51,7 @@
 }
 
 @theme {
+  /* Ranglar */
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-blue: var(--primary-blue);
@@ -40,14 +61,35 @@
   --color-surface-border: var(--surface-border);
   --color-text-muted: var(--text-muted);
 
-  /* next/font orqali keladigan Inter o'zgaruvchisi */
+  --color-ink: var(--navy-900);
+  --color-ink-soft: var(--navy-800);
+  --color-ink-deep: var(--navy-950);
+  --color-canvas: #ffffff;
+  --color-canvas-soft: var(--navy-50);
+  --color-line: var(--navy-200);
+
+  /* Shriftlar: Inter — matn, Manrope — sarlavha (display), Playfair — serif aksent */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif-accent: var(--font-playfair), "Georgia", "Times New Roman", serif;
 
   --text-display: var(--text-display);
   --text-h1: var(--text-h1);
   --text-h2: var(--text-h2);
   --text-h3: var(--text-h3);
+
+  /* Radius shkalasi: chip 12 / karta 24 / katta karta 28 / panel 32 */
+  --radius-chip: 0.75rem;
+  --radius-card: 1.5rem;
+  --radius-card-lg: 1.75rem;
+  --radius-panel: 2rem;
+
+  /* Soya shkalasi — navy tusli, "qora" emas */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.12);
+  --shadow-card-hover: 0 2px 4px rgba(15, 23, 42, 0.05), 0 24px 48px -16px rgba(15, 23, 42, 0.22);
+  --shadow-float: 0 20px 60px -20px rgba(15, 23, 42, 0.35);
+  --shadow-accent: 0 12px 30px -10px rgba(220, 38, 38, 0.45);
 }
 
 html {
@@ -108,6 +150,110 @@ body {
   .animate-marquee-horizontal,
   .ekg-trace {
     animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT RITMI: barcha section'lar bitta vertikal qadam bilan
+   ========================================================================== */
+.section-pad {
+  padding-block: 5rem;
+}
+@media (min-width: 640px) {
+  .section-pad {
+    padding-block: 6.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-block: 8rem;
+  }
+}
+
+/* Nozik nuqtali to'r — hero va bo'sh fonlarga "qog'oz" hissi beradi */
+.bg-dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.07) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+.bg-dot-grid-light {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* ==========================================================================
+   FOTO TONI: barcha suratlar bir xil rang gradatsiyasida — navy tint + biroz
+   pasaytirilgan to'yinganlik. Turli manbadagi rasmlar bitta "seriya"dek ko'rinadi.
+   Ishlatish: rasm o'rami (position: relative) ga `photo-tone` klassi.
+   ========================================================================== */
+.photo-tone > img,
+.photo-tone img {
+  filter: saturate(0.88) contrast(1.04);
+}
+.photo-tone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.16) 100%);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   EKG HOVER: asosiy tugmalarda hover paytida kardiogramma chizig'i o'tadi.
+   Brend motivi — EkgDivider bilan bir xil shakl.
+   ========================================================================== */
+.btn-ekg {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-ekg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background-repeat: repeat-x;
+  background-size: 140px 100%;
+  background-position: -140px 50%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 40' preserveAspectRatio='none'><path d='M0,20 H40 q4,-4 8,0 H60 l3,4 l4,-18 l4,16 l3,-2 H90 q6,-6 12,0 H140' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  transition: opacity var(--dur-fast) var(--ease-out-expo);
+}
+.btn-ekg:hover::before,
+.btn-ekg:focus-visible::before {
+  opacity: 1;
+  animation: ekg-sweep 1.1s linear infinite;
+}
+@keyframes ekg-sweep {
+  from {
+    background-position: -140px 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-ekg::before {
+    animation: none !important;
+  }
+}
+
+/* EKG chizig'i sarlavha ostida chiziladi (hero) */
+@keyframes ekg-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.ekg-underline path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ekg-draw 1.1s var(--ease-out-expo) 0.9s forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ekg-underline path {
+    stroke-dashoffset: 0;
+    animation: none;
   }
 }
 
@@ -180,6 +326,68 @@ body {
 /* ==========================================================================
    Formalar: xatolik paytidagi qisqa "shake"
    ========================================================================== */
+/* ==========================================================================
+   HERO: sarlavha so'zlari niqob ortidan ko'tariladi, CTA pastdan suzib chiqadi.
+   JS/framer'siz — LCP zonasi hech qachon "bo'sh" qolmasin.
+   ========================================================================== */
+@keyframes hero-mask-up {
+  from {
+    transform: translate3d(0, 135%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-word {
+  transform: translate3d(0, 135%, 0);
+  animation: hero-mask-up var(--dur-slow) var(--ease-out-expo) both;
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: hero-rise var(--dur-base) var(--ease-out-expo) both;
+}
+
+/* Chiplar: kirish + sekin suzish (ikkinchi animatsiya, vergul bilan) */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:animate-float-y {
+    animation:
+      hero-rise var(--dur-base) var(--ease-out-expo) both,
+      float-y 6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .hero-rise,
+  .lg\:animate-float-y {
+    animation: none !important;
+    transform: none;
+    opacity: 1;
+  }
+}
+
 @keyframes field-shake {
   0%,
   100% {

@@ -116,7 +116,7 @@ export function ImageUpload({
             <button
               type="button"
               onClick={() => inputRef.current?.click()}
-              className="text-xs text-[#dc2626] font-medium hover:underline mt-1 inline-block"
+              className="text-xs text-accent font-medium hover:underline mt-1 inline-block"
             >
               Almashtirish
             </button>
@@ -125,7 +125,7 @@ export function ImageUpload({
           <button
             type="button"
             onClick={() => onChange("")}
-            className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-[#dc2626] hover:border-red-200 hover:bg-red-50 flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-accent hover:border-red-200 hover:bg-red-50 flex items-center justify-center transition-colors"
             title="O'chirish"
           >
             <X className="w-4 h-4" />
@@ -139,13 +139,13 @@ export function ImageUpload({
           onClick={() => inputRef.current?.click()}
           className={`relative border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-all duration-200 ${
             dragActive
-              ? "border-[#dc2626] bg-red-50/50"
+              ? "border-accent bg-red-50/50"
               : "border-slate-200 hover:border-slate-300 bg-slate-50/60 hover:bg-slate-50"
           }`}
         >
           {isUploading ? (
             <div className="flex flex-col items-center justify-center py-3">
-              <Loader2 className="w-8 h-8 text-[#dc2626] animate-spin mb-2" />
+              <Loader2 className="w-8 h-8 text-accent animate-spin mb-2" />
               <p className="text-xs font-medium text-slate-600">
                 Serverga yuklanmoqda...
               </p>
@@ -157,7 +157,7 @@ export function ImageUpload({
               </div>
               <p className="text-xs font-semibold text-slate-700">
                 Rasmni bu yerga tashlang yoki{" "}
-                <span className="text-[#dc2626] hover:underline">tanlang</span>
+                <span className="text-accent hover:underline">tanlang</span>
               </p>
               <p className="text-[11px] text-slate-400 mt-1">{helperText}</p>
             </div>

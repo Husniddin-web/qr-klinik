@@ -25,7 +25,7 @@ export function PageHero({
   breadcrumbs,
 }: PageHeroProps) {
   return (
-    <section className="relative w-full min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] flex items-center justify-center overflow-hidden bg-[#070e1e] pt-24 sm:pt-28 pb-14 sm:pb-20">
+    <section className="relative w-full min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] flex items-center justify-center overflow-hidden bg-ink-deep pt-24 sm:pt-28 pb-14 sm:pb-20">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -37,9 +37,9 @@ export function PageHero({
           sizes="100vw"
         />
         {/* Layer 1: Atmospheric Navy Gradient allowing background image to be clearly seen */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060b18]/70 via-[#0a1224]/45 to-[#060b18]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-deep/70 via-[#0a1224]/45 to-ink-deep/70" />
         {/* Layer 2: Vertical Vignette for legibility and bottom wave transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060b18]/65 via-black/15 to-[#070e1e]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-deep/65 via-black/15 to-ink-deep/95" />
         {/* Layer 3: Subtle Red & Cyan ambient medical glow */}
         <div className="absolute -top-24 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -58,7 +58,7 @@ export function PageHero({
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
         {/* Main Headline */}
-        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-4xl leading-[1.18] sm:leading-[1.15] mb-3 sm:mb-5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+        <h1 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-[-0.02em] max-w-4xl leading-[1.18] sm:leading-[1.15] mb-3 sm:mb-5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
           {title}
         </h1>
 
@@ -110,7 +110,7 @@ export function PageHero({
         <svg
           viewBox="0 0 1200 40"
           preserveAspectRatio="none"
-          className="w-full h-5 sm:h-8 text-[#f8fafc] fill-current"
+          className="w-full h-5 sm:h-8 text-canvas-soft fill-current"
         >
           <path d="M0,0 C300,35 900,35 1200,0 L1200,40 L0,40 Z" />
         </svg>

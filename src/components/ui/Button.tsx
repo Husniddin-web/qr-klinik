@@ -20,10 +20,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const variantStyles = {
       // Primary: Deep Navy Blue
       primary:
-        "bg-[#0f172a] text-white hover:bg-[#1e293b] shadow-sm hover:shadow-md",
+        "bg-ink text-white hover:bg-ink-soft shadow-sm hover:shadow-md",
       // Accent: Crimson Red (Plan.txt talabi: faqat muhim CTA lar uchun)
       accent:
-        "bg-[#dc2626] text-white hover:bg-[#b91c1c] shadow-sm hover:shadow-md hover:shadow-red-500/20",
+        "bg-accent text-white hover:bg-accent-hover shadow-sm hover:shadow-md hover:shadow-red-500/20",
       // Outline
       outline:
         "border border-slate-200 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-300 shadow-sm",

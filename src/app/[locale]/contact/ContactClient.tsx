@@ -103,7 +103,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
   ];
 
   return (
-    <main id="main-content" className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-[#dc2626] selection:text-white">
+    <main id="main-content" className="min-h-screen flex flex-col bg-canvas-soft text-slate-900 selection:bg-accent selection:text-white">
 
       {/* Page Hero matching user uploaded reference media_1788754097253.png */}
       <PageHero
@@ -126,7 +126,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
                   className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-red-50 text-[#dc2626] flex items-center justify-center mb-4 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-red-50 text-accent flex items-center justify-center mb-4 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-base font-bold text-slate-900 mb-2">
@@ -140,7 +140,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
                     </p>
                   </div>
                   <div className="mt-4 pt-3 border-t border-slate-100">
-                    <span className="text-[11px] font-bold text-[#dc2626]">
+                    <span className="text-[11px] font-bold text-accent">
                       {card.highlight}
                     </span>
                   </div>
@@ -154,10 +154,10 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
             {/* Interactive Contact & Appointment Form */}
             <div className="lg:col-span-6 bg-white rounded-3xl p-5 sm:p-8 lg:p-10 border border-slate-200/80 shadow-sm">
               <div className="mb-6">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#dc2626] mb-1.5">
+                <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">
                   XABAR YUBORISH
                 </div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-ink tracking-tight">
                   Kutishlarsiz Mutaxassis Qabuliga Yoziling
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-500 font-normal mt-2">
@@ -262,7 +262,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-2xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm shadow-lg shadow-red-500/25 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                    className="w-full py-3.5 rounded-2xl bg-accent hover:bg-accent-hover text-white font-bold text-sm shadow-lg shadow-red-500/25 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <span>Yuborilmoqda...</span>
@@ -319,7 +319,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
                 </div>
 
                 <div className="p-4 rounded-3xl bg-white border border-slate-200/80 shadow-xs">
-                  <div className="w-9 h-9 rounded-xl bg-red-50 text-[#dc2626] flex items-center justify-center mb-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-red-50 text-accent flex items-center justify-center mb-2.5">
                     <Compass className="w-4 h-4" />
                   </div>
                   <h4 className="text-xs font-bold text-slate-900">Avtobuslar</h4>
@@ -334,10 +334,10 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
           {/* Quick FAQ Section */}
           <div className="max-w-3xl mx-auto pt-8 border-t border-slate-200">
             <div className="text-center mb-8">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#dc2626] mb-1.5">
+              <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">
                 SAVOLLAR VA JAVOBLAR
               </div>
-              <h3 className="text-2xl font-black text-slate-900">
+              <h3 className="text-2xl font-display font-bold text-ink">
                 Tashrif Buyurish Bo&apos;yicha Ko&apos;p Beriladigan Savollar
               </h3>
             </div>
@@ -353,7 +353,7 @@ export function ContactClient({ departments }: { departments: IDepartment[] }) {
                     <button
                       type="button"
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-800 hover:text-[#dc2626] transition-colors cursor-pointer"
+                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-800 hover:text-accent transition-colors cursor-pointer"
                     >
                       <span>{faq.q}</span>
                       <ChevronDown

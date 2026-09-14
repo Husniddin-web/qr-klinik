@@ -22,7 +22,7 @@ export default function AdminRootLayout({
 }) {
   return (
     <html lang="uz">
-      <body className="antialiased bg-slate-50 text-slate-900 selection:bg-[#dc2626] selection:text-white">
+      <body className="antialiased bg-slate-50 text-slate-900 selection:bg-accent selection:text-white">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

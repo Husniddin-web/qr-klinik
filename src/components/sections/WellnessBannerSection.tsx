@@ -33,9 +33,11 @@ export function WellnessBannerSection({ onOpenAppointment }: WellnessBannerSecti
         aria-label="QAXRAMON-RAXIMJON tibbiyot jamoasi"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center sm:bg-[center_30%]"
+          className="absolute inset-0 bg-cover bg-center sm:bg-[center_30%] saturate-[0.88]"
           style={{ backgroundImage: "url('/on-section.jpg')" }}
         />
+        {/* Foto toni: navy multiply — boshqa suratlar bilan bir seriyada */}
+        <div aria-hidden className="absolute inset-0 bg-ink/25 mix-blend-multiply" />
       </m.div>
 
       <div className="absolute inset-y-0 left-0 w-full sm:w-[50%] lg:w-[42%] backdrop-blur-sm z-10 [mask-image:linear-gradient(to_right,black_35%,transparent)] [-webkit-mask-image:linear-gradient(to_right,black_35%,transparent)]" />
@@ -44,7 +46,7 @@ export function WellnessBannerSection({ onOpenAppointment }: WellnessBannerSecti
         <Container size="wide">
           <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl text-left py-6">
             <Reveal variant="left" duration={0.7}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-extrabold text-white tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-[44px] font-bold text-white tracking-tight leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
                 {t("title")}
               </h2>
             </Reveal>
@@ -53,7 +55,7 @@ export function WellnessBannerSection({ onOpenAppointment }: WellnessBannerSecti
               <button
                 type="button"
                 onClick={onOpenAppointment}
-                className="inline-flex items-center gap-2.5 px-6 py-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-200 shadow-xl shadow-black/30 active:scale-95 cursor-pointer group"
+                className="btn-ekg inline-flex items-center gap-2.5 px-7 py-3.5 bg-accent hover:bg-accent-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-200 shadow-xl shadow-black/30 active:scale-95 cursor-pointer group"
               >
                 <span>{t("cta")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

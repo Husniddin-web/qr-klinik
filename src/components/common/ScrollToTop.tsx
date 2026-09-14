@@ -33,7 +33,7 @@ export function ScrollToTop() {
           transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.92 }}
-          className="fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white flex items-center justify-center shadow-lg shadow-red-600/35 cursor-pointer border border-red-500/20 transition-colors duration-200"
+          className="fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-accent hover:bg-accent-hover text-white flex items-center justify-center shadow-lg shadow-red-600/35 cursor-pointer border border-red-500/20 transition-colors duration-200"
         >
           {/* Breathing glow ring */}
           <motion.span

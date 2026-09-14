@@ -14,7 +14,7 @@ export function DoctorsClient({ doctors }: { doctors: IDoctor[] }) {
   const handleOpenAppointment = (docId?: string) => openAppointment({ doctorId: docId });
 
   return (
-    <main id="main-content" className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-[#dc2626] selection:text-white">
+    <main id="main-content" className="min-h-screen flex flex-col bg-canvas-soft text-slate-900 selection:bg-accent selection:text-white">
 
       {/* Page Hero without eyebrow badge */}
       <PageHero
@@ -47,7 +47,7 @@ export function DoctorsClient({ doctors }: { doctors: IDoctor[] }) {
                 </div>
 
                 {/* Doctor Name */}
-                <h3 className="text-sm sm:text-lg font-bold text-slate-900 group-hover:text-[#dc2626] transition-colors leading-snug line-clamp-2">
+                <h3 className="text-sm sm:text-lg font-bold text-slate-900 group-hover:text-accent transition-colors leading-snug line-clamp-2">
                   {doctor.name}
                 </h3>
 

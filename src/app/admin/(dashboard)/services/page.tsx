@@ -88,7 +88,7 @@ export default function ServicesListPage() {
       {/* Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight">
             Tibbiy Xizmatlar va Narxlar
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
@@ -98,7 +98,7 @@ export default function ServicesListPage() {
 
         <Link
           href="/admin/services/create"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#dc2626] hover:bg-red-700 text-white text-xs font-bold transition-colors shadow-xs shrink-0 self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-accent hover:bg-red-700 text-white text-xs font-bold transition-colors shadow-xs shrink-0 self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           Yangi xizmat qo&apos;shish
@@ -123,7 +123,7 @@ export default function ServicesListPage() {
               setDeptFilter(e.target.value);
               setPage(1);
             }}
-            className="px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:border-[#dc2626]"
+            className="px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:border-accent"
           >
             <option value="">Barcha bo&apos;limlar</option>
             {departments.map((d) => (
@@ -139,7 +139,7 @@ export default function ServicesListPage() {
               setStatusFilter(e.target.value);
               setPage(1);
             }}
-            className="px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:border-[#dc2626]"
+            className="px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:border-accent"
           >
             <option value="">Barcha statuslar</option>
             <option value="true">Faqat Faol</option>
@@ -152,7 +152,7 @@ export default function ServicesListPage() {
       <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
         {isLoading ? (
           <div className="py-16 flex flex-col items-center justify-center text-slate-400">
-            <Loader2 className="w-7 h-7 text-[#dc2626] animate-spin mb-2" />
+            <Loader2 className="w-7 h-7 text-accent animate-spin mb-2" />
             <p className="text-xs">Yuklanmoqda...</p>
           </div>
         ) : items.length === 0 ? (
@@ -201,7 +201,7 @@ export default function ServicesListPage() {
                       </span>
                     </td>
 
-                    <td className="py-3 px-4 font-bold text-[#dc2626]">
+                    <td className="py-3 px-4 font-bold text-accent">
                       {item.priceFormatted || `${item.price.toLocaleString()} so'm`}
                     </td>
 
@@ -225,7 +225,7 @@ export default function ServicesListPage() {
                         <button
                           type="button"
                           onClick={() => setDeleteId(item._id)}
-                          className="w-8 h-8 rounded-lg border border-slate-200 hover:bg-red-50 hover:border-red-200 flex items-center justify-center text-slate-400 hover:text-[#dc2626] transition-colors"
+                          className="w-8 h-8 rounded-lg border border-slate-200 hover:bg-red-50 hover:border-red-200 flex items-center justify-center text-slate-400 hover:text-accent transition-colors"
                           title="O'chirish"
                         >
                           <Trash2 className="w-3.5 h-3.5" />

@@ -31,7 +31,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
               onClick={onOpenAppointment}
               maxTilt={6}
               glare={true}
-              className="group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="photo-tone group relative h-[360px] sm:h-[400px] rounded-card-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer"
             >
             <Image
               src="/images/showcase/elderly-care.jpg"
@@ -40,9 +40,9 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white">
-              <h3 className="text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
+            <div className="absolute inset-0 z-[2] bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white z-[3]">
+              <h3 className="relative z-[2] font-display text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
                 {t("card1Title")}
               </h3>
             </div>
@@ -61,7 +61,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
               onClick={onOpenAppointment}
               maxTilt={6}
               glare={true}
-              className="group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="photo-tone group relative h-[360px] sm:h-[400px] rounded-card-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer"
             >
               <Image
                 src="/images/showcase/pediatrics.jpg"
@@ -72,13 +72,13 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
               />
               {/* Top-left rounded action pill */}
               <div className="absolute top-4 left-4 z-10">
-                <div className="w-10 h-10 rounded-full bg-white/95 text-slate-800 flex items-center justify-center shadow-md group-hover:bg-[#dc2626] group-hover:text-white transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-white/95 text-slate-800 flex items-center justify-center shadow-md group-hover:bg-accent group-hover:text-white transition-all duration-200">
                   <ArrowUpRight className="w-5 h-5 transition-transform group-hover:scale-110" />
                 </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white">
-                <h3 className="text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
+              <div className="absolute inset-0 z-[2] bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white z-[3]">
+                <h3 className="relative z-[2] font-display text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
                   {t("card2Title")}
                 </h3>
               </div>
@@ -96,7 +96,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
             <TiltCard
               maxTilt={6}
               glare={true}
-              className="group relative h-[360px] sm:h-[400px] rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-br from-[#fff7ed]/80 via-[#fef2f2]/60 to-[#f1f5f9] border border-red-100/80 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              className="group relative h-[360px] sm:h-[400px] rounded-card-lg p-6 flex flex-col justify-between bg-gradient-to-br from-[#fff7ed]/80 via-[#fef2f2]/60 to-[#f1f5f9] border border-red-100/80 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
               {/* Top Row */}
               <div className="flex items-center justify-between">
@@ -104,7 +104,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
                   {t("card3Badge")}
                 </span>
                 <div className="w-10 h-10 rounded-full bg-white text-slate-700 flex items-center justify-center shadow-xs border border-slate-100">
-                  <ArrowUpRight className="w-5 h-5 text-[#dc2626]" />
+                  <ArrowUpRight className="w-5 h-5 text-accent" />
                 </div>
               </div>
 
@@ -150,7 +150,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
                   </span>
                 </div>
 
-                <Quote className="w-6 h-6 text-[#dc2626]/30" />
+                <Quote className="w-6 h-6 text-accent/30" />
               </div>
             </TiltCard>
           </motion.div>
@@ -167,7 +167,7 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
               onClick={onOpenAppointment}
               maxTilt={6}
               glare={true}
-              className="group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="photo-tone group relative h-[360px] sm:h-[400px] rounded-card-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer"
             >
               <Image
                 src="/images/showcase/doctors-team.jpg"
@@ -176,9 +176,9 @@ export function HeroShowcaseSection({ onOpenAppointment }: HeroShowcaseSectionPr
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white">
-                <h3 className="text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
+              <div className="absolute inset-0 z-[2] bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 text-white z-[3]">
+                <h3 className="relative z-[2] font-display text-base sm:text-lg font-bold leading-snug tracking-tight text-white drop-shadow-sm">
                   {t("card4Title")}
                 </h3>
               </div>

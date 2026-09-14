@@ -5,8 +5,8 @@ import Image from "next/image";
 import { m, AnimatePresence, useScroll, useMotionValueEvent, useTransform, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "../common/Container";
-import { Reveal, RevealGroup, RevealItem } from "../common/Reveal";
-import { AnimatedDivider } from "../common/AnimatedDivider";
+import { RevealGroup, RevealItem } from "../common/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 import { EASE, DUR, SPRING } from "@/lib/animations";
 
 const STEPS = [
@@ -46,16 +46,17 @@ export function HowItWorksSection() {
   const railScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const heading = (
-    <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-0">
-      <Reveal as="h2" delay={0.1} className="text-2xl sm:text-4xl lg:text-[40px] font-black text-[#0f172a] tracking-tight leading-snug uppercase">
-        {t("title")}
-      </Reveal>
-      <AnimatedDivider />
-    </div>
+    <SectionHeading
+      align="center"
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      subtitle={t("subtitle")}
+      className="mb-8 lg:mb-2"
+    />
   );
 
   return (
-    <section className="relative bg-[#fafbfc] border-b border-slate-100">
+    <section className="relative bg-canvas-soft border-b border-slate-100">
       {/* ============ MOBIL / PLANSHET: oddiy ro'yxat ============ */}
       <div className="lg:hidden py-20 sm:py-24">
         <Container>
@@ -65,13 +66,13 @@ export function HowItWorksSection() {
             <span aria-hidden className="absolute left-[15px] top-2 bottom-2 w-px bg-slate-200" />
             {STEPS.map((s, i) => (
               <RevealItem key={s.step} variant="left" className="relative">
-                <span className="absolute -left-10 top-0 w-8 h-8 rounded-full bg-[#dc2626] text-white text-[11px] font-black flex items-center justify-center ring-4 ring-[#fafbfc] shadow-md">
+                <span className="absolute -left-10 top-0 w-8 h-8 rounded-full bg-accent text-white text-[11px] font-black flex items-center justify-center ring-4 ring-canvas-soft shadow-md">
                   {i + 1}
                 </span>
-                <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden mb-3 bg-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+                <div className="photo-tone relative aspect-[16/9] w-full rounded-card overflow-hidden mb-3 bg-slate-100 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
                   <Image src={s.image} alt={t(s.titleKey)} fill sizes="90vw" className="object-cover" />
                 </div>
-                <h3 className="text-lg font-bold text-[#0f172a] tracking-tight">{t(s.titleKey)}</h3>
+                <h3 className="font-display text-lg font-bold text-ink tracking-tight">{t(s.titleKey)}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed mt-1.5">{t(s.descKey)}</p>
               </RevealItem>
             ))}
@@ -93,7 +94,7 @@ export function HowItWorksSection() {
               {/* Progress rail + raqamlar */}
               <div className="col-span-1 flex flex-col items-center gap-0 self-stretch relative">
                 <div className="absolute inset-y-2 left-1/2 -translate-x-1/2 w-px bg-slate-200 overflow-hidden">
-                  <m.div style={{ scaleY: railScale, originY: 0 }} className="w-full h-full bg-[#dc2626]" />
+                  <m.div style={{ scaleY: railScale, originY: 0 }} className="w-full h-full bg-accent" />
                 </div>
                 <div className="relative flex flex-col justify-between h-full py-2">
                   {STEPS.map((s, i) => {
@@ -113,11 +114,11 @@ export function HowItWorksSection() {
                         }}
                         animate={{ scale: isActive ? 1.15 : 1 }}
                         transition={SPRING.snappy}
-                        className={`relative z-10 w-9 h-9 rounded-full text-[11px] font-black flex items-center justify-center ring-4 ring-[#fafbfc] transition-colors duration-300 cursor-pointer ${
+                        className={`relative z-10 w-9 h-9 rounded-full text-[11px] font-black flex items-center justify-center ring-4 ring-canvas-soft transition-colors duration-300 cursor-pointer ${
                           isActive
-                            ? "bg-[#dc2626] text-white shadow-lg shadow-red-600/30"
+                            ? "bg-accent text-white shadow-lg shadow-red-600/30"
                             : isPast
-                              ? "bg-[#0f172a] text-white"
+                              ? "bg-ink text-white"
                               : "bg-white text-slate-400 border border-slate-200"
                         }`}
                       >
@@ -139,10 +140,10 @@ export function HowItWorksSection() {
                     transition={{ duration: DUR.base, ease: EASE }}
                     className="text-left"
                   >
-                    <span className="text-[80px] leading-none font-black text-slate-200/80 tabular-nums select-none">
+                    <span className="font-display text-[80px] leading-none font-extrabold text-slate-200/80 tabular-nums select-none">
                       {STEPS[active].step}
                     </span>
-                    <h3 className="text-3xl xl:text-4xl font-black text-[#0f172a] tracking-tight leading-tight -mt-6">
+                    <h3 className="font-display text-3xl xl:text-4xl font-bold text-ink tracking-tight leading-tight -mt-6">
                       {t(STEPS[active].titleKey as StepKey)}
                     </h3>
                     <p className="mt-4 text-base text-slate-600 leading-relaxed max-w-md">
@@ -153,7 +154,7 @@ export function HowItWorksSection() {
               </div>
 
               {/* Rasm — cross-fade + engil zoom */}
-              <div className="col-span-6 relative aspect-[4/3] rounded-[28px] overflow-hidden bg-slate-100 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] border border-slate-200/60">
+              <div className="photo-tone col-span-6 relative aspect-[4/3] rounded-card-lg overflow-hidden bg-slate-100 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] border border-slate-200/60">
                 <AnimatePresence initial={false}>
                   <m.div
                     key={active}

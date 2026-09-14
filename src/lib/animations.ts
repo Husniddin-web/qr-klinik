@@ -29,9 +29,9 @@ export const DIST = {
 
 /** Stagger qadamlari. */
 export const STAGGER = {
-  tight: 0.06,
-  base: 0.1,
-  loose: 0.16,
+  tight: 0.05,
+  base: 0.08,
+  loose: 0.12,
 } as const;
 
 /** Spring presetlari — hover, drag va layout animatsiyalari uchun. */
@@ -51,8 +51,12 @@ export const SCROLL_SPRING = {
   restDelta: 0.001,
 } as const;
 
-/** Standart viewport sozlamasi — bir marta, element 15% ko'ringanda. */
-export const VIEWPORT = { once: true, amount: 0.15 } as const;
+/**
+ * Standart viewport sozlamasi — bir marta, element 10% ko'ringanda.
+ * `margin` (rootMargin) pastdan 120px kengaytiradi: element ekranga kirishidan
+ * sal oldin animatsiya boshlanadi, foydalanuvchi "bo'sh joy"ni ko'rmaydi.
+ */
+export const VIEWPORT = { once: true, amount: 0.1, margin: "0px 0px 120px 0px" } as const;
 
 const t = (duration: number, delay = 0): Transition => ({
   duration,

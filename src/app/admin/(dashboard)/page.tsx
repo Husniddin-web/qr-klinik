@@ -60,11 +60,11 @@ export default function AdminDashboardPage() {
       {/* Welcome Banner */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xs">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#dc2626] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-wider">
             <Activity className="w-3.5 h-3.5" />
             Klinika Boshqaruv Markazi
           </div>
-          <h1 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight">
             Xush kelibsiz, {admin?.fullName || "Administrator"}!
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl">
@@ -76,14 +76,14 @@ export default function AdminDashboardPage() {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/admin/doctors/create"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#dc2626] hover:bg-red-700 text-white text-xs font-bold transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-accent hover:bg-red-700 text-white text-xs font-bold transition-colors shadow-xs"
           >
             <Plus className="w-4 h-4" />
             Shifokor qo&apos;shish
           </Link>
           <Link
             href="/admin/services/create"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] hover:bg-slate-800 text-white text-xs font-bold transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink hover:bg-slate-800 text-white text-xs font-bold transition-colors shadow-xs"
           >
             <Plus className="w-4 h-4" />
             Xizmat qo&apos;shish
@@ -134,14 +134,14 @@ export default function AdminDashboardPage() {
       <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-red-50 text-[#dc2626] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-red-50 text-accent flex items-center justify-center">
               <Inbox className="w-4 h-4" />
             </div>
             <h3 className="text-sm font-bold text-slate-900">So&apos;nggi arizalar</h3>
           </div>
           <Link
             href="/admin/appointments"
-            className="text-xs font-semibold text-[#dc2626] hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-accent hover:underline flex items-center gap-1"
           >
             Barchasini ko&apos;rish
             <ArrowRight className="w-3.5 h-3.5" />
@@ -171,7 +171,7 @@ export default function AdminDashboardPage() {
                   </div>
                 </div>
                 <div className="text-right shrink-0">
-                  <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold border ${lead.status === "new" ? "bg-red-50 text-[#dc2626] border-red-200" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
+                  <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold border ${lead.status === "new" ? "bg-red-50 text-accent border-red-200" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
                     {lead.status === "new" ? "Yangi" : lead.status}
                   </span>
                   <div className="text-[10px] text-slate-400 font-mono mt-1">
@@ -190,7 +190,7 @@ export default function AdminDashboardPage() {
         <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-red-50 text-[#dc2626] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-red-50 text-accent flex items-center justify-center">
                 <Users className="w-4 h-4" />
               </div>
               <h3 className="text-sm font-bold text-slate-900">
@@ -199,7 +199,7 @@ export default function AdminDashboardPage() {
             </div>
             <Link
               href="/admin/doctors"
-              className="text-xs font-semibold text-[#dc2626] hover:underline flex items-center gap-1"
+              className="text-xs font-semibold text-accent hover:underline flex items-center gap-1"
             >
               Barchasini ko&apos;rish
               <ArrowRight className="w-3.5 h-3.5" />
@@ -216,7 +216,7 @@ export default function AdminDashboardPage() {
               href="/admin/doctors/create"
               className="flex-1 py-2 px-3 rounded-lg border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 text-center transition-colors flex items-center justify-center gap-1.5"
             >
-              <Plus className="w-3.5 h-3.5 text-[#dc2626]" />
+              <Plus className="w-3.5 h-3.5 text-accent" />
               Yangi shifokor
             </Link>
             <Link

@@ -40,7 +40,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
   }, [searchQuery, services]);
 
   return (
-    <main id="main-content" className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-[#dc2626] selection:text-white">
+    <main id="main-content" className="min-h-screen flex flex-col bg-canvas-soft text-slate-900 selection:bg-accent selection:text-white">
 
       {/* Page Hero with dark clinic atmosphere */}
       <PageHero
@@ -87,7 +87,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
                   <div>
                     {/* Department Tag & Duration */}
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-red-50 text-[#dc2626]">
+                      <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg bg-red-50 text-accent">
                         {service.departmentName}
                       </span>
                       {service.duration && (
@@ -99,7 +99,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#dc2626] transition-colors leading-snug mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-accent transition-colors leading-snug mb-2">
                       {service.title}
                     </h3>
 
@@ -115,7 +115,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
                       <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400">
                         Xizmat narxi
                       </div>
-                      <div className="text-base sm:text-lg font-black text-slate-900">
+                      <div className="text-base sm:text-lg font-display font-bold text-ink">
                         {formatPrice(service.price)}
                       </div>
                     </div>
@@ -123,7 +123,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
                     <button
                       type="button"
                       onClick={() => handleOpenAppointment(service.title)}
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer shrink-0"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-accent hover:bg-accent-hover text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer shrink-0"
                     >
                       <Calendar className="w-3.5 h-3.5" />
                       <span>Yozilish</span>
@@ -134,7 +134,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
             </div>
           ) : (
             <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 max-w-md mx-auto">
-              <div className="w-14 h-14 rounded-2xl bg-red-50 text-[#dc2626] flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-red-50 text-accent flex items-center justify-center mx-auto mb-4">
                 <Stethoscope className="w-7 h-7" />
               </div>
               <h4 className="text-lg font-bold text-slate-900 mb-1">
@@ -146,7 +146,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="px-5 py-2.5 rounded-full bg-[#dc2626] text-white text-xs font-bold shadow-md hover:bg-[#b91c1c] transition-all cursor-pointer"
+                className="px-5 py-2.5 rounded-full bg-accent text-white text-xs font-bold shadow-md hover:bg-accent-hover transition-all cursor-pointer"
               >
                 Qidiruvni tozalash
               </button>
@@ -156,10 +156,10 @@ export function ServicesClient({ services }: { services: IService[] }) {
           {/* Advantages / Why Choose Us Grid */}
           <div className="mt-16 sm:mt-24 pt-12 border-t border-slate-200">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#dc2626] mb-2">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2">
                 AFZALLIKLARIMIZ
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-ink tracking-tight">
                 Nima Uchun Aynan Qaxramon-Raximjon?
               </h2>
             </div>
@@ -193,7 +193,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
                     key={idx}
                     className="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:border-red-200 transition-all"
                   >
-                    <div className="w-11 h-11 rounded-2xl bg-red-50 text-[#dc2626] flex items-center justify-center mb-4">
+                    <div className="w-11 h-11 rounded-2xl bg-red-50 text-accent flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h4 className="text-base font-bold text-slate-900 mb-2">
@@ -209,9 +209,9 @@ export function ServicesClient({ services }: { services: IService[] }) {
           </div>
 
           {/* Quick Appointment Call-To-Action Banner */}
-          <div className="mt-12 sm:mt-16 rounded-2xl bg-[#0f172a] border border-slate-800 p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-sm">
+          <div className="mt-12 sm:mt-16 rounded-2xl bg-ink border border-slate-800 p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-sm">
             <div className="relative z-10 max-w-2xl">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight mb-2 sm:mb-3">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold tracking-tight mb-2 sm:mb-3">
                 O&apos;zingizga qulay vaqtda shifokor qabuliga yoziling
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
@@ -220,7 +220,7 @@ export function ServicesClient({ services }: { services: IService[] }) {
               <button
                 type="button"
                 onClick={() => handleOpenAppointment()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm shadow-lg shadow-red-600/30 active:scale-95 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-bold text-sm shadow-lg shadow-red-600/30 active:scale-95 transition-all cursor-pointer"
               >
                 <span>Hozir qabulga yozilish</span>
                 <ChevronRight className="w-4 h-4" />

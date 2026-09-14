@@ -35,7 +35,7 @@ export function AccordionItem({
           <ChevronDown
             className={cn(
               "w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0",
-              isOpen && "transform rotate-180 text-[#0f172a]"
+              isOpen && "transform rotate-180 text-ink"
             )}
           />
         </div>

@@ -38,7 +38,7 @@ export function AdminHeader() {
     <header className="h-16 bg-white border-b border-slate-200 px-6 flex items-center justify-between sticky top-0 z-20">
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-2 text-xs text-slate-500">
-        <Link href="/admin" className="font-semibold text-slate-700 hover:text-[#dc2626]">
+        <Link href="/admin" className="font-semibold text-slate-700 hover:text-accent">
           Admin
         </Link>
 
@@ -50,13 +50,13 @@ export function AdminHeader() {
             <React.Fragment key={path}>
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               {isLast ? (
-                <span className="font-bold text-[#0f172a] truncate max-w-[200px]">
+                <span className="font-bold text-ink truncate max-w-[200px]">
                   {formatSegment(seg)}
                 </span>
               ) : (
                 <Link
                   href={path}
-                  className="font-medium text-slate-600 hover:text-[#dc2626]"
+                  className="font-medium text-slate-600 hover:text-accent"
                 >
                   {formatSegment(seg)}
                 </Link>
@@ -80,7 +80,7 @@ export function AdminHeader() {
         <div className="h-6 w-px bg-slate-200 hidden sm:block" />
 
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-[#0f172a] text-white flex items-center justify-center font-bold text-xs">
+          <div className="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center font-bold text-xs">
             {admin?.fullName ? admin.fullName[0].toUpperCase() : "A"}
           </div>
           <div className="hidden md:block text-left">

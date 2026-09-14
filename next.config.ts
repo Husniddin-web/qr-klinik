@@ -7,6 +7,8 @@ const backendUrl = new URL(process.env.NEXT_PUBLIC_BACKEND_URL || "http://localh
 
 const nextConfig: NextConfig = {
   images: {
+    // Hero cut-out va renderlar uchun 85 sifat ham ruxsat etiladi
+    qualities: [75, 85],
     // Backend `/uploads/*` rasmlari next/image orqali optimallashtiriladi
     remotePatterns: [
       {

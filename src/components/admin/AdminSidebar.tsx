@@ -63,7 +63,7 @@ export function AdminSidebar() {
   };
 
   return (
-    <aside className="w-64 bg-[#0f172a] text-slate-300 flex flex-col h-screen sticky top-0 shrink-0 border-r border-slate-800 selection:bg-[#dc2626] selection:text-white z-30">
+    <aside className="w-64 bg-ink text-slate-300 flex flex-col h-screen sticky top-0 shrink-0 border-r border-slate-800 selection:bg-accent selection:text-white z-30">
       {/* Brand Header */}
       <div className="p-5 border-b border-slate-800 flex items-center justify-between">
         <Link href="/admin" className="flex items-center gap-3">
@@ -103,7 +103,7 @@ export function AdminSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 ${
                 active
-                  ? "bg-[#dc2626] text-white shadow-sm"
+                  ? "bg-accent text-white shadow-sm"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/60"
               }`}
             >
@@ -137,7 +137,7 @@ export function AdminSidebar() {
       <div className="p-3 border-t border-slate-800 bg-slate-950/40">
         <div className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-lg bg-[#dc2626]/20 text-[#dc2626] border border-red-900/30 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-accent/20 text-accent border border-red-900/30 flex items-center justify-center shrink-0">
               <Shield className="w-4 h-4" />
             </div>
             <div className="min-w-0">

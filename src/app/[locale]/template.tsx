@@ -44,7 +44,7 @@ export default function LocaleTemplate({ children }: { children: React.ReactNode
             animate={{ scaleX: 0 }}
             transition={{ duration: DUR.curtain, ease: EASE_IN_OUT }}
             style={{ originX: 1 }}
-            className="fixed inset-0 z-[9998] bg-[#dc2626] pointer-events-none"
+            className="fixed inset-0 z-[9998] bg-accent pointer-events-none"
           />
           {/* Orqasidan ergashuvchi to'q ko'k qatlam — chuqurlik hissi beradi */}
           <m.div
@@ -53,7 +53,7 @@ export default function LocaleTemplate({ children }: { children: React.ReactNode
             animate={{ scaleX: 0 }}
             transition={{ duration: DUR.curtain, ease: EASE_IN_OUT, delay: 0.08 }}
             style={{ originX: 1 }}
-            className="fixed inset-0 z-[9997] bg-[#0f172a] pointer-events-none"
+            className="fixed inset-0 z-[9997] bg-ink pointer-events-none"
           />
         </>
       )}

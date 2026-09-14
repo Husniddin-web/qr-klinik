@@ -11,8 +11,9 @@ import {
 } from "framer-motion";
 import { TESTIMONIALS_DATA } from "@/data/testimonials";
 import { ITestimonial } from "@/types";
+import { useTranslations } from "next-intl";
 import { Reveal } from "../common/Reveal";
-import { AnimatedDivider } from "../common/AnimatedDivider";
+import { SectionHeading } from "../common/SectionHeading";
 
 /**
  * Vertikal cheksiz marquee — endi CSS keyframe emas, framer MotionValue.
@@ -74,6 +75,7 @@ function MarqueeColumn({
 }
 
 export function TestimonialsSection() {
+  const t = useTranslations("testimonials");
   const col1 = [TESTIMONIALS_DATA[0], TESTIMONIALS_DATA[3], TESTIMONIALS_DATA[6]];
   const col2 = [TESTIMONIALS_DATA[1], TESTIMONIALS_DATA[4], TESTIMONIALS_DATA[7]];
   const col3 = [TESTIMONIALS_DATA[2], TESTIMONIALS_DATA[5], TESTIMONIALS_DATA[8]];
@@ -81,20 +83,24 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-20 lg:py-28 bg-white relative overflow-hidden border-b border-slate-200/80"
+      className="section-pad bg-white relative overflow-hidden border-b border-slate-200/80"
     >
-      <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 px-4 relative z-10">
-        <Reveal as="h2" delay={0.1} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight uppercase">
-          Bemorlar Sharhlari
-        </Reveal>
-        <AnimatedDivider />
-        <Reveal delay={0.3} className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-          <Hand className="w-3.5 h-3.5" />
-          Sudrab ko&apos;ring
-        </Reveal>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <SectionHeading
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+          className="mb-8 sm:mb-10"
+          action={
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+              <Hand className="w-3.5 h-3.5" />
+              {t("drag")}
+            </span>
+          }
+        />
       </div>
 
-      <Reveal delay={0.2} className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <Reveal delay={0.1} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="relative overflow-hidden h-[620px] sm:h-[680px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_16%,black_84%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_16%,black_84%,transparent_100%)]">
           <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white via-white/80 to-transparent z-20" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white via-white/80 to-transparent z-20" />
@@ -112,7 +118,7 @@ export function TestimonialsSection() {
 
 function ReviewCard({ review }: { review: ITestimonial }) {
   return (
-    <div className="p-6 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 shadow-xs group text-left select-none">
+    <div className="p-6 rounded-card bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-lg transition-all duration-300 shadow-xs group text-left select-none">
       <div className="flex items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-1">
           {[...Array(review.rating)].map((_, i) => (
@@ -131,7 +137,7 @@ function ReviewCard({ review }: { review: ITestimonial }) {
       </p>
 
       <div className="pt-4 border-t border-slate-100">
-        <h4 className="text-xs sm:text-sm font-bold text-[#0f172a] tracking-tight">{review.patientName}</h4>
+        <h4 className="font-display text-xs sm:text-sm font-bold text-ink tracking-tight">{review.patientName}</h4>
       </div>
     </div>
   );

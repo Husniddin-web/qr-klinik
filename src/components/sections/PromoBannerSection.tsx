@@ -19,10 +19,10 @@ export function PromoBannerSection({ onOpenAppointment }: PromoBannerSectionProp
         <Reveal
           variant="zoom"
           duration={0.7}
-          className="rounded-3xl bg-[#0f172a] text-white p-8 sm:p-12 lg:p-14 border border-slate-800 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden"
+          className="rounded-3xl bg-ink text-white p-8 sm:p-12 lg:p-14 border border-slate-800 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden"
         >
           <Reveal variant="left" delay={0.2} className="space-y-3 max-w-2xl text-left z-10">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#dc2626]">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent">
               {t("badge")}
             </span>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
@@ -50,7 +50,7 @@ export function PromoBannerSection({ onOpenAppointment }: PromoBannerSectionProp
             <button
               type="button"
               onClick={onOpenAppointment}
-              className="px-7 py-3.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-[#dc2626]/30 active:scale-95 cursor-pointer flex items-center gap-2 shrink-0"
+              className="px-7 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-accent/30 active:scale-95 cursor-pointer flex items-center gap-2 shrink-0"
             >
               <Calendar className="w-4 h-4" />
               <span>{t("btn")}</span>

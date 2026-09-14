@@ -106,7 +106,7 @@ export default function EditServicePage() {
   if (isLoading) {
     return (
       <div className="py-20 flex flex-col items-center justify-center text-slate-400">
-        <Loader2 className="w-8 h-8 text-[#dc2626] animate-spin mb-3" />
+        <Loader2 className="w-8 h-8 text-accent animate-spin mb-3" />
         <p className="text-xs font-semibold">Xizmat ma&apos;lumotlari yuklanmoqda...</p>
       </div>
     );
@@ -123,7 +123,7 @@ export default function EditServicePage() {
           <ArrowLeft className="w-4 h-4" />
         </Link>
         <div>
-          <h1 className="text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-extrabold text-ink tracking-tight">
             Xizmatni Tahrirlash
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -144,7 +144,7 @@ export default function EditServicePage() {
           {/* Title */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-              Xizmat nomi <span className="text-[#dc2626]">*</span>
+              Xizmat nomi <span className="text-accent">*</span>
             </label>
             <input
               type="text"
@@ -153,7 +153,7 @@ export default function EditServicePage() {
               onChange={(e) =>
                 setFormData({ ...formData, title: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition-all"
+              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
           </div>
 
@@ -167,7 +167,7 @@ export default function EditServicePage() {
               onChange={(e) =>
                 setFormData({ ...formData, departmentId: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition-all"
+              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             >
               <option value="">Bo&apos;limga bog&apos;lamaslik (Umumiy)</option>
               {departments.map((d) => (
@@ -182,14 +182,14 @@ export default function EditServicePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                Narxi (so&apos;mda) <span className="text-[#dc2626]">*</span>
+                Narxi (so&apos;mda) <span className="text-accent">*</span>
               </label>
               <input
                 type="text"
                 required
                 value={formData.price}
                 onChange={(e) => handlePriceChange(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition-all font-mono"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all font-mono"
               />
               {formData.priceFormatted && (
                 <p className="text-xs text-emerald-600 font-bold mt-1">
@@ -208,7 +208,7 @@ export default function EditServicePage() {
                 onChange={(e) =>
                   setFormData({ ...formData, duration: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition-all"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
               />
             </div>
           </div>
@@ -216,7 +216,7 @@ export default function EditServicePage() {
           {/* Description */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-              Batafsil Tavsif <span className="text-[#dc2626]">*</span>
+              Batafsil Tavsif <span className="text-accent">*</span>
             </label>
             <textarea
               rows={4}
@@ -225,7 +225,7 @@ export default function EditServicePage() {
               onChange={(e) =>
                 setFormData({ ...formData, description: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition-all resize-none"
+              className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
             />
           </div>
 
@@ -238,7 +238,7 @@ export default function EditServicePage() {
                 onChange={(e) =>
                   setFormData({ ...formData, isActive: e.target.checked })
                 }
-                className="w-4 h-4 text-[#dc2626] rounded border-slate-300 focus:ring-[#dc2626]"
+                className="w-4 h-4 text-accent rounded border-slate-300 focus:ring-accent"
               />
               <span className="text-xs font-semibold text-slate-700">
                 Faol (Saytda narxlar jadvalida ko&apos;rinsin)
@@ -257,7 +257,7 @@ export default function EditServicePage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2.5 rounded-xl bg-[#dc2626] hover:bg-red-700 text-white text-xs font-bold flex items-center gap-2 transition-colors shadow-xs disabled:opacity-60"
+              className="px-6 py-2.5 rounded-xl bg-accent hover:bg-red-700 text-white text-xs font-bold flex items-center gap-2 transition-colors shadow-xs disabled:opacity-60"
             >
               {isSubmitting ? (
                 <>

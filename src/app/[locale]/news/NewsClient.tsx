@@ -23,7 +23,7 @@ export function NewsClient({ news }: { news: INews[] }) {
   const featuredArticle = news[1] || news[0];
 
   return (
-    <main id="main-content" className="min-h-screen flex flex-col bg-[#f8fafc] text-slate-900 selection:bg-[#dc2626] selection:text-white">
+    <main id="main-content" className="min-h-screen flex flex-col bg-canvas-soft text-slate-900 selection:bg-accent selection:text-white">
 
       {/* Page Hero without eyebrow badge */}
       <PageHero
@@ -61,7 +61,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                       </span>
                     </div>
 
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight mb-4 hover:text-[#dc2626] transition-colors">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight mb-4 hover:text-accent transition-colors">
                       {featuredArticle.title}
                     </h2>
 
@@ -78,7 +78,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                     <button
                       type="button"
                       onClick={() => setActiveArticle(featuredArticle)}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#dc2626] hover:text-[#b91c1c] transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-accent hover:text-accent-hover transition-colors cursor-pointer"
                     >
                       <span>Batafsil o&apos;qish</span>
                       <ArrowRight className="w-4 h-4" />
@@ -122,7 +122,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                       </span>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#dc2626] transition-colors leading-snug mb-3 line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-accent transition-colors leading-snug mb-3 line-clamp-2">
                       {article.title}
                     </h3>
 
@@ -144,7 +144,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                   <button
                     type="button"
                     onClick={() => setActiveArticle(article)}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#dc2626] hover:text-[#b91c1c] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:text-accent-hover transition-colors cursor-pointer"
                   >
                     <span>O&apos;qish</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -163,7 +163,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                 <Send className="w-3.5 h-3.5" />
                 Telegram Salomatlik Kanali
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-3">
                 Foydali Tibbiy Maslahatlar va Yangiliklarni Telegramda Kuzating
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
@@ -239,7 +239,7 @@ export function NewsClient({ news }: { news: INews[] }) {
                     setActiveArticle(null);
                     openAppointment();
                   }}
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer text-center"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-accent hover:bg-accent-hover text-white text-xs sm:text-sm font-bold shadow-md shadow-red-500/20 active:scale-95 transition-all cursor-pointer text-center"
                 >
                   Shifokor ko&apos;rigiga yozilish
                 </button>

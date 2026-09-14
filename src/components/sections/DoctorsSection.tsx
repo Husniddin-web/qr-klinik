@@ -9,7 +9,7 @@ import { DOCTORS_DATA } from "@/data/doctors";
 import type { IDoctor } from "@/types";
 import { Container } from "../common/Container";
 import { Reveal } from "../common/Reveal";
-import { AnimatedDivider } from "../common/AnimatedDivider";
+import { SectionHeading } from "../common/SectionHeading";
 import { EASE, DUR, SPRING } from "@/lib/animations";
 
 interface DoctorsSectionProps {
@@ -72,7 +72,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
     <section
       ref={sectionRef}
       id="doctors"
-      className="relative py-20 sm:py-24 bg-white overflow-hidden select-none border-b border-slate-100"
+      className="relative section-pad bg-white overflow-hidden select-none border-b border-slate-100"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -80,19 +80,14 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
       onTouchEnd={handleTouchEnd}
     >
       <Container className="relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 px-4">
-          <Reveal as="h2" delay={0.1} className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0b1b36] tracking-tight leading-[1.2] uppercase">
-            {t("title")}
-          </Reveal>
-          <AnimatedDivider />
-        </div>
+        <SectionHeading align="center" eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} className="mb-6 sm:mb-8" />
 
         <Reveal variant="zoom" delay={0.2} duration={0.7} className="relative w-full max-w-5xl mx-auto flex items-center justify-center py-2">
           <button
             type="button"
             onClick={prevSlide}
             aria-label="Oldingi mutaxassis"
-            className="absolute left-1 sm:left-2 md:-left-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#dc2626] shadow-md hover:shadow-xl border border-slate-200/80 flex items-center justify-center transition-all duration-200 active:scale-95 cursor-pointer backdrop-blur-sm group"
+            className="absolute left-1 sm:left-2 md:-left-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-accent shadow-md hover:shadow-xl border border-slate-200/80 flex items-center justify-center transition-all duration-200 active:scale-95 cursor-pointer backdrop-blur-sm group"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:-translate-x-0.5" />
           </button>
@@ -101,7 +96,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
             type="button"
             onClick={nextSlide}
             aria-label="Keyingi mutaxassis"
-            className="absolute right-1 sm:right-2 md:-right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#dc2626] shadow-md hover:shadow-xl border border-slate-200/80 flex items-center justify-center transition-all duration-200 active:scale-95 cursor-pointer backdrop-blur-sm group"
+            className="absolute right-1 sm:right-2 md:-right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-accent shadow-md hover:shadow-xl border border-slate-200/80 flex items-center justify-center transition-all duration-200 active:scale-95 cursor-pointer backdrop-blur-sm group"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-0.5" />
           </button>
@@ -171,7 +166,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: DUR.base, ease: EASE }}
-                      className="absolute top-4 right-4 z-20 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-[#0f172a] shadow-sm"
+                      className="absolute top-4 right-4 z-20 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-ink shadow-sm"
                     >
                       <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                       {doctor.rating.toFixed(1)}
@@ -180,7 +175,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
 
                   {/* Pastki kontent: hover'da tajriba + CTA ko'tariladi */}
                   <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white z-10 flex flex-col justify-end">
-                    <h3 className={`text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-md transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "group-hover:-translate-y-1" : ""}`}>
+                    <h3 className={`font-display text-lg sm:text-2xl font-bold tracking-tight leading-snug drop-shadow-md transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive ? "group-hover:-translate-y-1" : ""}`}>
                       {doctor.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-200/90 font-medium mt-1 drop-shadow-sm line-clamp-1">
@@ -202,7 +197,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
                               e.stopPropagation();
                               onSelectDoctor(doctor.id);
                             }}
-                            className="mt-3 w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs font-bold transition-colors cursor-pointer shadow-lg shadow-red-600/30"
+                            className="mt-3 w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-accent hover:bg-accent-hover text-white text-xs font-bold transition-colors cursor-pointer shadow-lg shadow-red-600/30"
                           >
                             <Calendar className="w-3.5 h-3.5" />
                             {t("btn")}
@@ -231,7 +226,7 @@ export function DoctorsSection({ onSelectDoctor, doctors = DOCTORS_DATA }: Docto
                 <m.span
                   layoutId="doctor-dot"
                   transition={SPRING.soft}
-                  className="absolute -inset-y-0 -left-3 -right-3 rounded-full bg-[#dc2626]"
+                  className="absolute -inset-y-0 -left-3 -right-3 rounded-full bg-accent"
                 />
               )}
             </button>

@@ -7,6 +7,7 @@ import { m, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "../common/Container";
 import { Reveal } from "../common/Reveal";
+import { SectionHeading } from "../common/SectionHeading";
 import { FloatingInput } from "../ui/FloatingInput";
 import { MorphButton, MorphState } from "../ui/MorphButton";
 import { EASE, DUR } from "@/lib/animations";
@@ -74,7 +75,7 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
   return (
     <section
       id="contact"
-      className="w-full bg-[#0f172a] text-white mt-24 sm:mt-32 lg:mt-40 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 relative overflow-visible border-t border-slate-800"
+      className="w-full bg-ink text-white mt-24 sm:mt-32 lg:mt-40 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 relative overflow-visible border-t border-slate-800"
     >
       <Container className="relative overflow-visible">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
@@ -85,7 +86,7 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
               {/* ---------- 1. Doira foni: toza qizil, hech qanday soya/halqa/animatsiya yo'q ---------- */}
               <div
                 aria-hidden
-                className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[84%] aspect-square rounded-full bg-[#dc2626]"
+                className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[84%] aspect-square rounded-full bg-accent"
               />
 
               {/* ---------- 2. Pastki qism: rasm DOIRA ICHIDA (rounded-full + overflow-hidden) ----------
@@ -128,11 +129,7 @@ export function ContactSection({ onOpenAppointment }: ContactSectionProps) {
           {/* O'ng: forma */}
           <Reveal delay={0.1} className="lg:col-span-7 xl:col-span-7 relative z-20 order-2 lg:order-2 pt-6 lg:pt-8">
             <div className="max-w-xl">
-              <div className="mb-6 text-left">
-                <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-black text-white tracking-tight leading-snug">
-                  {t("title")}
-                </h2>
-              </div>
+              <SectionHeading tone="dark" eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} className="mb-7" />
 
               <AnimatePresence mode="wait" initial={false}>
                 {isSuccess ? (

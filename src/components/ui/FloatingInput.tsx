@@ -46,6 +46,7 @@ export function FloatingInput(props: FloatingInputProps) {
     tone = "light",
     className,
     shakeKey = 0,
+    multiline = false,
     ...rest
   } = props as FloatingInputProps & { multiline?: boolean };
 
@@ -60,7 +61,7 @@ export function FloatingInput(props: FloatingInputProps) {
     Icon ? "pl-11 pr-4" : "px-4",
     isDark
       ? "text-white border-slate-700/80 bg-slate-900/80 placeholder-transparent"
-      : "text-[#0f172a] border-slate-200 bg-slate-50 placeholder-transparent",
+      : "text-ink border-slate-200 bg-slate-50 placeholder-transparent",
     hasError
       ? isDark
         ? "border-red-400/80"
@@ -68,7 +69,7 @@ export function FloatingInput(props: FloatingInputProps) {
       : focused
         ? isDark
           ? "border-red-400/70"
-          : "border-[#0f172a]"
+          : "border-ink"
         : ""
   );
 
@@ -85,7 +86,7 @@ export function FloatingInput(props: FloatingInputProps) {
       ? "text-red-500 peer-focus:text-red-500"
       : isDark
         ? "peer-focus:text-red-300"
-        : "peer-focus:text-[#dc2626]"
+        : "peer-focus:text-accent"
   );
 
   return (
@@ -104,13 +105,13 @@ export function FloatingInput(props: FloatingInputProps) {
                 : focused
                   ? isDark
                     ? "text-red-300"
-                    : "text-[#dc2626]"
+                    : "text-accent"
                   : "text-slate-400"
             )}
           />
         )}
 
-        {"multiline" in rest && rest.multiline ? (
+        {multiline ? (
           <textarea
             id={id}
             placeholder={label}
@@ -158,7 +159,7 @@ export function FloatingInput(props: FloatingInputProps) {
           transition={{ duration: DUR.fast, ease: EASE }}
           className={cn(
             "absolute bottom-0 left-3 right-3 h-[2px] rounded-full origin-center pointer-events-none",
-            hasError ? "bg-red-500" : "bg-[#dc2626]"
+            hasError ? "bg-red-500" : "bg-accent"
           )}
         />
       </div>

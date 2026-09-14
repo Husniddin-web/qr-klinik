@@ -24,7 +24,7 @@ export default function AdminDashboardLayout({
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center">
-        <Loader2 className="w-8 h-8 text-[#dc2626] animate-spin mb-3" />
+        <Loader2 className="w-8 h-8 text-accent animate-spin mb-3" />
         <p className="text-xs font-semibold text-slate-500">
           Admin portal yuklanmoqda...
         </p>
@@ -37,7 +37,7 @@ export default function AdminDashboardLayout({
   }
 
   return (
-    <div className="min-h-screen flex bg-slate-50 selection:bg-[#dc2626] selection:text-white">
+    <div className="min-h-screen flex bg-slate-50 selection:bg-accent selection:text-white">
       {/* Sleek Sidebar */}
       <AdminSidebar />
 

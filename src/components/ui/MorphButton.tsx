@@ -52,7 +52,7 @@ export function MorphButton({
         "shadow-md transition-colors duration-200 active:scale-[0.98] disabled:cursor-default overflow-hidden",
         state === "success"
           ? "bg-emerald-500 shadow-emerald-500/25"
-          : "bg-[#dc2626] hover:bg-[#b91c1c] shadow-[#dc2626]/25",
+          : "bg-accent hover:bg-accent-hover shadow-accent/25",
         fullWidth && "w-full",
         className
       )}

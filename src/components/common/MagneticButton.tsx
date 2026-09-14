@@ -69,7 +69,7 @@ export function MagneticButton({
             scale: { repeat: Infinity, duration: 1.8, ease: "easeInOut" },
             opacity: { duration: 0.25 },
           }}
-          className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#dc2626] to-red-500 blur-lg pointer-events-none -z-10"
+          className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-accent to-red-500 blur-lg pointer-events-none -z-10"
         />
       )}
 

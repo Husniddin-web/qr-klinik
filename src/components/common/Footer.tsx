@@ -9,7 +9,7 @@ import { RevealGroup, RevealItem } from "./Reveal";
 
 export function Footer({ departments = DEPARTMENTS_DATA }: { departments?: IDepartment[] }) {
   return (
-    <footer className="bg-[#0f172a] text-slate-400 pt-20 pb-12 border-t border-slate-800 text-sm">
+    <footer className="bg-ink text-slate-400 pt-20 pb-12 border-t border-slate-800 text-sm">
       <Container>
         {/* 4 ustun ketma-ket (stagger) ochiladi */}
         <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-slate-800/80">
@@ -82,7 +82,7 @@ export function Footer({ departments = DEPARTMENTS_DATA }: { departments?: IDepa
             <p>
               <a
                 href={`tel:${CLINIC_CONTACT.emergencyPhone.replace(/\s+/g, "")}`}
-                className="text-[#dc2626] hover:underline font-bold text-xs"
+                className="text-accent hover:underline font-bold text-xs"
               >
                 {CLINIC_CONTACT.emergencyPhone} (24/7 Shoshilinch)
               </a>

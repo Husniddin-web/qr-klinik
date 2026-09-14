@@ -56,7 +56,7 @@ export function SplashScreen() {
           className="fixed inset-0 z-[9999] bg-white pointer-events-none select-none overflow-hidden"
         >
           {/* Pastki qizil chiziq — parda ko'tarilganda brend rangi "iz" qoldiradi */}
-          <div className="absolute inset-x-0 bottom-0 h-1 bg-[#dc2626]" />
+          <div className="absolute inset-x-0 bottom-0 h-1 bg-accent" />
 
           {/* EKG chizig'i — butun ekran kengligida, markazda */}
           <svg
@@ -101,7 +101,7 @@ export function SplashScreen() {
                 initial={{ scale: 0.8, opacity: 0.6 }}
                 animate={{ scale: 2, opacity: 0 }}
                 transition={{ delay: 0.5, duration: 0.9, ease: "easeOut" }}
-                className="absolute -inset-3 rounded-full border-2 border-[#dc2626]/40"
+                className="absolute -inset-3 rounded-full border-2 border-accent/40"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

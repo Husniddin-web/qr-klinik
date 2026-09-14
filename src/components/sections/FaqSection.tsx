@@ -7,7 +7,7 @@ import { m, AnimatePresence, useScroll, useTransform, useReducedMotion } from "f
 import { useTranslations } from "next-intl";
 import { FAQS_DATA } from "@/data/faqs";
 import { Reveal, RevealGroup, RevealItem } from "../common/Reveal";
-import { AnimatedDivider } from "../common/AnimatedDivider";
+import { SectionHeading } from "../common/SectionHeading";
 import { EASE, DUR, SPRING } from "@/lib/animations";
 
 interface FaqSectionProps {
@@ -39,12 +39,12 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
   const hiddenCount = FAQS_DATA.length - INITIAL_COUNT;
 
   return (
-    <section id="faq" className="w-full bg-[#fafbfc] border-y border-slate-200/80 overflow-hidden">
+    <section id="faq" className="w-full bg-canvas-soft border-y border-slate-200/80 overflow-hidden">
       <div className="flex flex-col lg:flex-row items-stretch w-full">
         {/* ---------- Chap: rasm + parallax + pastki aloqa kartasi ---------- */}
         <div
           ref={imageRef}
-          className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-0 lg:self-stretch overflow-hidden bg-slate-200 shrink-0"
+          className="photo-tone w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-0 lg:self-stretch overflow-hidden bg-slate-200 shrink-0"
         >
           <m.div
             style={shouldReduceMotion ? {} : { y: imageY }}
@@ -62,15 +62,9 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
         </div>
 
         {/* ---------- O'ng: akkordeon ---------- */}
-        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-16 xl:px-20 py-14 sm:py-20 flex flex-col justify-center bg-[#fafbfc]">
+        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:px-16 xl:px-20 py-14 sm:py-20 flex flex-col justify-center bg-canvas-soft">
           <div className="max-w-xl w-full mx-auto lg:mx-0 text-left">
-            <Reveal variant="down" className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#dc2626] mb-3">
-              {t("badge")}
-            </Reveal>
-            <Reveal as="h2" delay={0.1} className="text-2xl sm:text-3xl lg:text-[36px] font-black text-[#0f172a] tracking-tight leading-tight">
-              {t("title")}
-            </Reveal>
-            <AnimatedDivider className="mx-0 mb-8" />
+            <SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} className="mb-8" />
 
             <RevealGroup stagger={0.08} className="space-y-3">
               <AnimatePresence initial={false}>
@@ -98,7 +92,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                           animate={{ scaleY: isOpen ? 1 : 0 }}
                           transition={{ duration: DUR.base, ease: EASE }}
                           style={{ originY: 0 }}
-                          className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#dc2626]"
+                          className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent"
                         />
 
                         <button
@@ -109,7 +103,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                           onClick={() => toggleItem(item.id)}
                           className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer group"
                         >
-                          <span className="flex items-start gap-3 text-xs sm:text-[15px] font-bold text-[#0f172a] leading-snug">
+                          <span className="flex items-start gap-3 text-xs sm:text-[15px] font-bold text-ink leading-snug">
                             {/* Raqam: ochiqda qizil to'ldirilgan badge'ga aylanadi */}
                             <m.span
                               initial={false}
@@ -122,7 +116,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                             >
                               {idx + 1}
                             </m.span>
-                            <span className={`transition-colors ${isOpen ? "" : "group-hover:text-[#dc2626]"}`}>
+                            <span className={`transition-colors ${isOpen ? "" : "group-hover:text-accent"}`}>
                               {item.question}
                             </span>
                           </span>
@@ -131,7 +125,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                             animate={{ rotate: isOpen ? 180 : 0 }}
                             transition={SPRING.snappy}
                             className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                              isOpen ? "bg-red-50 text-[#dc2626]" : "bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#dc2626]"
+                              isOpen ? "bg-red-50 text-accent" : "bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-accent"
                             }`}
                           >
                             <ChevronDown className="w-4 h-4" />
@@ -179,7 +173,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
               <button
                 type="button"
                 onClick={handleAskQuestion}
-                className="px-7 py-3 rounded-full bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 inline-flex items-center gap-2 cursor-pointer active:scale-95 group"
+                className="btn-ekg px-7 py-3 rounded-full bg-accent hover:bg-accent-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-200 inline-flex items-center gap-2 cursor-pointer active:scale-95 group"
               >
                 <span>{t("askBtn")}</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -190,7 +184,7 @@ export function FaqSection({ onOpenAppointment }: FaqSectionProps) {
                   type="button"
                   onClick={() => setShowAll((v) => !v)}
                   aria-expanded={showAll}
-                  className="px-5 py-3 rounded-full border border-slate-300 hover:border-[#dc2626] text-slate-700 hover:text-[#dc2626] text-xs sm:text-sm font-bold transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-5 py-3 rounded-full border border-slate-300 hover:border-accent text-slate-700 hover:text-accent text-xs sm:text-sm font-bold transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   {showAll ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                   <span>{showAll ? "Kamroq ko'rsatish" : `Barcha savollar (${FAQS_DATA.length})`}</span>
