@@ -1,74 +1,34 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { m, useReducedMotion } from "framer-motion";
-import { DUR, EASE, EASE_IN_OUT } from "@/lib/animations";
+import { DUR, EASE } from "@/lib/animations";
 
 /**
- * Sahifalararo o'tish animatsiyasi.
+ * Sahifalararo o'tish.
  *
- * Next.js App Router'da `template.tsx` har bir navigatsiyada QAYTA MOUNT bo'ladi
- * (`layout.tsx` esa bo'lmaydi) — shuning uchun kirish animatsiyasi shu yerda.
- *
- * Effekt: brand rangidagi (#dc2626) parda chapdan yopib, o'ngga ochiladi;
- * ayni paytda yangi sahifa kontenti pastdan mayin ko'tariladi.
- *
- * Parda FAQAT client-side navigatsiyada ishlaydi — birinchi yuklanishda
- * SplashScreen bilan ustma-ust tushmasligi uchun (modul scope'dagi bayroq
- * remount'lardan omon qoladi).
+ * `template.tsx` har navigatsiyada QAYTA MOUNT bo'ladi — shuning uchun kirish
+ * animatsiyasi shu yerda. Parda yo'q: yangi kontent 12px pastdan yengil
+ * ko'tarilib paydo bo'ladi (350ms), yuqorida esa NavProgress EKG chizig'i
+ * "sahifa keldi" deb bir marta uradi. Navbar layout'da, u qimirlamaydi.
  */
-let hasNavigatedOnce = false;
-
 export default function LocaleTemplate({ children }: { children: React.ReactNode }) {
   const shouldReduceMotion = useReducedMotion();
-  const [showCurtain] = useState(() => hasNavigatedOnce);
 
   useEffect(() => {
-    hasNavigatedOnce = true;
     // Yangi sahifa har doim tepadan boshlansin
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, []);
 
-  if (shouldReduceMotion) {
-    return <>{children}</>;
-  }
+  if (shouldReduceMotion) return <>{children}</>;
 
   return (
-    <>
-      {showCurtain && (
-        <>
-          {/* Asosiy qizil parda: chapdan yopiq → o'ngga ochiladi */}
-          <m.div
-            aria-hidden
-            initial={{ scaleX: 1 }}
-            animate={{ scaleX: 0 }}
-            transition={{ duration: DUR.curtain, ease: EASE_IN_OUT }}
-            style={{ originX: 1 }}
-            className="fixed inset-0 z-[9998] bg-accent pointer-events-none"
-          />
-          {/* Orqasidan ergashuvchi to'q ko'k qatlam — chuqurlik hissi beradi */}
-          <m.div
-            aria-hidden
-            initial={{ scaleX: 1 }}
-            animate={{ scaleX: 0 }}
-            transition={{ duration: DUR.curtain, ease: EASE_IN_OUT, delay: 0.08 }}
-            style={{ originX: 1 }}
-            className="fixed inset-0 z-[9997] bg-ink pointer-events-none"
-          />
-        </>
-      )}
-
-      <m.div
-        initial={{ opacity: 0, y: showCurtain ? 16 : 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: DUR.base,
-          ease: EASE,
-          delay: showCurtain ? 0.35 : 0,
-        }}
-      >
-        {children}
-      </m.div>
-    </>
+    <m.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: DUR.base * 0.8, ease: EASE }}
+    >
+      {children}
+    </m.div>
   );
 }

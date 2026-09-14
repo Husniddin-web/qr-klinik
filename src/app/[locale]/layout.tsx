@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { MotionProvider } from "@/components/common/MotionProvider";
 import { SiteShell } from "@/components/common/SiteShell";
 import { getDepartments, getDoctors } from "@/lib/public-api";
-import { ScrollProgressBar } from "@/components/common/ScrollProgressBar";
+import { NavProgress } from "@/components/common/NavProgress";
 import { SplashScreen } from "@/components/common/SplashScreen";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 import "../globals.css";
@@ -102,7 +102,7 @@ export default async function LocaleLayout({
         <MotionProvider>
           {/* Sessiya davomida faqat bir marta ko'rinadigan splash */}
           <SplashScreen />
-          <ScrollProgressBar />
+          <NavProgress />
           <ScrollToTop />
           <NextIntlClientProvider locale={locale} messages={messages}>
             {/* Navbar + AppointmentModal — sahifalar orasida saqlanib qoladi */}
